@@ -1,0 +1,9 @@
+lightbox http://www.ericmmartin.com/projects/simplemodal-demos/
+time picker http://trentrichardson.com/examples/timepicker/
+http://www.bloogie.es/tecnologia/programacion/34-ajax-con-jquery-php-y-json-ejemplo-paso-a-paso
+
+
+ALTER TABLE `SYSTEMUSER` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE `TICKETS` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE `INSTANT_WIN` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE `INSTANT_WIN` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;

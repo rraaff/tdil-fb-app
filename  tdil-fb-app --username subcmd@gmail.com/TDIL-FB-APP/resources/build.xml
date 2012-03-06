@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Nov 30, 2011 6:16:12 PM                                                        
+
+     Package    
+     description
+                   
+     mgodoy                                                                
+     ====================================================================== -->
+<project name="Package" default="make_package">
+    <description>
+            ANT file para armar el paquete de entrega de FB_MGM
+    </description>
+	
+	
+    <!-- ================================= 
+          target: make_pakage              
+         ================================= -->
+    <target name="make_package" description="description">
+    	<delete file="lasmoras.zip" failonerror="false"></delete>
+    	<delete dir="tmp" failonerror="false"></delete>
+    	<mkdir dir="tmp/LasMoras"/>
+    	<copy todir="tmp" file="Instrucciones.txt"></copy>
+    	<copy todir="tmp" file="database.sql"></copy>
+    	<copy todir="tmp" file="lasmoras.sql"></copy>
+    	<copy todir="tmp/LasMoras">
+    		<fileset dir="../" id="id">
+    			<exclude name="**/.settings/**"/>
+			    <exclude name="**/resources/**"/>
+			   	<exclude name="**/deploy.sh"/>
+    			<exclude name="**/.project"/>
+    			<exclude name="**/.buildpath"/>
+			</fileset>
+    	</copy>
+        <zip destfile="lasmoras.zip" basedir="tmp">		
+		</zip>
+    	<delete dir="tmp" failonerror="false"></delete>
+    </target>
+
+</project>
