@@ -1,0 +1,18 @@
+Instalaci�n
+===========
+
+1) Descomprimir el zip
+
+2) Correr resources/database.sql como root del mysql
+
+3) Correr resources/fb_mgm.sql como FB_MGM_USER/FB_MGM_USER base FB_MGM
+
+4) Copiar los archivos al root del servidor
+
+4) Modificar constantes.php con los datos del server de la base (constante DB_SERVER)
+
+
+Accesos
+=======
+
+BackOffice: ./boLogin.php
