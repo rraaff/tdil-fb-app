@@ -41,6 +41,15 @@ CREATE TABLE `GROUP_APP1` (
   PRIMARY KEY (`id`) ,
   INDEX `groupowner_fbidasc` (`groupowner_fbid` ASC) );
   
+CREATE TABLE `ACTION_APP1` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `fbid` VARCHAR(255) NULL ,
+  `action` VARCHAR(255) NULL ,
+  `dataid` INT NOT NULL ,
+  `completed` INT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fbidasc` (`fbid` ASC) );
+  
 CREATE TABLE `EMAIL_INV_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `groupowner_fbid` VARCHAR(255) NULL ,
