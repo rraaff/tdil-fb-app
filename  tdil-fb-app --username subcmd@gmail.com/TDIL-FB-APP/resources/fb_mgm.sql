@@ -29,10 +29,16 @@ CREATE TABLE `USER_APP1` (
   `fbname` VARCHAR(255) NULL ,
   `fbusername` VARCHAR(250) NULL ,
   `fbgender` VARCHAR(100) NULL ,
+  `origin` INT NULL ,
+  `participation` INT NULL ,
   `participation_code` VARCHAR(100) NULL ,
   `invitation_code` VARCHAR(100) NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fbidasc` (`fbid` ASC) );
+
+INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('a@a.com',1,0);
+INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('b@b.com',1,0);  
+INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('m@m.com',1,0);
   
 CREATE TABLE `GROUP_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
@@ -52,7 +58,7 @@ CREATE TABLE `ACTION_APP1` (
   
 CREATE TABLE `EMAIL_INV_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `groupowner_fbid` VARCHAR(255) NULL ,
+  `groupid` VARCHAR(255) NULL ,
   `friend_email` VARCHAR(255) NULL ,
   `followed` INT NULL ,
   `completed` INT NULL ,

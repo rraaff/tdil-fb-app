@@ -1,10 +1,18 @@
 <html>
 <head></head>
 <body>
+<table>
+<tr>
+<td>
+New group
 <form method="GET" action="../app1/home.php">
+fbid: <input type="text" name="fbid"><br>
+fbname: <input type="text" name="fbname"><br>
+fbusername: <input type="text" name="fbusername"><br>
+fbgender: <input type="text" name="fbgender"><br>
 action: <select name="action">
 			<option value=""></option>
-			<option value="new_group">new_group</option>
+			<option value="new_group" selected>new_group</option>
 			<option value="join_group">join_group</option>
 		</select>
 		<br>
@@ -16,6 +24,48 @@ fan: <select name="fan">
 		<br>
 <input type="submit" value="Submit">
 </form>
+</td>
+<td>
+Join group
+<form method="GET" action="../app1/home.php">
+idgroup: <input type="text" name="idgroup"><br>
+iduser: <input type="text" name="iduser"><br>
 
+fbid: <input type="text" name="fbid"><br>
+fbname: <input type="text" name="fbname"><br>
+fbusername: <input type="text" name="fbusername"><br>
+fbgender: <input type="text" name="fbgender"><br>
+action: <select name="action">
+			<option value=""></option>
+			<option value="new_group">new_group</option>
+			<option value="join_group" selected>join_group</option>
+		</select>
+		<br>
+inv_email: <input type="text" name="inv_email"><br>
+fan: <select name="fan">
+			<option value="1">1</option>
+			<option value="0">0</option>
+		</select>
+		<br>
+<input type="submit" value="Submit">
+</form>
+</td>
+
+<td>
+Navegacion de fb
+<form method="GET" action="../app1/home.php">
+fbid: <input type="text" name="fbid"><br>
+fbname: <input type="text" name="fbname"><br>
+fbusername: <input type="text" name="fbusername"><br>
+fan: <select name="fan">
+			<option value="1">1</option>
+			<option value="0">0</option>
+		</select>
+		<br>
+<input type="submit" value="Submit">
+</form>
+</td>
+</tr>
+</table>
 </body>
 </html>
