@@ -1,1 +1,5 @@
 Volar la carpeta testing
+
+or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+
+ver si todos los fbid son numericos

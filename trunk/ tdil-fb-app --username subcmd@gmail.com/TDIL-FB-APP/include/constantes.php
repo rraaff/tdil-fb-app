@@ -6,4 +6,6 @@
 	define('DB_NAME','FB_MGM');
 	
 	define('TESTING','TRUE');
+	
+	define('APP1_WIN',3);
 ?>
