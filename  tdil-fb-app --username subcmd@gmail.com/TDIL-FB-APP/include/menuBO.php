@@ -13,6 +13,13 @@
       <li><a href="http://github.com/javan/jbar/tarball/master">Download .tar.gz</a></li>
     </ul>
   </li-->
+   <li>
+    <a href="#">App 10 + 10 = 17</a>
+    <ul>
+      <li><a href="boApp1Stats.php">Estado de la applicacion</a></li>
+      <li><a href="boApp1Search.php">Consultas</a></li>
+    </ul>
+  </li>
   <li>
     <a href="boPremiosInstantaneos.php">Manejo de instant win</a>
   </li>

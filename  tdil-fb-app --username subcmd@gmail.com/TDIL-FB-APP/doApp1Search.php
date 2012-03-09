@@ -5,6 +5,7 @@ include("include/headers.php");
 require("include/funcionesDB.php");
 //require("include/boCheckLogin.php");
 
+
 $connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
 mysql_select_db(DB_NAME,$connection);
 	
