@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS BOUSER;
 DROP TABLE IF EXISTS USER_APP1;
 DROP TABLE IF EXISTS GROUP_APP1;
+DROP TABLE IF EXISTS ACTION_APP1;
+DROP TABLE IF EXISTS WINNER_APP1;
 DROP TABLE IF EXISTS EMAIL_INV_APP1;
 DROP TABLE IF EXISTS FB_INV_APP1;
 
@@ -36,9 +38,9 @@ CREATE TABLE `USER_APP1` (
   PRIMARY KEY (`id`) ,
   INDEX `fbidasc` (`fbid` ASC) );
 
-INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('a@a.com',1,0);
-INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('b@b.com',1,0);  
-INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('m@m.com',1,0);
+INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('a',1,0);
+INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('b',1,0);  
+INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('c',1,0);
   
 CREATE TABLE `GROUP_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
@@ -46,6 +48,14 @@ CREATE TABLE `GROUP_APP1` (
   `groupmember_fbid` VARCHAR(255) NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `groupowner_fbidasc` (`groupowner_fbid` ASC) );
+  
+CREATE TABLE `WINNER_APP1` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `active` INT NULL,
+  `groupowner_fbid` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO WINNER_APP1 (active) values (1);
   
 CREATE TABLE `ACTION_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
