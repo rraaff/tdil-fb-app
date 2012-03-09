@@ -3,3 +3,6 @@ Volar la carpeta testing
 or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 
 ver si todos los fbid son numericos
+
+Agregar a la tabla group_app1 un timestamp.
+Registrar las invitaciones, quien a quien y por que canal.
