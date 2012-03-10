@@ -20,7 +20,7 @@ INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
 VALUES ('fb', 'fb', 'fb@ssdd.com', 'fb', 'fb'); 
 
 INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
-VALUES ('pablo', 'mendoza', 'aas@ssdd.com', 'mendoza', 'mendoza'); 
+VALUES ('pablo', 'mendoza', 'aas@ssdd.com', 'pm', 'pm'); 
 
 
 CREATE TABLE `USER_APP1` (
@@ -37,10 +37,6 @@ CREATE TABLE `USER_APP1` (
   `invitation_code` VARCHAR(100) NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fbidasc` (`fbid` ASC) );
-
-INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('a',1,0);
-INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('b',1,0);  
-INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('c',1,0);
   
 CREATE TABLE `GROUP_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,

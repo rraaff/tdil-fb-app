@@ -88,9 +88,14 @@ iduser:<?php echo $iduser?><br>
 							$fbname = quote_smart($fbname, $connection);
 							$fbusername = quote_smart($fbusername, $connection);
 							$fbgender = quote_smart($fbgender, $connection);
-							// el usuario fue invitado, se completan sus datos de fb
-							$SQL = "UPDATE USER_APP1 SET fbid = $fbid, fbname = $fbname, fbusername = $fbusername, fbgender = $fbgender , participation = 1 WHERE inv_email = $inv_email";
-							$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+							if($pendingaction == 0) {
+								// el usuario fue invitado, se completan sus datos de fb
+								$SQL = "UPDATE USER_APP1 SET fbid = $fbid, fbname = $fbname, fbusername = $fbusername, fbgender = $fbgender , participation = 1 WHERE inv_email = $inv_email";
+								$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+							} else {
+								$SQL = "UPDATE USER_APP1 SET participation = 1 WHERE inv_email = $inv_email";
+								$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+							}
 							// se registra un grupo inicial con el member 0
 							$SQL = "INSERT INTO GROUP_APP1(groupowner_fbid, groupmember_fbid, creation_date) VALUES($fbid, 0, NOW())"; // TODO XXX esto creo que no hace falta
 							$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
