@@ -92,7 +92,7 @@ iduser:<?php echo $iduser?><br>
 							$SQL = "UPDATE USER_APP1 SET fbid = $fbid, fbname = $fbname, fbusername = $fbusername, fbgender = $fbgender , participation = 1 WHERE inv_email = $inv_email";
 							$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 							// se registra un grupo inicial con el member 0
-							$SQL = "INSERT INTO GROUP_APP1(groupowner_fbid, groupmember_fbid) VALUES($fbid, 0)"; // TODO XXX esto creo que no hace falta
+							$SQL = "INSERT INTO GROUP_APP1(groupowner_fbid, groupmember_fbid, creation_date) VALUES($fbid, 0, NOW())"; // TODO XXX esto creo que no hace falta
 							$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 							if($pendingaction = 1) {
 								$SQL = "DELETE FROM ACTION_APP1 WHERE fbid = $fbid";
@@ -129,7 +129,7 @@ iduser:<?php echo $iduser?><br>
 									$SQL = "UPDATE USER_APP1 SET fbid = $fbid, fbname = $fbname, fbusername = $fbusername, fbgender = $fbgender , participation = 1 WHERE id = $iduser";
 									$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 									// se registra el miembro
-									$SQL = "INSERT INTO GROUP_APP1(groupowner_fbid, groupmember_fbid) VALUES($groupowner_fbid, $fbid)";
+									$SQL = "INSERT INTO GROUP_APP1(groupowner_fbid, groupmember_fbid, creation_date) VALUES($groupowner_fbid, $fbid, NOW())";
 									$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 									if($pendingaction = 1) {
 										$SQL = "DELETE FROM ACTION_APP1 WHERE fbid = $fbid";
@@ -143,7 +143,7 @@ iduser:<?php echo $iduser?><br>
 									$cantidadrow = mysql_fetch_array($result);
 									$cantidad = $cantidadrow["CANT"];
 									if ($cantidad > APP1_WIN) { // Si llego al limite
-										$SQL = "UPDATE WINNER_APP1 SET groupowner_fbid = $groupowner_fbid WHERE groupowner_fbid IS NULL AND active = 1";
+										$SQL = "UPDATE WINNER_APP1 SET groupowner_fbid = $groupowner_fbid, win_date = NOW() WHERE groupowner_fbid IS NULL AND active = 1";
 										mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 										// si gano
 										if (mysql_affected_rows() == 1) {

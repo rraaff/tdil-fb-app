@@ -27,6 +27,10 @@
 			$SQL = "INSERT INTO USER_APP1 (inv_email,origin, participation) VALUES($inv_email,0,0)";
 			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$returnInsert = mysql_insert_id($connection);
+			//log de invitaciones por email
+			$SQL = "INSERT INTO EMAIL_INV_APP1 (groupowner_id,groupmember_id,followed, completed, creation_date) VALUES($groupownerid,$returnInsert,0,0,NOW())";
+			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+			
 			$message = "Invitado (nuevo) id: $returnInsert para grupo: $groupownerid";
 		} else {
 			// si fue invitado, me fijo si participo, si es asi, ya esta en otro grupo

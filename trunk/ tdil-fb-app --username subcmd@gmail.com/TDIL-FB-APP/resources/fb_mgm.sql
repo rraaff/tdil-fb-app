@@ -46,6 +46,7 @@ CREATE TABLE `GROUP_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `groupowner_fbid` VARCHAR(255) NULL ,
   `groupmember_fbid` VARCHAR(255) NULL ,
+  `creation_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`) ,
   INDEX `groupowner_fbidasc` (`groupowner_fbid` ASC) );
   
@@ -53,6 +54,7 @@ CREATE TABLE `WINNER_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `active` INT NULL,
   `groupowner_fbid` VARCHAR(255) NULL,
+  `win_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`));
 
 INSERT INTO WINNER_APP1 (active) values (1);
@@ -70,12 +72,13 @@ CREATE TABLE `ACTION_APP1` (
   
 CREATE TABLE `EMAIL_INV_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `groupid` VARCHAR(255) NULL ,
-  `friend_email` VARCHAR(255) NULL ,
+  `groupowner_id` VARCHAR(255) NULL ,
+  `groupmember_id` VARCHAR(255) NULL ,
   `followed` INT NULL ,
   `completed` INT NULL ,
+  `creation_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`) ,
-  INDEX `groupowner_fbiddasc` (`groupowner_fbid` ASC) );
+  INDEX `groupowner_idasc` (`groupowner_id` ASC) );
   
 CREATE TABLE `FB_INV_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
