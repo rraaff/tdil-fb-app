@@ -33,13 +33,17 @@ function doSearch() {
  	var sInicial = document.getElementById('sInicial').value;
  	var sParticipation = document.getElementById('sParticipation').value;
  	var sGender = document.getElementById('sGender').value;
+ 	var sMinFans = document.getElementById('sMinFans').value;
+ 	var sMaxFans = document.getElementById('sMaxFans').value;
 	oTable = $('#example').dataTable( {
 					"bProcessing": true,
 					"sAjaxSource": "doApp1Search.php",
 					 "fnServerParams": function ( aoData ) {
 				            aoData.push( { "name" : "sInicial","value" : sInicial },
 				            			{ "name" : "sParticipation","value" : sParticipation },
-				            			{ "name" : "sGender","value" : sGender } );
+				            			{ "name" : "sGender","value" : sGender },
+				            			{ "name" : "sMinFans","value" : sMinFans },
+				            			{ "name" : "sMaxFans","value" : sMaxFans } );
 				        },
 						"sDom": 'T<"clear">lfrtip',
 						"oTableTools": {
@@ -77,23 +81,19 @@ function doSearch() {
 					<td>Origen del usuario:</td>
 					<td><select id="sInicial">
 							<option value="-1">Todos</option>
-							<option value="1">Inicial</option>
+							<option value="1">Base inicial</option>
 							<option value="0">Invitados</option>
 						</select>
 					</td>
 				</tr>
 				<tr>	
-					<td>Participantes (fans):</td>
+					<td>Fans de la pagina:</td>
 					<td><select id="sParticipation">
 							<option value="-1">Todos</option>
 							<option value="1">Fans</option>
 							<option value="0">No fans</option>
 						</select>
 					</td>
-				</tr>
-				<tr>
-					<td></td><td></td>
-					<td></td><td></td>
 				</tr>
 				<tr>	
 					<td>Sexo:</td>
@@ -103,6 +103,14 @@ function doSearch() {
 							<option value="female">Mujer</option>
 						</select>
 					</td>
+				</tr>
+				<tr>	
+					<td>Fans recomendados (como minimo):</td>
+					<td><input type="text" id="sMinFans"></td>
+				</tr>
+				<tr>	
+					<td>Fans recomendados (como maximo):</td>
+					<td><input type="text" id="sMaxFans"></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center">

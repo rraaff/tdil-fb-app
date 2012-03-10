@@ -37,6 +37,12 @@ if ($sParticipation != "-1") {
 if ($sGender != "'all'") {
 	$SQL = $SQL . " AND USERS.fbgender = $sGender";
 }
+if ($sMinFans != "" && is_numeric($sMinFans)) {
+	$SQL = $SQL . " AND USERS.fans >= $sMinFans";
+}
+if ($sMaxFans != "" && is_numeric($sMaxFans)) {
+	$SQL = $SQL . " AND USERS.fans <= $sMaxFans";
+}
 
 $result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 $iTotal = mysql_num_rows($result);
