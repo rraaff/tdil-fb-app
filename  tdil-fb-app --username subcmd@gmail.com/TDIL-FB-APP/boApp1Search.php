@@ -30,11 +30,16 @@ function doSearch() {
 	if (oTable != null) {
 		oTable.fnDestroy();
 	}
+ 	var sInicial = document.getElementById('sInicial').value;
+ 	var sParticipation = document.getElementById('sParticipation').value;
+ 	var sGender = document.getElementById('sGender').value;
 	oTable = $('#example').dataTable( {
 					"bProcessing": true,
 					"sAjaxSource": "doApp1Search.php",
 					 "fnServerParams": function ( aoData ) {
-				            aoData.push( { "name" : "my_valuexxxx","value" : "aaaaa" } );
+				            aoData.push( { "name" : "sInicial","value" : sInicial },
+				            			{ "name" : "sParticipation","value" : sParticipation },
+				            			{ "name" : "sGender","value" : sGender } );
 				        },
 						"sDom": 'T<"clear">lfrtip',
 						"oTableTools": {
@@ -61,16 +66,64 @@ function doSearch() {
 	<div id="hello">Hola <span class="remarcado"><?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?></span></div>
 	<div id="portaMenu"><?php include("include/menuBO.php"); ?></div>
 	<div id="page">
-
-		<input type="button" onclick="doSearch();" value="Buscar">
+		<div>
+			<table>
+				<tr>
+					<td colspan="2" align="center">
+						Busquedas
+					</td>
+				</tr>
+				<tr>
+					<td>Origen del usuario:</td>
+					<td><select id="sInicial">
+							<option value="-1">Todos</option>
+							<option value="1">Inicial</option>
+							<option value="0">Invitados</option>
+						</select>
+					</td>
+				</tr>
+				<tr>	
+					<td>Participantes (fans):</td>
+					<td><select id="sParticipation">
+							<option value="-1">Todos</option>
+							<option value="1">Fans</option>
+							<option value="0">No fans</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td></td><td></td>
+					<td></td><td></td>
+				</tr>
+				<tr>	
+					<td>Sexo:</td>
+					<td><select id="sGender">
+							<option value="all">Todos</option>
+							<option value="male">Hombre</option>
+							<option value="female">Mujer</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" onclick="doSearch();" value="Buscar">
+					</td>
+				</tr>
+			</table>			
+		</div>
 		<div id="container">
 			<div id="dynamic">
 				<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
 					<thead>
 						<tr>
-							<th width="20%">Id</th>
-							<th width="25%">fbid</th>
-							<th width="25%">fbname</th>
+							<th width="5%">FB id</th>
+							<th width="25%">FB nombre</th>
+							<th width="25%">FB usuario</th>
+							<th width="25%">FB sexo</th>
+							<th width="25%">Email</th>
+							<th width="25%">Inicial</th>
+							<th width="25%">Participo</th>
+							<th width="25%">Fans</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -78,9 +131,14 @@ function doSearch() {
 					</tbody>
 					<tfoot>
 						<tr>
-							<th width="20%">Id</th>
-							<th width="25%">fbid</th>
-							<th width="25%">fbname</th>
+							<th width="5%">FB id</th>
+							<th width="25%">FB nombre</th>
+							<th width="25%">FB usuario</th>
+							<th width="25%">FB sexo</th>
+							<th width="25%">Email</th>
+							<th width="25%">Inicial</th>
+							<th width="25%">Participo</th>
+							<th width="25%">Fans</th>
 						</tr>
 					</tfoot>
 				</table>
