@@ -82,7 +82,8 @@ function doSearch() {
 					<td><select id="sInicial">
 							<option value="-1">Todos</option>
 							<option value="1">Base inicial</option>
-							<option value="0">Invitados</option>
+							<option value="2">Invitados por email</option>
+							<option value="3">Invitados por facebook</option>
 						</select>
 					</td>
 				</tr>
