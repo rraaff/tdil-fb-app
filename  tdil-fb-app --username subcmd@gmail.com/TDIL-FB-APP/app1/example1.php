@@ -21,8 +21,8 @@ Facebook::$CURL_OPTS[CURLOPT_CAINFO] = '/var/www/TDIL-FB-APP/include/fb_ca_chain
 
 // Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(
-  'appId'  => '292861170783253',
-  'secret' => '822b60809737ff91e6142f924e85e9d5',
+  'appId'  => '232922540094566',
+  'secret' => '118b7ae9d97bcd6db02e09507fc0c043'
 ));
 
 // Get User ID
@@ -38,45 +38,12 @@ if ($user) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
+    print_r($user_profile);
   } catch (FacebookApiException $e) {
-  	print_r($e);
     error_log($e);
     $user = null;
   }
 }
-
-$signed_request = $facebook->getSignedRequest();
-$fbid = $signed_request['user_id'];
-$page_id = $signed_request["page"]["id"]; /*TODO Limitar a una pagina cuanto este productivo*/
-echo $page_id;echo '<br>';
-echo $page_id;echo '<br>';
-$likes = $signed_request["page"]["liked"]; /*TODO Limitar a una pagina cuanto este productivo*/
-echo $likes; '<br>';
-$app_data = $signed_request["app_data"];
-echo $app_data;echo '<br>';
-
-print_r($signed_request["page"]);
-
-if ($user) {
-	try {
-		// Proceed knowing you have a logged in user who's authenticated.
-		$user_profile = $facebook->api('/me');
-	} catch (FacebookApiException $e) {
-		/* TODO aca va un die */
-		error_log($e);
-		$user = null;
-	}
-} else {
-	/* TODO aca va un die */
-}
-$fbemail = '';
-$fbname = $user_profile['name'];
-echo $fbname;echo '<br>';
-$fbusername = $user_profile['username'];
-echo $fbusername;echo '<br>';
-$fbgender = $user_profile['gender'];
-echo $fbgender;echo '<br>';
-echo $fan;echo '<br>';
 
 // Login or logout url will be needed depending on current user state.
 if ($user) {
@@ -86,6 +53,7 @@ if ($user) {
 }
 
 // This call will always work since we are fetching public data.
+$naitik = $facebook->api('/naitik');
 
 ?>
 <!doctype html>
@@ -116,8 +84,6 @@ if ($user) {
       </div>
     <?php endif ?>
 
-    <h3>App data</h3>
-	<?php echo $app_data; ?>
     
     <h3>PHP Session</h3>
     <pre><?php print_r($_SESSION); ?></pre>

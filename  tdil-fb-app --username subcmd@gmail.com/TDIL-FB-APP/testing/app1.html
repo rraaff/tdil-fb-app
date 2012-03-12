@@ -65,6 +65,33 @@ fan: <select name="fan">
 <input type="submit" value="Submit">
 </form>
 </td>
+
+<td>
+Post invitacion
+<form method="GET" action="../app1/handle_fbrequest.php">
+fbid: <input type="text" name="uid"><br>
+requestid1: <input type="text" name="request_ids"><br>
+<input type="submit" value="Submit">
+</form>
+</td>
+
+
+<td>
+Test Post signed req example
+<form method="POST" action="../app1/example.php">
+signedred: <textarea id="signed_request" name="signed_request"></textarea><br>
+<input type="submit" value="Submit">
+</form>
+</td>
+
+<td>
+Test Post signed req
+<form method="POST" action="../app1/home.php">
+signedred: <textarea id="signed_request" name="signed_request"></textarea><br>
+<input type="submit" value="Submit">
+</form>
+</td>
+
 </tr>
 </table>
 </body>

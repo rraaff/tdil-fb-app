@@ -80,6 +80,7 @@ CREATE TABLE `FB_INV_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `groupowner_fbid` VARCHAR(255) NULL ,
   `groupmember_fbid` VARCHAR(255) NULL ,
+  `request_id` VARCHAR(255) NULL ,
   `followed` INT NULL ,
   `completed` INT NULL ,
   PRIMARY KEY (`id`) ,

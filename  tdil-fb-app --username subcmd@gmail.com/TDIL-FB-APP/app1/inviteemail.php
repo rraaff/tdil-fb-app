@@ -24,14 +24,14 @@
 		if ($num_rows == 0) {
 			// nadie lo invito, mando email 
 			// Inserto en la base
-			$SQL = "INSERT INTO USER_APP1 (inv_email,origin, participation) VALUES($inv_email,0,0)";
+			$SQL = "INSERT INTO USER_APP1 (inv_email,origin, participation) VALUES($inv_email,2,0)"; // 2 es email invitation
 			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$returnInsert = mysql_insert_id($connection);
 			//log de invitaciones por email
 			$SQL = "INSERT INTO EMAIL_INV_APP1 (groupowner_id,groupmember_id,followed, completed, creation_date) VALUES($groupownerid,$returnInsert,0,0,NOW())";
 			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			
-			$message = "Invitado (nuevo) id: $returnInsert para grupo: $groupownerid";
+			$message = "Invitado (nuevo) id: $returnInsert para grupo: $groupownerid, email cositasdulces.face?sk=app_232922540094566&app_data=: join_group_" . $groupownerid . "_" . $returnInsert;
 		} else {
 			// si fue invitado, me fijo si participo, si es asi, ya esta en otro grupo
 			$user_app1 = mysql_fetch_array($result);
@@ -40,7 +40,7 @@
 				$message = "Tu amigo ya se unio a la base";
 			} else {
 				// nadie lo invito, mando email, no inserto en la base ya esta
-				$message = "Invitado (Ya existente) id: $user_app1id grupo: $groupownerid";
+				$message = "Invitado (Ya existente) id: $user_app1id grupo: $groupownerid, email cositasdulces.face?sk=app_232922540094566&app_data=: join_group_" . $groupownerid . "_" . $user_app1id;
 			}
 		}
 	} 
