@@ -6,6 +6,7 @@
 	$PAGEID = '';
 	$PAGE_NAME = 'tdil.test.page';
 	$APPLICATION_URL = 'http://localhost/TDIL-FB-APP/app1';
+	define('APP1_WIN',10);
 	
 	function get_app_access($appId, $appSecret) {
 		$token_url =    "https://graph.facebook.com/oauth/access_token?" .
@@ -15,5 +16,6 @@
 		$token = file_get_contents($token_url);
 		return $token;
 	}
+	
 	
 ?>

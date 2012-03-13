@@ -110,6 +110,18 @@ iduser:<?php echo $iduser?><br>
 		
 	mysql_select_db(DB_NAME,$connection);
 	
+	$SQL = "SELECT USER_APP1.*,WINNER_APP1.win_date FROM USER_APP1, WINNER_APP1 WHERE USER_APP1.fbid = WINNER_APP1.groupowner_fbid";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$num_rows = mysql_num_rows($result);
+	if ($num_rows == 1) { 
+		$winnerame = $aRow["fbname"];
+		$winnerfbid = $aRow["fbid"];
+		$winnerusername =  $aRow["fbusername"];
+		include("winner.php");
+		closeConnection($connection);
+		return;
+	}
+	
 	$fbid = quote_smart($fbid, $connection);
 	$inv_email = quote_smart($inv_email, $connection);
 	
