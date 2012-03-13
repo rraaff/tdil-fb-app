@@ -1,12 +1,12 @@
 <?php		
 	//Defino las constantes para envio de email
-	define('SERVER_NAME','http://localhost');
-	define('EMAIL_FROM','info@lasmoras.com');
-	define('EMAIL_FROM_NAME','Las Moras');
-	define('PASSWORD_REMINDER_SUBJECT','Recordatorio de clave');
-	define('PASSWORD_REMINDER_BODY_ALT','Para ver correctamente este email usar un visor html.');
+	define('SERVER_NAME','http://arlistan.ccc');
+	define('EMAIL_FROM_APP1','info@arlistan.com');
+	define('EMAIL_FROM_NAME_APP1','Arlistan');
 	
-	define('COMPARTIR_SUBJECT','Sugerencia');
-	define('COMPARTIR_BODY_ALT','Para ver correctamente este email usar un visor html.');
+	define('APP1_SUMATE_SUBJECT','Sumate a mi grupo');
+	define('BODY_ALT','Para ver correctamente este email usar un visor html.');
+	
+	define('WINNER_SUBJECT','Ganaste');
 	
 ?>

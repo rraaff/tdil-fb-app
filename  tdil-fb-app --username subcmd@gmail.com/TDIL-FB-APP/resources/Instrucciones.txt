@@ -16,3 +16,11 @@ Accesos
 =======
 
 BackOffice: ./boLogin.php
+
+
+Invitacion por email app1:
+invitacion_app1.html
+Reemplazos
+{SERVER_NAME}
+{SENDER_NAME}
+{PAGE_LINK}
