@@ -1,5 +1,5 @@
 <?php
-/* Esta pagina avisa al usuario que sus invitaciones han sido realizadas*/
+/* TODO no se usa*/
 ?>
 <html>
 <body>

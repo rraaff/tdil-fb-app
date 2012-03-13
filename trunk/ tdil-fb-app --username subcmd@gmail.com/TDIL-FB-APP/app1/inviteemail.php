@@ -1,6 +1,9 @@
 <?php 
 	include("../include/headers.php");
 	require("../include/funcionesDB.php");
+	include_once('../phpmail/class.phpmailer.php');
+	include("../include/constantes_mail.php");
+	
 	
 	$fbid = $_REQUEST['fbid']; /*id de facebook*/
 	$inv_email = $_REQUEST['inv_email']; /*mail de invitacion*/
@@ -11,7 +14,7 @@
 	$fbid = quote_smart($fbid, $connection);
 	$inv_email = quote_smart($inv_email, $connection);
 	
-	$SQL = "SELECT id FROM USER_APP1 WHERE fbid = $fbid";
+	$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $fbid";
 	$ownerid = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 	$num_rows = mysql_num_rows($ownerid);
 	// el usuario es group owner
@@ -31,19 +34,69 @@
 			$SQL = "INSERT INTO EMAIL_INV_APP1 (groupowner_id,groupmember_id,followed, completed, creation_date) VALUES($groupownerid,$returnInsert,0,0,NOW())";
 			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			
-			$message = "Invitado (nuevo) id: $returnInsert para grupo: $groupownerid, email http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|" . $groupownerid . "|" . $returnInsert . "|";
+			$mail = new PHPMailer(); // defaults to using php "mail()"
+			$mail->SMTPDebug = true;
+			$mail->From       = EMAIL_FROM_APP1;
+			$mail->FromName   = EMAIL_FROM_NAME_APP1;
+			$mail->FromName = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->FromName);
+			//Headers
+			$headers['X-Mailer'] = 'X-Mailer: PHP/' . phpversion();
+			$mail -> AddCustomHeader($headers);
+			$mail->Subject    = APP1_SUMATE_SUBJECT;
+			$mail->Subject = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->Subject);
+			$mail->AltBody    = BODY_ALT;
+			$body             = $mail->getFile('invitacion_app1.html');
+			$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
+			$body = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $body);
+			$link = 'http://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+			$link = $link . '&app_data=join_group|' . $groupownerid . '|' . $returnInsert . '|';
+			$body = str_replace('{PAGE_LINK}', SERVER_NAME, $body);
+			$mail->MsgHTML("$body");
+			$mail->AddAddress("$email");
+			$mail_sent = $mail->Send();
+			if(!$mail_sent) {
+				/* borrar los datos, no se pudo invitar al amigo*/
+				$SQL = "DELETE FROM USER_APP1 WHERE id = $returnInsert"; // 2 es email invitation
+				$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+			} 
 		} else {
 			// si fue invitado, me fijo si participo, si es asi, ya esta en otro grupo
 			$user_app1 = mysql_fetch_array($result);
 			$user_app1id = $user_app1["id"];
 			if ($user_app1['participation'] == 1 || $user_app1['origin'] == 1) {
-				$message = "Tu amigo ya se unio a la base";
+				include("friendismember.php");
+				closeConnection($connection);
+				return;
 			} else {
-				// nadie lo invito, mando email, no inserto en la base ya esta
-				$message = "Invitado (Ya existente) id: $user_app1id grupo: $groupownerid, email http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|" . $groupownerid . "|" . $user_app1id . "|";
+				$mail = new PHPMailer(); // defaults to using php "mail()"
+				$mail->SMTPDebug = true;
+				$mail->From       = EMAIL_FROM_APP1;
+				$mail->FromName   = EMAIL_FROM_NAME_APP1;
+				$mail->FromName = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->FromName);
+				//Headers
+				$headers['X-Mailer'] = 'X-Mailer: PHP/' . phpversion();
+				$mail -> AddCustomHeader($headers);
+				$mail->Subject    = APP1_SUMATE_SUBJECT;
+				$mail->AltBody    = BODY_ALT;
+				$body             = $mail->getFile('invitacion_app1.html');
+				$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
+				$body = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $body);
+				$link = 'http://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+				$link = $link . '&app_data=join_group|' . $groupownerid . '|' . $user_app1id . '|';
+				$body = str_replace('{PAGE_LINK}', SERVER_NAME, $body);
+				$mail->MsgHTML("$body");
+				$mail->AddAddress("$email");
+				$mail_sent = $mail->Send();
 			}
 		}
 	} 
 	closeConnection($connection);
 	echo $message;
 ?>
+<?php 
+/* {PABLO} Esta pagina muestra el resultado de la invitacion por email*/
+if ($mail_sent) { ?>
+Invitaciones enviadas
+<?php } else { ?>
+No se pudo enviar el mail
+<?php } ?>

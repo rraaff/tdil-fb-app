@@ -1,5 +1,5 @@
 <?php
-	/* Pagina que dice que la app es solo para fans*/
+	/* {PABLO} Pagina que dice que la app es solo para fans*/
 ?>
 <html>
 <body>

@@ -5,9 +5,8 @@
 <body>
 Esta aplicacion necesita acceder a tus datos publicos
 <?php 
-$encodedParams = urlencode(json_encode($app_data)); // Encode the parameters to a JSON string for use in a URL query string
 $url = $facebook->getLoginUrl(array(
-		'redirect_uri' => $APPLICATION_URL . '/logincallback.php?app_data=' . $app_data
+		'redirect_uri' => $APPLICATION_URL . '/logincallbackcanvas.php'
 ));
 echo '<a href="' . $url . '" target="_top">Login</a><br/> ';
 ?>
