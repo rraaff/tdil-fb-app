@@ -1,3 +1,8 @@
+<html>
+<head>
+<script type='text/javascript' src='../js/jquery-1.7.min.js'></script>
+</head>
+<body>
 <!-- Esta pagina es la que se muestra a los que son dueños de un grupo -->
 <form action="./inviteemail.php">
 <input type="text" name="fbid" value="<?php echo $fbid;?>">
@@ -21,8 +26,8 @@ Invite friend: <input type="text" name="inv_email">
     function sendRequest() {
         FB.ui({
             method: 'apprequests',
-            message: 'Hacete fan ayudame a ganar',
-            title: 'Send your friends an application request',
+            message: 'Sumate a la promo',
+            title: 'Sumate a la promo',
 			data: '{"item_id":<?php echo $user; ?>}' /*Aca va el id del usuario que manda*/
         },
         function (response) {
@@ -35,7 +40,10 @@ Invite friend: <input type="text" name="inv_email">
                 var requests = request_ids.join(',');
                 $.post('http://localhost/TDIL-FB-APP/app1/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
                     // callback after storing the requests
+					alert(resp);
                 });
+				/* TODO Redirect to requestsent.php */
+				
             } 
         });
         return false;
@@ -50,5 +58,8 @@ Invite friend: <input type="text" name="inv_email">
    }(document));
 </script>
  
-<a href="#" onclick="sendRequest()">Send Application Request</a>
- 
+<a href="#" onclick="sendRequest()">Send Application Request</a><br>
+
+<a href="groupdetails.php">Detalles de mi grupo</a>
+</body>
+</html>
