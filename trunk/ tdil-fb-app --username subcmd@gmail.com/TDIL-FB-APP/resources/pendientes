@@ -5,14 +5,9 @@ or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql
 Guardar las fechas de las invitaciones y no dejar hacerlas a los que se le hizo en los ultimos x dias.
 Tanto email como fb.
 
-Mostrar el nombre del grupo al cual se esta uniendo.
+Validar el email
 
-Mostrar el nombre del gruo al cual pertenece.
-
-
-
-Consultas para pablo:
-Se puede invitar n veces al mismo?
+Volar cosas de las moras
 
 App1 cantidad de usuarios nuevos por dia?
 SELECT DATE_FORMAT(creation_date, '%Y-%m-%d'), count(1) FROM GROUP_APP1 GROUP BY DATE_FORMAT(creation_date, '%Y-%m-%d');
