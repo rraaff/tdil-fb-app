@@ -1,3 +1,5 @@
+-- Este query se usa para insertar los usuarios de backoffice
+
 INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
 VALUES ('fb', 'fb', 'fb@ssdd.com', 'fb', 'fb'); 
 

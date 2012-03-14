@@ -23,6 +23,10 @@ Instalacion
 10) Usando el query email_inv.sql, sacar las urls de invitacion (modificar la url de la pagina)
 
 
+Importante:
+El server donde este corriendo debe tener habilitado el uso de HTTPS
+Para pruebas se puede hacer cambiando manualmente la url del browser cuando de algun error.
+
 Accesos
 =======
 
