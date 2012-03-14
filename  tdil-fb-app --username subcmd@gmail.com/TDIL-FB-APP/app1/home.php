@@ -1,6 +1,8 @@
 <?php
 	include("../include/headers.php");
 	require("../include/funcionesDB.php");
+	include_once('../phpmail/class.phpmailer.php');
+	include("../include/constantes_mail.php");
 	
 	require '../include/facebook.php';
 	include("../include/app1constants.php"); 
@@ -114,6 +116,7 @@ iduser:<?php echo $iduser?><br>
 	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 	$num_rows = mysql_num_rows($result);
 	if ($num_rows == 1) { 
+		$aRow = mysql_fetch_array( $result );
 		$winnerame = $aRow["fbname"];
 		$winnerfbid = $aRow["fbid"];
 		$winnerusername =  $aRow["fbusername"];
@@ -235,9 +238,25 @@ iduser:<?php echo $iduser?><br>
 							mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 							// si gano
 							if (mysql_affected_rows() == 1) {
-								echo "Owner es ganador!!!";
+								$mail = new PHPMailer(); // defaults to using php "mail()"
+								$mail->SMTPDebug = true;
+								$mail->From       = EMAIL_FROM_APP1;
+								$mail->FromName   = EMAIL_FROM_NAME_APP1;
+								//Headers
+								$mail->Subject    = APP1_WINNER_SUBJECT;
+								$mail->AltBody    = BODY_ALT;
+								$body             = $mail->getFile('../winner_app1.html');
+								$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
+								$body = str_replace('{WINNER_NAME}', $idgrouprow['fbname'], $body);
+								$body = str_replace('{PAGE_LINK}', SERVER_NAME, $body);
+								$body             = eregi_replace("[\]",'',$body);
+								$mail->MsgHTML($body);
+								$mail->AddAddress($idgrouprow['inv_email'],$idgrouprow['inv_email']);
+								$mail_sent = $mail->Send();
 							}
-						}									
+						}
+						closeConnection($connection);
+						return;							
 						/* Se formo un grupo END */
 					} else {
 						echo "El usuario no existe";

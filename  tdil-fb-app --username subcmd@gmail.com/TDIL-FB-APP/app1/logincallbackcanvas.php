@@ -9,6 +9,6 @@
 	));
 ?>
 <?php
-$redirect = 'http://apps.facebook.com/'. $APPLICATION_ID;
+$redirect = $PROTOCOL . '://apps.facebook.com/'. $APPLICATION_ID;
 header('Location: '.$redirect);
 ?>

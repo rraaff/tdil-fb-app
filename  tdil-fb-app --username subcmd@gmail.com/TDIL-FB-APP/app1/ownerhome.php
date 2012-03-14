@@ -39,7 +39,7 @@ Invite friend: <input type="text" name="inv_email">
                     request_ids.push(temp);
                 }
                 var requests = request_ids.join(',');
-                $.post('http://localhost/TDIL-FB-APP/app1/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
+                $.post('<?php echo $APPLICATION_URL;?>/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
                     // callback after storing the requests
 					alert(resp);
                 });

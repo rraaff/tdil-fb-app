@@ -1,4 +1,4 @@
-Instalaci�n
+Instalacion
 ===========
 
 1) Descomprimir el zip
@@ -7,9 +7,20 @@ Instalaci�n
 
 3) Correr resources/fb_mgm.sql como FB_MGM_USER/FB_MGM_USER base FB_MGM
 
-4) Copiar los archivos al root del servidor
+4) Modificar y correr el script create_bo_users.sql para crear los usuarios de back end
 
-4) Modificar constantes.php con los datos del server de la base (constante DB_SERVER)
+5) Insertar los datos iniciales, como ejemplo se tiene initialize_users.sql
+
+6) Copiar los archivos al root del servidor
+
+7) Modificar constantes.php con los datos del server de la base (constante DB_SERVER)
+
+8) Modificar app1constants.php con los datos de la aplicacion 10 x 10
+	Cambiar el protocolo a https
+
+9) Modificar constantes_mail.php con los datos para envio de emails
+
+10) Usando el query email_inv.sql, sacar las urls de invitacion (modificar la url de la pagina)
 
 
 Accesos
@@ -17,10 +28,15 @@ Accesos
 
 BackOffice: ./boLogin.php
 
-
 Invitacion por email app1:
 invitacion_app1.html
 Reemplazos
 {SERVER_NAME}
 {SENDER_NAME}
 {PAGE_LINK}
+
+Notificacion ganador app1:
+winner_app1.html
+Reemplazos
+{SERVER_NAME}
+{WINNER_NAME}

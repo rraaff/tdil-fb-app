@@ -22,13 +22,12 @@
 		include("askpermissioncanvas.php");
 		return;
 	}
-	echo $request_ids;
-	echo $user;
 	if(empty($_REQUEST['request_ids'])) {
 		$request_ids = $_SESSION['request_ids'];
 	} else {
 		$request_ids = $_REQUEST['request_ids'];
 	}
+	$ok_to_procced = 0;
 	/* Si viene con request_id, es una invitacion de facebook*/
 	if(!empty($request_ids)) {
 		/*
@@ -49,7 +48,6 @@
 			$request_message = $request_content['message'];
 			$from_id = $request_content['from']['id'];
 			// An easier way to extract info from the data field
-			extract(json_decode($request_content['data'], TRUE));
 			// Now that we got the $item_id and the $item_type, process them
 			// Or if the recevier is not yet a member, encourage him to claims his item (install your application)!
 			if($user) {
@@ -63,12 +61,49 @@
 			}
 			/* Lo uno solo al primer grupo*/
 			if ($first == 0) {
-				$idgroup = $item_id; /*Tomo el grupo al cual se quiere unir el usuario */
+				$first = 1;
+				$groupowner_fbid = $from_id; /*Tomo el grupo al cual se quiere unir el usuario */
 			}
 		}
+		// Esta todo ok, preparo la data para la app pendiente
+		$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
+		mysql_select_db(DB_NAME,$connection);
+		$groupowner_fbid = quote_smart($groupowner_fbid, $connection);
+		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $groupowner_fbid AND origin = 1";
+		$group_owner = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+		$num_rows = mysql_num_rows($group_owner);
+		if ($num_rows > 0) {
+			$user_fbid = quote_smart($user, $connection);
+			$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $user_fbid AND origin != 1";
+			$group_member = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+			$num_rows = mysql_num_rows($group_member);
+			if ($num_rows == 1) {
+				$group_ownerrow = mysql_fetch_array($group_owner);
+				$idgroup = $group_ownerrow['id'];
+				$group_memberrow = mysql_fetch_array($group_member);
+				$iduser = $group_memberrow['id'];
+				// todo ok, registro la accion pendiente y muestro el link a tab para que termine de unirse al grupo
+				$SQL = "DELETE FROM ACTION_APP1 WHERE fbid = $user_fbid";
+				$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+				// inserto la ultima
+				$SQL = "INSERT INTO ACTION_APP1(fbid, userid, action, dataid) VALUES($user_fbid, $iduser, 'join_group',$idgroup)";
+				$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+				$ok_to_procced = 1;
+			} else {
+				echo "Usuario inexistente";
+			}
+		} else {
+			echo "Grupo invalido";
+		}
+		closeConnection($connection);
+	} else {
+		echo "La peticion ya expiro";
 	}
-
 ?>
-A hacer el join <?php $idgroup;?>
-
-si es fan, lo termino al proceso, si no es fan, cargo la op pendiente y le digo que se tiene que hacer y luego volver al tab de la app
+<?php 
+/* {PABLO} Esto se muestra para que termine el proceso de union al grupo*/
+if ($ok_to_procced == 1) { 
+	$redirect = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+?>
+	Para unirte al grupo tenes que cliquear <a href="<?php echo $redirect;?>" target="_top">Aca</a>
+<?php } ?>

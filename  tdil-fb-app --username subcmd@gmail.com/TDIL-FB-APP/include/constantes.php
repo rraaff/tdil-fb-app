@@ -5,5 +5,5 @@
 	define('DB_PASS','FB_MGM_USER');
 	define('DB_NAME','FB_MGM');
 	
-	define('TESTING','TRUE');
+	define('TESTING','FALSE');
 ?>
