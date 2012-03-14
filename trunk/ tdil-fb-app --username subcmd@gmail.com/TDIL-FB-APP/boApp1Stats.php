@@ -38,6 +38,7 @@
 	<div id="hello">Hola <span class="remarcado"><?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?></span></div>
 	<div id="portaMenu"><?php include("include/menuBO.php"); ?></div>
 	<div id="page">
+		Estado de la aplicacion 10x10=17
 		<table>
 			<?php while ( $aRow = mysql_fetch_array( $result ) ) { ?>
 				<tr><td><?php echo $aRow["DATA_DESC"] ?></td><td><?php echo $aRow["DATA_VALUE"] ?></td></tr>

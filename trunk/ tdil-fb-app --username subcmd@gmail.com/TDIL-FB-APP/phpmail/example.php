@@ -6,7 +6,7 @@ $mail             = new PHPMailer(); // defaults to using php "mail()"
 $body             = $mail->getFile('contents.html');
 $body             = eregi_replace("[\]",'',$body);
 
-$mail->From       = "name@yourdomain.com";
+$mail->From       = "mgodoy@mgodoy.com";
 $mail->FromName   = "First Last";
 
 $mail->Subject    = "PHPMailer Test Subject via mail()";
@@ -15,7 +15,7 @@ $mail->AltBody    = "To view the message, please use an HTML compatible email vi
 
 $mail->MsgHTML($body);
 
-$mail->AddAddress("nicohen@gmail.com", "John Doe");
+$mail->AddAddress("mgodoy@mgodoy.com", "John Doe");
 
 //$mail->AddAttachment("images/phpmailer.gif");             // attachment
 

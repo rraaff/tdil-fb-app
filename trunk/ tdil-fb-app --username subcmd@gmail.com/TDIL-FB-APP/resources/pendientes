@@ -2,15 +2,14 @@ Volar la carpeta testing
 
 or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 
-App1:
-Email de ganador
-Email de invitacion
+Guardar las fechas de las invitaciones y no dejar hacerlas a los que se le hizo en los ultimos x dias.
+Tanto email como fb.
 
-App request
-Enganchar con facebook
-Prueba con muchos datos iniciales (1000 iniciales)
+Mostrar el nombre del grupo al cual se esta uniendo.
 
-Generar link para el email con datos posta a partir de un query.
+Mostrar el nombre del gruo al cual pertenece.
+
+
 
 Consultas para pablo:
 Se puede invitar n veces al mismo?

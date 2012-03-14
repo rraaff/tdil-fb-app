@@ -6,6 +6,8 @@
 	$PAGEID = '';
 	$PAGE_NAME = 'tdil.test.page';
 	$APPLICATION_URL = 'http://localhost/TDIL-FB-APP/app1';
+	$PROTOCOL = 'http';
+	
 	define('APP1_WIN',10);
 	
 	function get_app_access($appId, $appSecret) {

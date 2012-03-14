@@ -16,13 +16,6 @@ CREATE  TABLE `BOUSER` (
   PRIMARY KEY (`id`) ,
   INDEX `BOUNAME` (`usuario` ASC) );
 
-INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
-VALUES ('fb', 'fb', 'fb@ssdd.com', 'fb', 'fb'); 
-
-INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
-VALUES ('pablo', 'mendoza', 'aas@ssdd.com', 'pm', 'pm'); 
-
-
 CREATE TABLE `USER_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `inv_email` VARCHAR(255) NULL ,

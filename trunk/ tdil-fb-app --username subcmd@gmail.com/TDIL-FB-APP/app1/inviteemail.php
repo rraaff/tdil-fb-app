@@ -3,6 +3,8 @@
 	require("../include/funcionesDB.php");
 	include_once('../phpmail/class.phpmailer.php');
 	include("../include/constantes_mail.php");
+	require '../include/facebook.php';
+	include("../include/app1constants.php"); 
 	
 	
 	$fbid = $_REQUEST['fbid']; /*id de facebook*/
@@ -12,6 +14,7 @@
 	mysql_select_db(DB_NAME,$connection);
 	
 	$fbid = quote_smart($fbid, $connection);
+	$email_address = $inv_email;
 	$inv_email = quote_smart($inv_email, $connection);
 	
 	$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $fbid";
@@ -35,24 +38,22 @@
 			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			
 			$mail = new PHPMailer(); // defaults to using php "mail()"
-			$mail->SMTPDebug = true;
 			$mail->From       = EMAIL_FROM_APP1;
 			$mail->FromName   = EMAIL_FROM_NAME_APP1;
 			$mail->FromName = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->FromName);
 			//Headers
-			$headers['X-Mailer'] = 'X-Mailer: PHP/' . phpversion();
-			$mail -> AddCustomHeader($headers);
 			$mail->Subject    = APP1_SUMATE_SUBJECT;
 			$mail->Subject = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->Subject);
 			$mail->AltBody    = BODY_ALT;
-			$body             = $mail->getFile('invitacion_app1.html');
+			$body             = $mail->getFile('../invitacion_app1.html');
 			$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
 			$body = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $body);
-			$link = 'http://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+			$link = $PROTOCOL . '://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
 			$link = $link . '&app_data=join_group|' . $groupownerid . '|' . $returnInsert . '|';
-			$body = str_replace('{PAGE_LINK}', SERVER_NAME, $body);
-			$mail->MsgHTML("$body");
-			$mail->AddAddress("$email");
+			$body = str_replace('{PAGE_LINK}', $link, $body);
+			$body             = eregi_replace("[\]",'',$body);
+			$mail->MsgHTML($body);
+			$mail->AddAddress($email_address, $email_address);
 			$mail_sent = $mail->Send();
 			if(!$mail_sent) {
 				/* borrar los datos, no se pudo invitar al amigo*/
@@ -68,30 +69,35 @@
 				closeConnection($connection);
 				return;
 			} else {
+				$SQL = "SELECT * FROM EMAIL_INV_APP1 WHERE groupowner_id = $groupownerid AND groupmember_id = $user_app1id";
+				$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+				$num_rows = mysql_num_rows($result);
+				if ($num_rows == 0) {
+					$SQL = "INSERT INTO EMAIL_INV_APP1 (groupowner_id,groupmember_id,followed, completed, creation_date) VALUES($groupownerid,$user_app1id,0,0,NOW())";
+					$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+				}
 				$mail = new PHPMailer(); // defaults to using php "mail()"
-				$mail->SMTPDebug = true;
 				$mail->From       = EMAIL_FROM_APP1;
 				$mail->FromName   = EMAIL_FROM_NAME_APP1;
 				$mail->FromName = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->FromName);
 				//Headers
-				$headers['X-Mailer'] = 'X-Mailer: PHP/' . phpversion();
-				$mail -> AddCustomHeader($headers);
 				$mail->Subject    = APP1_SUMATE_SUBJECT;
+				$mail->Subject = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->Subject);
 				$mail->AltBody    = BODY_ALT;
-				$body             = $mail->getFile('invitacion_app1.html');
+				$body             = $mail->getFile('../invitacion_app1.html');
 				$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
 				$body = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $body);
-				$link = 'http://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+				$link = $PROTOCOL . '://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
 				$link = $link . '&app_data=join_group|' . $groupownerid . '|' . $user_app1id . '|';
-				$body = str_replace('{PAGE_LINK}', SERVER_NAME, $body);
+				$body = str_replace('{PAGE_LINK}', $link, $body);
+				$body             = eregi_replace("[\]",'',$body);
 				$mail->MsgHTML("$body");
-				$mail->AddAddress("$email");
+				$mail->AddAddress($email_address,$email_address);
 				$mail_sent = $mail->Send();
 			}
 		}
 	} 
 	closeConnection($connection);
-	echo $message;
 ?>
 <?php 
 /* {PABLO} Esta pagina muestra el resultado de la invitacion por email*/
