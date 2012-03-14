@@ -2,12 +2,25 @@
 <html>
 <head>
 <script type='text/javascript' src='../js/jquery-1.7.min.js'></script>
+
+<script>
+	function checkEmail() {
+		var email = document.getElementById('inv_email');
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if (!filter.test(email.value)) {
+			alert('La direccion de email es incorrecta');
+			email.focus;
+			return false;
+		}
+	}
+</script>
+
 </head>
 <body>
 <!-- Esta pagina es la que se muestra a los que son dueños de un grupo -->
-<form action="./inviteemail.php">
+<form action="./inviteemail.php" onSubmit="return checkEmail();">
 <input type="text" name="fbid" value="<?php echo $fbid;?>">
-Invite friend: <input type="text" name="inv_email">
+Invite friend: <input type="text" name="inv_email" id="inv_email">
 <input type="submit">
 </form>
 <br><br>

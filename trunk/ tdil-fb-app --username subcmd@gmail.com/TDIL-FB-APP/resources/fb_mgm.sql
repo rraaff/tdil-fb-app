@@ -76,5 +76,6 @@ CREATE TABLE `FB_INV_APP1` (
   `request_id` VARCHAR(255) NULL ,
   `followed` INT NULL ,
   `completed` INT NULL ,
+  `creation_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`) ,
   INDEX `groupowner_fbiddasc` (`groupowner_fbid` ASC) );
