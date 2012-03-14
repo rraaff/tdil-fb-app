@@ -1,3 +1,5 @@
+--Estos inserts son los inserts iniciales a la base
+
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('a',1,0);
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('b',1,0);  
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('c',1,0);

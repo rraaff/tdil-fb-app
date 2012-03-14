@@ -142,6 +142,12 @@ iduser:<?php echo $iduser?><br>
 	$num_rows = mysql_num_rows($result);
 	if ($num_rows > 0) {
 		// el usuario es group member
+		$friend_group = mysql_fetch_array( $result );
+		$friend_groupid = $friend_group['groupowner_fbid'];
+		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $friend_groupid";
+		$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+		$owner = mysql_fetch_array( $result );
+		$group_owner_name = $owner['fbname'];
 		include("memberhome.php");
 		closeConnection($connection);
 		return;
