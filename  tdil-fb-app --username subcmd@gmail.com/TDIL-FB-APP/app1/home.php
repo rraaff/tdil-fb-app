@@ -269,7 +269,11 @@
 					closeConnection($connection);
 					return;
 				}
-			} 
+			} else {
+				include("notinvited.php");
+				closeConnection($connection);
+				return;
+			}
 		}
 	} else {
 		/* *************SI NO ES FAN *******************/
