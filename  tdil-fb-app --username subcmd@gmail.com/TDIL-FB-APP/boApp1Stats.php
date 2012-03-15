@@ -23,44 +23,51 @@
 <head>
 <?php include("include/title_meta.php"); ?>
 <!-- Contact Form CSS files -->
-<link type='text/css' href='css/tdil.css' rel='stylesheet' media='screen' />
+<link type='text/css' href='css/tdil_bo.css' rel='stylesheet' media='screen' />
 <?php include("include/headerBO.php"); ?>
 <style>
 	#content #page {
 	width: 850px;
 	padding: 0px;
 	margin-top: 20px;
+	line-height: 30px;
 }
 </style>	
 </head>
 <body>
 <div id="content">
-	<div id="hello">Hola <span class="remarcado"><?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?></span></div>
-	<div id="portaMenu"><?php include("include/menuBO.php"); ?></div>
-	<div id="page">
-		Estado de la aplicacion 10x10=17
-		<table>
-			<?php while ( $aRow = mysql_fetch_array( $result ) ) { ?>
-				<tr><td><?php echo $aRow["DATA_DESC"] ?></td><td><?php echo $aRow["DATA_VALUE"] ?></td></tr>
-			<?php }	?>
-		</table>
-		<?php 
-			$SQL = "SELECT USER_APP1.*,WINNER_APP1.win_date FROM USER_APP1, WINNER_APP1 WHERE USER_APP1.fbid = WINNER_APP1.groupowner_fbid";
-			$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
-			$num_rows = mysql_num_rows($result);
-			if ($num_rows == 0) { ?>
-				No hay ganadores
-			<?php } else { 
-				$aRow = mysql_fetch_array( $result );
-			?>
-				Ganador<br>
-				fbid: <?php echo $aRow["fbid"]?><br>
-				inv_email: <?php echo $aRow["inv_email"]?><br>
-				fbname: <?php echo $aRow["fbname"]?><br>
-				fbusername: <?php echo $aRow["fbusername"]?><br>
-				fbgender: <?php echo $aRow["fbgender"]?><br>
-				win date: <?php echo $aRow["win_date"]?><br>
-			<?php } ?>
+	<div id="header"></div>
+    <div id="block">
+		<div id="promoTitle"><h1>Bienvenido al BackOffice de la promoci&oacute;n <span class="remarcado">ARLISTAN 10 + 10 = 17.</span></h1></div>
+        <div id="hello">Hola <span class="remarcado"><?php echo($_SESSION['boNombre']);?> <?php echo($_SESSION['boApellido']);?></span></div>
+        <div id="portaMenu"><?php include("include/menuBO.php"); ?></div>
+        <div id="page">
+        	<h2>Estado de la aplicacion: 10 + 10 = 17</h2>
+            <div align="center">
+            <table width="350" cellspacing="10" cellpadding="0" align="center" border="0">
+                <?php while ( $aRow = mysql_fetch_array( $result ) ) { ?>
+                    <tr><td><?php echo $aRow["DATA_DESC"] ?></td><td><?php echo $aRow["DATA_VALUE"] ?></td></tr>
+                <?php }	?>
+            </table>
+            </div>
+            <?php 
+                $SQL = "SELECT USER_APP1.*,WINNER_APP1.win_date FROM USER_APP1, WINNER_APP1 WHERE USER_APP1.fbid = WINNER_APP1.groupowner_fbid";
+                $result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+                $num_rows = mysql_num_rows($result);
+                if ($num_rows == 0) { ?>
+                    <h3>No hay ganadores</h3>
+                <?php } else { 
+                    $aRow = mysql_fetch_array( $result );
+                ?>
+                    Ganador<br>
+                    fbid: <?php echo $aRow["fbid"]?><br>
+                    inv_email: <?php echo $aRow["inv_email"]?><br>
+                    fbname: <?php echo $aRow["fbname"]?><br>
+                    fbusername: <?php echo $aRow["fbusername"]?><br>
+                    fbgender: <?php echo $aRow["fbgender"]?><br>
+                    win date: <?php echo $aRow["win_date"]?><br>
+                <?php } ?>
+		</div>
 	</div>
 </div>
 <?php 	closeConnection($connection); ?>
