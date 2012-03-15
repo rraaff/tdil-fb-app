@@ -28,4 +28,4 @@
 		closeConnection($connection);
 	}
 ?>
-Invitaciones guardadas
+Sus invitaciones han sido guardadas.

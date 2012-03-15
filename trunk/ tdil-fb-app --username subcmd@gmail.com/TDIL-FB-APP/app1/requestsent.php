@@ -1,5 +1,5 @@
 <?php
-/* TODO no se usa*/
+/* NO SE USA */
 ?>
 <html>
 <body>

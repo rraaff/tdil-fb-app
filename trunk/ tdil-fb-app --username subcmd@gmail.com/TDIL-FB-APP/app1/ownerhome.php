@@ -15,16 +15,59 @@
 	}
 </script>
 
+<style type="text/css">
+<!--
+body {
+	background-image: url(../images/ownerhome.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#invitationBlock {
+	height: 100px;
+	margin-top: 460px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 285px;
+	width: 350px;
+}
+.galletaInput{
+	background: none;
+	border:none;
+	height: 20px;
+	width: 120px;
+}
+.okButton {
+	font-size: 1px;
+	color: #FFFFFF;
+	background:none;
+	background-image: url(../images/button_ok.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 69px;
+	width: 69px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-left: 30px;
+}
+#buttonsLinks {
+	height: 60px;
+	width: 460px;
+	margin-right: auto;
+	margin-left: auto;
+}
+-->
+</style>
 </head>
 <body>
-<!-- Esta pagina es la que se muestra a los que son dueños de un grupo -->
-<form action="./inviteemail.php" onSubmit="return checkEmail();">
-<input type="text" name="fbid" value="<?php echo $fbid;?>">
-Invite friend: <input type="text" name="inv_email" id="inv_email">
-<input type="submit">
-</form>
-<br><br>
-
+<div id="invitationBlock">
+  <form action="./inviteemail.php" onSubmit="return checkEmail();">
+		<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
+	<input type="text" name="inv_email" id="inv_email" class="galletaInput">
+	<input type="submit" class="okButton">
+  </form>
+</div>
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
@@ -72,9 +115,14 @@ Invite friend: <input type="text" name="inv_email" id="inv_email">
      d.getElementsByTagName('head')[0].appendChild(js);
    }(document));
 </script>
- 
-<a href="#" onclick="sendRequest()">Send Application Request</a><br>
-
-<a href="groupdetails.php">Detalles de mi grupo</a>
+<div id="buttonsLinks">
+	<img src="../images/null.gif" width="460" height="60" border="0" usemap="#Map">
+  <map name="Map">
+        <area shape="rect" coords="326,29,456,52" href="groupdetails.php">
+        <area shape="rect" coords="81,29,235,50" href="javascript:sendRequest();">
+  </map>
+</div>
+<!--a href="#" onClick="sendRequest()">Send Application Request</a><br>
+<a href="groupdetails.php">Detalles de mi grupo</a-->
 </body>
 </html>

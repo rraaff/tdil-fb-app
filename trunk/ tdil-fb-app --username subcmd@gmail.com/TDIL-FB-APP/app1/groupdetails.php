@@ -98,6 +98,6 @@ while ($iw = mysql_fetch_array($result)){ ?>
 	
 	$redirect = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
 ?>
-<a href="<?php echo $redirect;?>" target="_top">Volver a la home</a>
+<a href="<?php echo $redirect;?>" target="_top">Volver a la home de la app</a>
 </body>
 </html>
