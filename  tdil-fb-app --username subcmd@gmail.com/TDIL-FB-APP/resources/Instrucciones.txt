@@ -1,26 +1,32 @@
 Instalacion
 ===========
 
-1) Descomprimir el zip
+1) Registrar una nueva applicacion en facebook
 
-2) Correr resources/database.sql como root del mysql
+2) Descomprimir el zip
 
-3) Correr resources/fb_mgm.sql como FB_MGM_USER/FB_MGM_USER base FB_MGM
+3) Correr resources/database.sql como root del mysql
 
-4) Modificar y correr el script create_bo_users.sql para crear los usuarios de back end
+4) Correr resources/fb_mgm.sql como FB_MGM_USER/FB_MGM_USER base FB_MGM
 
-5) Insertar los datos iniciales, como ejemplo se tiene initialize_users.sql
+5) Modificar y correr el script create_bo_users.sql para crear los usuarios de back end
 
-6) Copiar los archivos al root del servidor
+6) Insertar los datos iniciales, como ejemplo se tiene initialize_users.sql
 
-7) Modificar constantes.php con los datos del server de la base (constante DB_SERVER)
+7) Copiar los archivos al root del servidor
 
-8) Modificar app1constants.php con los datos de la aplicacion 10 x 10
+8) Modificar constantes.php con los datos del server de la base (constante DB_SERVER)
+
+9) Modificar app1constants.php con los datos de la aplicacion 10 x 10
 	Cambiar el protocolo a https
 
-9) Modificar constantes_mail.php con los datos para envio de emails
+10) Modificar constantes_mail.php con los datos para envio de emails
 
-10) Usando el query email_inv.sql, sacar las urls de invitacion (modificar la url de la pagina)
+11) Usando el query email_inv.sql, sacar las urls de invitacion (modificar la url de la pagina)
+
+12) Crear una pagina en facebook
+
+13) Agregar la aplicacion creada a la pagina
 
 Importante:
 El server donde este corriendo debe tener habilitado el uso de HTTPS
