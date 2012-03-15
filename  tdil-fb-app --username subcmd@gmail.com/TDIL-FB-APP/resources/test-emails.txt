@@ -1,0 +1,23 @@
+Owners
+
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|a| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|b| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|c| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|d| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|e| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|f| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|g| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|h| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|i| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|j| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|k| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|h| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|i| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|l| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|m| 
+
+Amigos
+El primero hace ganar a un usuario
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|1|25| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|2|26| 
+http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|2|27| 

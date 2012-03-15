@@ -27,8 +27,6 @@ El server donde este corriendo debe tener habilitado el uso de HTTPS
 Para pruebas se puede hacer cambiando manualmente la url del browser cuando de algun error.
 
 
-
-
 Accesos
 =======
 
