@@ -87,7 +87,7 @@ VALUES ('fb', 'fb', 'fb@ssdd.com', 'fb', 'fb');
 INSERT INTO BOUSER(nombre, apellido, email, usuario, password)
 VALUES ('pablo', 'mendoza', 'aas@ssdd.com', 'pm', 'pm'); 
 
-INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('a',1,0);
+INSERT INTO USER_APP1(fbid,inv_email,origin,participation) VALUES (100003557187940,'a',1,0);
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('b',1,0);  
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('c',1,0);
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('d',1,0);
@@ -103,12 +103,14 @@ INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('i',1,0);
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('l',1,0);  
 INSERT INTO USER_APP1(inv_email,origin,participation) VALUES ('m',1,0);
 
+INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid) VALUES(100003557187940,0);
+
 INSERT INTO USER_APP1(inv_email,fbid,fbname, fbusername, origin,participation)
 SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CONCAT('username',MAX(id) + 1),2,1
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -117,7 +119,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -126,7 +128,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -135,7 +137,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -144,7 +146,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -153,7 +155,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -162,7 +164,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -171,7 +173,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 
@@ -180,7 +182,7 @@ SELECT CONCAT('email', MAX(id) + 1), MAX(id) + 1, CONCAT('name',MAX(id) + 1),CON
 FROM USER_APP1
 WHERE id = (SELECT max(id) from USER_APP1); 
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
-SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
+SELECT 100003557187940, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
 WHERE inv_email = 'a'; 
 

@@ -17,7 +17,8 @@ http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group
 http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=new_group|m| 
 
 Amigos
-El primero hace ganar a un usuario
+El primero hace ganar al usuario a pqdesa
 http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|1|25| 
+
 http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|2|26| 
 http://www.facebook.com/tdil.test.page?sk=app_292861170783253&app_data=join_group|2|27| 
