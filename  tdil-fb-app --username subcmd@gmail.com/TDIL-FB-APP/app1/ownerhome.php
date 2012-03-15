@@ -42,6 +42,7 @@ Invite friend: <input type="text" name="inv_email" id="inv_email">
             method: 'apprequests',
             message: 'Sumate a la promo',
             title: 'Sumate a la promo',
+			exclude_ids: [],
 			data: '{"item_id":<?php echo $user; ?>}' /*Aca va el id del usuario que manda*/
         },
         function (response) {

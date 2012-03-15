@@ -1,8 +1,6 @@
 <?php
 
-if (DB_USER == NULL || DB_USER == '' || DB_USER == 'DB_USER'){
 	include("constantes.php");
-}
 
 //==========================================
 //	ESCAPE DANGEROUS SQL CHARACTERS

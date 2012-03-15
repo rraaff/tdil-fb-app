@@ -23,7 +23,7 @@
 				$SQL = "INSERT INTO USER_APP1 (fbid,origin, participation) VALUES($invited,3,0)"; // 3 is fb invitation
 				$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			} 
-			mysql_query("INSERT INTO FB_INV_APP1 (groupowner_fbid, groupmember_fbid,request_id,followed,completed) VALUES ($uid, $invited,$invitation,0,0)") or die("MySQL Error: " . mysql_error());
+			mysql_query("INSERT INTO FB_INV_APP1 (groupowner_fbid, groupmember_fbid,request_id,followed,completed,creation_date) VALUES ($uid, $invited,$invitation,0,0, NOW())") or die("MySQL Error: " . mysql_error());
 		}
 		closeConnection($connection);
 	}

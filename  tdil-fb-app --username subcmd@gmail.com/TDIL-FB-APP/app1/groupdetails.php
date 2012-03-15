@@ -3,7 +3,6 @@
 ?>
 <html>
 <body>
-
 <?php
 	include("../include/headers.php");
 	require("../include/funcionesDB.php");
