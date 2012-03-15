@@ -1,8 +1,8 @@
 <?php
-	/* {PABLO} Pagina que dice que la app es solo para fans*/
+	/* Pagina que dice que la app es solo para fans*/
 ?>
 <html>
 <body>
-El acceso a la applicacion es solo para fans.
+<img src="../images/onlyforfans.jpg" width="795" height="780">
 </body>
 </html>
