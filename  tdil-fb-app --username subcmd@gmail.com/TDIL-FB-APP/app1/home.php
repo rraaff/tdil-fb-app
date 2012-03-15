@@ -92,19 +92,6 @@
 	}
 	
 } ?>
-
-Debug info:
-action:<?php echo $action?><br>
-inv_email:<?php echo $inv_email?><br>
-fan:<?php echo $fan?><br>
-fbid:<?php echo $fbid?><br>
-fbemail:<?php echo $fbemail?><br>
-fbname:<?php echo $fbname?><br>
-fbusername:<?php echo $fbusername?><br>
-fbgender:<?php echo $fbgender?><br>
-idgroup:<?php echo $idgroup?><br>
-iduser:<?php echo $iduser?><br>
-
 <?php
 	$pendingaction = 0;
 	$message = "";
