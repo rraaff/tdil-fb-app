@@ -22,10 +22,12 @@ Instalacion
 
 10) Usando el query email_inv.sql, sacar las urls de invitacion (modificar la url de la pagina)
 
-
 Importante:
 El server donde este corriendo debe tener habilitado el uso de HTTPS
 Para pruebas se puede hacer cambiando manualmente la url del browser cuando de algun error.
+
+
+
 
 Accesos
 =======
@@ -44,3 +46,10 @@ winner_app1.html
 Reemplazos
 {SERVER_NAME}
 {WINNER_NAME}
+
+
+Prueba de la aplicacion
+===========
+Para realizar la prueba de la aplicacion se deberan dar de alta usuarios de facebook, algunos de los cuales deberan
+ser amigos de forma de poder enviarse invitaciones.
+Puede utilizarse el query test-addfriend.sql modificandole el email para aumentar la cantidad de amigos de un usuario.

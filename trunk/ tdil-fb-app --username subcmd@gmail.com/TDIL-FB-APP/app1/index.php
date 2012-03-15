@@ -15,7 +15,9 @@
 	$user = $facebook->getUser();
 	
 	if ($user == 0) {
-		session_start();
+		if(!isset($_SESSION)) {
+			session_start();
+		}
 		if (!empty($_REQUEST['request_ids'])) {
 			$_SESSION['request_ids'] = $_REQUEST['request_ids']; // meto los datos en la session y redirijo
 		}

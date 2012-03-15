@@ -31,7 +31,9 @@
 	$idgroup = $_REQUEST['idgroup']; /*id de grupo a hacer el join*/
 	$iduser = $_REQUEST['iduser'];
 } else {
-	session_start();
+	if(!isset($_SESSION)) {
+		session_start();
+	}
 	/* Aca tengo que sacar cosas del signed_request y del usuario logueado*/
 	$inv_email = "";
 	$signed_request = $facebook->getSignedRequest();
@@ -39,10 +41,13 @@
 		echo "External links no permitidos";
 		return;
 	}
+	$app_data = null;
 	if (isset($_SESSION['app_data'])) {
 		$app_data = $_SESSION['app_data'];
 	} else {
-		$app_data = $signed_request["app_data"];
+		if (isset($signed_request['app_data'])) {
+			$app_data = $signed_request["app_data"];
+		}
 	}
 	/* si el usuario es nulo, no lo autorizo */
 	if ($user == 0) {
@@ -77,7 +82,10 @@
 	}
 	$fbemail = '';
 	$fbname = $user_profile['name'];
-	$fbusername = $user_profile['username'];
+	$fbusername = "";
+	if (isset($user_profile['username'])) {
+		$fbusername = $user_profile['username'];
+	}
 	$fbgender = $user_profile['gender'];
 	
 	if ($app_data) {

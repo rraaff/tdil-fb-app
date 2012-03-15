@@ -2,6 +2,7 @@
 	include("include/headers.php");
 	require("include/funcionesDB.php");
 	
+	$errorMessage = "";
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		// Inicio conexion
 		$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
@@ -18,7 +19,6 @@
 		$result = mysql_query($SQL);
 		$num_rows = mysql_num_rows($result);
 		
-		$errorMessage = "";
 		if ($result) {
 			if ($num_rows > 0) {
 				session_start();
