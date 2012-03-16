@@ -60,7 +60,7 @@
 	//if ($page_id != $PAGEID) {
 	//	die("No allowed");
 	//}
-	if (empty($signed_request['page']['liked']) /* TODO DESCOMENTAR && $_SESSION['fan'] == 0*/) {
+	if (empty($signed_request['page']['liked']) && CHECK_FAN == 1 /* TODO DESCOMENTAR && $_SESSION['fan'] == 0*/) {
 		$_SESSION['app_data'] = $app_data; // meto los datos en la session y redirijo
 		$fan = 0;
 		$_SESSION['fan'] = '0';
@@ -139,6 +139,7 @@
 		// el usuario es group member
 		$friend_group = mysql_fetch_array( $result );
 		$friend_groupid = $friend_group['groupowner_fbid'];
+		$friend_groupid = quote_smart($friend_groupid, $connection);
 		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $friend_groupid";
 		$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$owner = mysql_fetch_array( $result );
@@ -155,6 +156,7 @@
 			$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$num_rows = mysql_num_rows($result);
 			if ($num_rows > 0) {
+				syslog(LOG_INFO, 'has pending action');
 				$pendingaction = 1;
 				$pending = mysql_fetch_array($result);
 				$action = $pending["action"];
