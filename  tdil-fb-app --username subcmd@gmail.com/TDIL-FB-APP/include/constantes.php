@@ -5,5 +5,6 @@
 	define('DB_PASS','FB_MGM_USER');
 	define('DB_NAME','FB_MGM');
 	
-	define('TESTING','FALSE');
+	define('TESTING','TRUE');
+	define('CHECK_FAN',0);
 ?>

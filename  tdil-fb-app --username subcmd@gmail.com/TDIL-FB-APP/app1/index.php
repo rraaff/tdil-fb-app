@@ -13,11 +13,13 @@
 	$app_token = get_app_access($APPLICATION_ID,$APPLICATION_SECRET);
 	// Get User ID
 	$user = $facebook->getUser();
-	
+	if(!isset($_SESSION)) {
+		session_start();
+	}
+	if(isset($_SESSION['app_data'])) { // si tiene datos de la otra pagina, entonces los desseteo
+		unset($_SESSION['app_data']);
+	}
 	if ($user == 0) {
-		if(!isset($_SESSION)) {
-			session_start();
-		}
 		if (!empty($_REQUEST['request_ids'])) {
 			$_SESSION['request_ids'] = $_REQUEST['request_ids']; // meto los datos en la session y redirijo
 		}
@@ -101,6 +103,7 @@
 	} else {
 		echo "La peticion ya expiro";
 	}
+	unset($_SESSION['request_ids']);
 ?>
 <?php 
 /* {PABLO} Esto se muestra para que termine el proceso de union al grupo*/

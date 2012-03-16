@@ -19,8 +19,6 @@
 	$user = $facebook->getUser();
 	if ($user) {
 		$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
-		
-		$sGender = quote_smart($sGender, $connection);
 		mysql_select_db(DB_NAME,$connection);
 		$fbid = quote_smart($user, $connection);
 		
