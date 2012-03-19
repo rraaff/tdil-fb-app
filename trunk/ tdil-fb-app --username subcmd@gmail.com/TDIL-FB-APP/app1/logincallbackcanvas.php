@@ -4,11 +4,11 @@
 	include("../include/app1constants.php"); 
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
-			'appId'  => $APPLICATION_ID,
-			'secret' => $APPLICATION_SECRET,
+			'appId'  => $APPLICATION1_ID,
+			'secret' => $APPLICATION1_SECRET,
 	));
 ?>
 <?php
-$redirect = 'https://apps.facebook.com/'. $APPLICATION_ID;
+$redirect = 'https://apps.facebook.com/'. $APPLICATION1_ID;
 header('Location: '.$redirect);
 ?>
