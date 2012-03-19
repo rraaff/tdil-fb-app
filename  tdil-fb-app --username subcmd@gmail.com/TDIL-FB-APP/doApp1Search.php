@@ -16,17 +16,22 @@ $connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la
 $sGender = quote_smart($sGender, $connection);
 mysql_select_db(DB_NAME,$connection);
 	
-$SQL = "SELECT * FROM (SELECT fbid, fbname, fbusername, fbgender, inv_email, origin, participation, FANS_RECOMENDADOS.CANTIDAD fans
+$SQL = "SELECT * FROM (SELECT fbid, fbname, fbusername, fbgender, inv_email, origin, participation, FANS_RECOMENDADOS.CANTIDAD fans, '' groupOwner
 FROM USER_APP1, (SELECT groupowner_fbid, count(1) - 1 CANTIDAD FROM GROUP_APP1 GROUP BY groupowner_fbid) FANS_RECOMENDADOS
 WHERE USER_APP1.ORIGIN = 1
 AND USER_APP1.fbid = FANS_RECOMENDADOS.groupowner_fbid
 UNION ALL
-SELECT fbid, fbname, fbusername, fbgender, inv_email, origin, participation, 0
+SELECT fbid, fbname, fbusername, fbgender, inv_email, origin, participation, 0, '' groupOwner
 FROM USER_APP1
 WHERE ORIGIN = 1
 AND PARTICIPATION = 0
 UNION ALL
-SELECT fbid, fbname, fbusername, fbgender, inv_email, origin, participation, 0 FROM USER_APP1 WHERE ORIGIN = 0) USERS WHERE 1=1 ";
+SELECT u1.fbid, u1.fbname, u1.fbusername, u1.fbgender, u1.inv_email, u1.origin, u1.participation, 0, u2.fbname groupOwner
+FROM USER_APP1 u1, GROUP_APP1 g1, USER_APP1 u2
+WHERE u1.ORIGIN != 1
+AND u1.PARTICIPATION = 1
+AND u1.fbid = g1.groupmember_fbid
+AND g1.groupowner_fbid = u2.fbid) USERS WHERE 1=1 ";
 
 if ($sInicial != "-1") {
 	$SQL = $SQL . " AND USERS.origin = $sInicial";
@@ -48,12 +53,12 @@ $result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - 
 $iTotal = mysql_num_rows($result);
 
 $output = array(
-		"sEcho" => intval($_GET['sEcho']),
+		"sEcho" => 1, // intval($_GET['sEcho'])
 		"iTotalRecords" => $iTotal,
 		"iTotalDisplayRecords" => $iTotal,
 		"aaData" => array()
 );
-$aColumns = array( 'fbid', 'fbname', 'fbusername', 'fbgender', 'inv_email', 'origin', 'participation', 'fans');
+$aColumns = array( 'fbid', 'fbname', 'fbusername', 'fbgender', 'inv_email', 'origin', 'participation', 'fans', 'groupOwner');
 
 while ( $aRow = mysql_fetch_array( $result ) ) {
 	$row = array();

@@ -132,6 +132,7 @@ function doSearch() {
                                 <th width="25%">Inicial</th>
                                 <th width="25%">Participo</th>
                                 <th width="25%">Fans</th>
+                                <th width="25%">Grupo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -147,6 +148,7 @@ function doSearch() {
                                 <th width="25%">Inicial</th>
                                 <th width="25%">Participo</th>
                                 <th width="25%">Fans</th>
+                                <th width="25%">Grupo</th>
                             </tr>
                         </tfoot>
                     </table>
