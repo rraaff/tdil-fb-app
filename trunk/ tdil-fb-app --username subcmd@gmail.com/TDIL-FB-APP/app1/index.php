@@ -7,10 +7,10 @@
 	include("../include/app1constants.php"); 
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
-			'appId'  => $APPLICATION1_ID,
-			'secret' => $APPLICATION1_SECRET,
+			'appId'  => APPLICATION1_ID,
+			'secret' => APPLICATION1_SECRET,
 	));
-	$app_token = get_app_access($APPLICATION1_ID,$APPLICATION1_SECRET);
+	$app_token = get_app_access(APPLICATION1_ID,APPLICATION1_SECRET);
 	// Get User ID
 	$user = $facebook->getUser();
 	if(!isset($_SESSION)) {
@@ -108,7 +108,7 @@
 <?php 
 /* {PABLO} Esto se muestra para que termine el proceso de union al grupo*/
 if ($ok_to_procced == 1) { 
-	$redirect = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION1_ID;
+	$redirect = 'https://www.facebook.com/'. PAGE_NAME . '?sk=app_'. APPLICATION1_ID;
 ?>
 	Para unirte al grupo tenes que cliquear <a href="<?php echo $redirect;?>" target="_top">Aca</a>
 <?php } ?>

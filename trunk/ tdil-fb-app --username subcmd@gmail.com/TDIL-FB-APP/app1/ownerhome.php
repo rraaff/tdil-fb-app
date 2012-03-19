@@ -72,7 +72,7 @@ body {
 <script>
     window.fbAsyncInit = function() {
         FB.init({
-            appId: '<?php echo $APPLICATION1_ID;?>',
+            appId: '<?php echo APPLICATION1_ID;?>',
             status: true,
             cookie: true,
             oauth: true
@@ -96,7 +96,7 @@ body {
                     request_ids.push(temp);
                 }
                 var requests = request_ids.join(',');
-                $.post('<?php echo $APPLICATION1_URL;?>/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
+                $.post('<?php echo APPLICATION1_URL;?>/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
                     // callback after storing the requests
 					alert(resp);
                 });
@@ -122,7 +122,7 @@ body {
         <area shape="rect" coords="81,29,235,50" href="javascript:sendRequest();">
   </map>
 </div>
-<!--a href="#" onClick="sendRequest()">Send Application Request</a><br>
-<a href="groupdetails.php">Detalles de mi grupo</a-->
+<a href="#" onClick="sendRequest()">Send Application Request</a><br>
+<a href="groupdetails.php">Detalles de mi grupo</a>
 </body>
 </html>

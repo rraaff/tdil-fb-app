@@ -52,8 +52,13 @@ if ($sMaxFans != "" && is_numeric($sMaxFans)) {
 $result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 $iTotal = mysql_num_rows($result);
 
+$sEcho = 1;
+if (isset($_GET['sEcho'])) {
+	$sEcho = intval($_GET['sEcho']);
+}
+
 $output = array(
-		"sEcho" => 1, // intval($_GET['sEcho'])
+		"sEcho" => $sEcho,
 		"iTotalRecords" => $iTotal,
 		"iTotalDisplayRecords" => $iTotal,
 		"aaData" => array()
