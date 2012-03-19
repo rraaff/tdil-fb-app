@@ -1,11 +1,11 @@
 <?php 
 	Facebook::$CURL_OPTS[CURLOPT_CAINFO] = '/var/www/TDIL-FB-APP/include/fb_ca_chain_bundle.crt';
 	
-	$APPLICATION_ID = '292861170783253';
-	$APPLICATION_SECRET = '822b60809737ff91e6142f924e85e9d5';
+	$APPLICATION1_ID = '292861170783253';
+	$APPLICATION1_SECRET = '822b60809737ff91e6142f924e85e9d5';
 	$PAGEID = '';
 	$PAGE_NAME = 'tdil.test.page';
-	$APPLICATION_URL = 'http://localhost/TDIL-FB-APP/app1';
+	$APPLICATION1_URL = 'http://localhost/TDIL-FB-APP/app1';
 	
 	define('INVITATION_DELAY',1);
 	define('APP1_WIN',10);

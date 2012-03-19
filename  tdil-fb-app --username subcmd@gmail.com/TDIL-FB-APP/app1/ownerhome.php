@@ -72,7 +72,7 @@ body {
 <script>
     window.fbAsyncInit = function() {
         FB.init({
-            appId: '292861170783253',
+            appId: '<?php echo $APPLICATION1_ID;?>',
             status: true,
             cookie: true,
             oauth: true
@@ -96,7 +96,7 @@ body {
                     request_ids.push(temp);
                 }
                 var requests = request_ids.join(',');
-                $.post('<?php echo $APPLICATION_URL;?>/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
+                $.post('<?php echo $APPLICATION1_URL;?>/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
                     // callback after storing the requests
 					alert(resp);
                 });

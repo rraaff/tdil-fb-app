@@ -48,7 +48,7 @@
 			$body             = $mail->getFile('../invitacion_app1.html');
 			$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
 			$body = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $body);
-			$link = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+			$link = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION1_ID;
 			$link = $link . '&app_data=join_group|' . $groupownerid . '|' . $returnInsert . '|';
 			$body = str_replace('{PAGE_LINK}', $link, $body);
 			$body             = eregi_replace("[\]",'',$body);
@@ -87,7 +87,7 @@
 				$body             = $mail->getFile('../invitacion_app1.html');
 				$body = str_replace('{SERVER_NAME}', SERVER_NAME, $body);
 				$body = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $body);
-				$link = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+				$link = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION1_ID;
 				$link = $link . '&app_data=join_group|' . $groupownerid . '|' . $user_app1id . '|';
 				$body = str_replace('{PAGE_LINK}', $link, $body);
 				$body             = eregi_replace("[\]",'',$body);
@@ -106,6 +106,6 @@ Invitaciones enviadas
 <?php } else { ?>
 No se pudo enviar el mail
 <?php } 
-$redirect = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION_ID;
+$redirect = 'https://www.facebook.com/'. $PAGE_NAME . '?sk=app_'. $APPLICATION1_ID;
 ?>
 <a href="<?php echo $redirect;?>" target="_top">Volver a la home</a>
