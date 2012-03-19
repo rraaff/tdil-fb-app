@@ -199,6 +199,7 @@
 				if ($num_rows > 0) {
 					$idgrouprow = mysql_fetch_array($result);
 					$groupowner_fbid = $idgrouprow["fbid"];
+					$group_owner_name = $idgrouprow["fbname"];
 					$iduser = quote_smart($iduser, $connection);
 					$SQL = "SELECT * FROM USER_APP1 WHERE id = $iduser AND origin != 1";
 					$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
