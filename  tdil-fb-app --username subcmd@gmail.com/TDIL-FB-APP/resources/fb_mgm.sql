@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS BOUSER;
+DROP TABLE IF EXISTS CONFIG_APP1;
 DROP TABLE IF EXISTS USER_APP1;
 DROP TABLE IF EXISTS GROUP_APP1;
 DROP TABLE IF EXISTS ACTION_APP1;
@@ -79,3 +80,11 @@ CREATE TABLE `FB_INV_APP1` (
   `creation_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`) ,
   INDEX `groupowner_fbiddasc` (`groupowner_fbid` ASC) );
+
+CREATE TABLE `CONFIG_APP1` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `invitation_days` INT NULL ,
+  `email_daily_quota` INT NULL ,
+  `fb_daily_quota` INT NULL ,
+  `winner_pubdate` DATE NOT NULL,
+  PRIMARY KEY (`id`));

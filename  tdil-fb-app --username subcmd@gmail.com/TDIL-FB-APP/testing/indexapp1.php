@@ -1,12 +1,13 @@
 <?php
 // PATH TO YOUR FACEBOOK PHP-SDK
 	require '../include/facebook.php';
+	require '../include/app1constants.php';
 
 
 // REPLACE WITH YOUR APPLICATION ID AND SECRET
 $facebook = new Facebook(array(
-  'appId'  => '292861170783253',
-  'secret' => '822b60809737ff91e6142f924e85e9d5',
+  'appId'  => APPLICATION1_ID,
+  'secret' => APPLICATION1_SECRET,
   'cookie' => true,
 ));
 
@@ -35,7 +36,10 @@ function createTestUser($fb, $a) {
 	if( isset($_GET['perms']) ) {
 		$perms = trim($_GET['perms']);
 		$params['permissions'] = $perms;
-	}	
+	}
+	if( isset($_GET['nombre']) ) {
+		$params['name'] = $_GET['nombre'];
+	}
 	$fb->api("/{$fb->getAppId()}/accounts/test-users", "POST", $params);
 }
 
@@ -102,12 +106,16 @@ $acc = getTestAccounts($facebook, $app_access_token);
 				
 				<input type="hidden" name="action" value="create" />
 				<li>
-					<label>Permissions:</label>
+					<label>Nombre:</label>
+					<input type="text" name="nombre" value="" />
+				</li>
+				<li>
+					<label>Permisos:</label>
 					<input type="text" name="perms" value="" />
 				</li>
 				
 				<li>
-				<label>Installed:</label>
+				<label>Aplicacion instalada:</label>
 				<input type="radio" name="installed" value="true" checked="checked" /> Yes <input type="radio" name="installed" value="false" /> No
 				</li>
 
@@ -116,9 +124,6 @@ $acc = getTestAccounts($facebook, $app_access_token);
 				<p><input type="submit" value="Create Test User" /></p>
 			</form>
 		</div>
-	</div>
-	<div id="footer">
-		<p>&copy; 2011 <a href="http://www.masteringapi.com/">MasteringAPI.com</a></p>
 	</div>
 </div>
 </body>
