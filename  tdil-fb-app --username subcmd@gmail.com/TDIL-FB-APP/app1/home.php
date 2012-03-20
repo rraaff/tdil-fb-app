@@ -45,12 +45,28 @@
 	//if ($page_id != $PAGEID) {
 	//	die("No allowed");
 	//}
-	if (empty($signed_request['page']['liked']) && CHECK_FAN == 1 /* TODO DESCOMENTAR && $_SESSION['fan'] == 0*/) {
-		$_SESSION['app_data'] = $app_data; // meto los datos en la session y redirijo
-		$fan = 0;
-		$_SESSION['fan'] = '0';
-		include("onlyforfans.php");
-		return;
+	if (empty($signed_request['page']['liked'])) {
+		// Si estoy en localhost
+		if (APPLICATION1_URL == 'http://localhost/TDIL-FB-APP/app1') {
+			$testuser = $facebook->api('/me');
+			// Si el nombre incluye Tester entonces asumo que es fan
+			if (strpos($testuser['name'], 'Tester')) {
+				$_SESSION['fan'] = '1'; // pongo que es fan
+				$fan = 1;
+			} else {
+				$_SESSION['app_data'] = $app_data; // meto los datos en la session y redirijo
+				$fan = 0;
+				$_SESSION['fan'] = '0';
+				include("onlyforfans.php");
+				return;
+			}
+		} else {
+			$_SESSION['app_data'] = $app_data; // meto los datos en la session y redirijo
+			$fan = 0;
+			$_SESSION['fan'] = '0';
+			include("onlyforfans.php");
+			return;
+		}
 	} else {
 		$_SESSION['fan'] = '1'; // pongo que es fan
 		$fan = 1;
@@ -230,7 +246,7 @@
 							$SQL = "UPDATE WINNER_APP1 SET groupowner_fbid = $groupowner_fbid, win_date = NOW() WHERE groupowner_fbid IS NULL AND active = 1";
 							mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 							// si gano
-							if (mysql_affected_rows() == 1) {
+							/* NO SE USA EL ENVIO DE EMAILif (mysql_affected_rows() == 1) {
 								$mail = new PHPMailer(); // defaults to using php "mail()"
 								$mail->SMTPDebug = true;
 								$mail->From       = EMAIL_FROM_APP1;
@@ -246,10 +262,10 @@
 								$mail->MsgHTML($body);
 								$mail->AddAddress($idgrouprow['inv_email'],$idgrouprow['inv_email']);
 								$mail_sent = $mail->Send();
-							}
+							}*/
 						}
 						closeConnection($connection);
-						return;							
+						return;
 						/* Se formo un grupo END */
 					} else {
 						echo "El usuario no existe";
