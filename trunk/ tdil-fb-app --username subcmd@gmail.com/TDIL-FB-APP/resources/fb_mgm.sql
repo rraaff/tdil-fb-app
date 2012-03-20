@@ -83,8 +83,11 @@ CREATE TABLE `FB_INV_APP1` (
 
 CREATE TABLE `CONFIG_APP1` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `invitation_days` INT NULL ,
-  `email_daily_quota` INT NULL ,
-  `fb_daily_quota` INT NULL ,
-  `winner_pubdate` DATE NOT NULL,
+  `invitation_days` INT NOT NULL ,
+  `email_daily_quota` INT NOT NULL ,
+  `fb_daily_quota` INT NOT NULL ,
+  `show_winner` INT NULL ,
+  `winner_pubdate` DATE NULL,
   PRIMARY KEY (`id`));
+  
+  INSERT INTO CONFIG_APP1 (invitation_days, email_daily_quota, fb_daily_quota,show_winner) VALUES(1,1,1,0);

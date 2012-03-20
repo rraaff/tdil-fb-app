@@ -1,4 +1,22 @@
-<?php /* {PABLO} Esta es la home del owner */?>
+<?php /* {PABLO} Esta es la home del owner */
+	$SQL = "SELECT groupmember_fbid FROM FB_INV_APP1 WHERE groupowner_fbid = $fbid AND creation_date >= (CURDATE() - INTERVAL (select invitation_days FROM CONFIG_APP1) DAY)";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$excluded = '';
+	while ( $aRow = mysql_fetch_array( $result ) ) {
+		$excluded = $excluded . $aRow['groupmember_fbid'] . ',';
+	}
+	$excluded =  substr($excluded, 0 , strlen($excluded)-1);
+	
+	$SQL = "SELECT (select fb_daily_quota FROM CONFIG_APP1) - COUNT(*) remaining FROM FB_INV_APP1 WHERE groupowner_fbid = $fbid AND creation_date >= CURDATE()";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$aRow = mysql_fetch_array( $result );
+	$fb_remaining = $aRow['remaining'];
+	
+	$SQL = "select (select email_daily_quota FROM CONFIG_APP1) - COUNT(*) remaining FROM EMAIL_INV_APP1 where groupowner_id = (select id from USER_APP1 where fbid = $fbid) AND creation_date >= CURDATE()";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$aRow = mysql_fetch_array( $result );
+	$email_remaining = $aRow['remaining'];
+?>
 <html>
 <head>
 <script type='text/javascript' src='../js/jquery-1.7.min.js'></script>
@@ -62,11 +80,13 @@ body {
 </head>
 <body>
 <div id="invitationBlock">
+<?php if ( $email_remaining > 0 ) { ?>
   <form action="./inviteemail.php" onSubmit="return checkEmail();">
 		<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
 	<input type="text" name="inv_email" id="inv_email" class="galletaInput">
 	<input type="submit" class="okButton">
   </form>
+  <?php } ?>
 </div>
 <div id="fb-root"></div>
 <script>
@@ -85,7 +105,8 @@ body {
             method: 'apprequests',
             message: 'Sumate a la promo',
             title: 'Sumate a la promo',
-			exclude_ids: [],
+			max_recipients: 1,
+			exclude_ids: [<?php echo $excluded;?>],
 			data: '{"item_id":<?php echo $user; ?>}' /*Aca va el id del usuario que manda*/
         },
         function (response) {
@@ -98,7 +119,7 @@ body {
                 var requests = request_ids.join(',');
                 $.post('<?php echo APPLICATION1_URL;?>/handle_fbrequest.php',{uid: <?php echo $user; ?>, request_ids: requests},function(resp) {
                     // callback after storing the requests
-					alert(resp);
+				   location.replace('<?php echo APPLICATION1_URL;?>/requestsent.php');
                 });
 				/* TODO Redirect to requestsent.php */
 				
@@ -122,7 +143,11 @@ body {
         <area shape="rect" coords="81,29,235,50" href="javascript:sendRequest();">
   </map>
 </div>
-<a href="#" onClick="sendRequest()">Send Application Request</a><br>
+<?php if ($fb_remaining > 0) { ?>
+	<a href="#" onClick="sendRequest()">Send Application Request</a><br>
+<?php } else { ?>
+	Send Application Request<br>
+<?php } ?>
 <a href="groupdetails.php">Detalles de mi grupo</a>
 </body>
 </html>
