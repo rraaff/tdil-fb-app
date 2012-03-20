@@ -1,4 +1,1 @@
-<?php
-/* {PABLE} Esta pagina es solo para invitados*/
-?>
-NO fuiste invitado
+<img src="../images/notinvited.jpg" width="795" height="780" />
