@@ -62,7 +62,8 @@ function printTestUsers($accounts) {
 			$html .= "<tr>";
 			$html .= "<td>{$arr['id']}</td>";
 			$fbid = $arr['id'];
-			$SQL = "SELECT USER_APP1 WHERE USER_APP1.fbid = $fbid";
+			$fbid = quote_smart($fbid, $connection);
+			$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $fbid";
 			$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$num_rows = mysql_num_rows($result);
 			if ($num_rows == 1) {
