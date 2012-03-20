@@ -2,6 +2,7 @@
 // PATH TO YOUR FACEBOOK PHP-SDK
 	require '../include/facebook.php';
 	require '../include/app1constants.php';
+	require("../include/funcionesDB.php");
 
 
 // REPLACE WITH YOUR APPLICATION ID AND SECRET
@@ -50,14 +51,27 @@ function deleteTestUser($fb, $id, $a) {
 
 /////////////////////// \\\\\\\\\\\\\\\\\\\\\\\
 function printTestUsers($accounts) {
+	$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
+	mysql_select_db(DB_NAME,$connection);
 	$html = "";
 	if(isset($accounts['data']) && count($accounts['data'])) {
 		$html .= "<table>";
-		$html .= "<tr class=\"head\"><td colspan=\"4\">Test Users Table</td></tr>";
-		$html .= "<tr class=\"head\"><td>Test User ID</td><td>Application User</td><td>Login URL</td><td>Delete</td></tr>";
+		$html .= "<tr class=\"head\"><td colspan=\"4\">Usuarios de prueba</td></tr>";
+		$html .= "<tr class=\"head\"><td>ID</td><td>Nombre</td><td>App user</td><td>Login URL</td><td>Borrar</td></tr>";
 		foreach($accounts['data'] as $arr) {
 			$html .= "<tr>";
 			$html .= "<td>{$arr['id']}</td>";
+			$fbid = $arr['id'];
+			$SQL = "SELECT USER_APP1 WHERE USER_APP1.fbid = $fbid";
+			$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+			$num_rows = mysql_num_rows($result);
+			if ($num_rows == 1) {
+				$aRow = mysql_fetch_array( $result );
+				$html .= "<td>". $aRow['fbname']."</td>";
+			} else {
+				$html .= "<td>-</td>";
+			}
+			
 			$html .= "<td>" . ((empty($arr['access_token'])) ? "NO":"YES") . "</td>";
 			$html .= "<td><a href=\"{$arr['login_url']}\" target=\"_blank\">Test User Login</a></td>";
 			$html .= "<td><a href=\"{$_SERVER['PHP_SELF']}?id={$arr['id']}&action=delete\">Delete Test User</a></td>";
@@ -65,8 +79,9 @@ function printTestUsers($accounts) {
 		}
 		$html .= "</table>";
 	} else {
-		$html = "No users or something went wrong!";
+		$html = "No hay usuarios";
 	}
+	closeConnection($connection);
 	return $html;
 }
 
@@ -87,41 +102,34 @@ $acc = getTestAccounts($facebook, $app_access_token);
 <!doctype html>
 <html>
 <head>
-	<title>Test Users</title>
+	<title>Usuarios de prueba</title>
 	<link href="style.css" media="screen" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div id="wrapper">
 	<div id="header">
-		<h1><a href="<?php echo $_SERVER['PHP_SELF'] ?>">Test Users Panel</a></h1>
+		<h1><a href="<?php echo $_SERVER['PHP_SELF'] ?>">Usuarios de prueba</a></h1>
 	</div>
 	<div id="content">
 		<?php echo printTestUsers($acc); ?>
 		<br />
 		<div>
 			<form class="cmxform" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
-				<fieldset>
-				<legend>Create test user:</legend>
-				<ol>
-				
 				<input type="hidden" name="action" value="create" />
-				<li>
-					<label>Nombre:</label>
-					<input type="text" name="nombre" value="" />
-				</li>
-				<li>
-					<label>Permisos:</label>
-					<input type="text" name="perms" value="" />
-				</li>
-				
-				<li>
-				<label>Aplicacion instalada:</label>
-				<input type="radio" name="installed" value="true" checked="checked" /> Yes <input type="radio" name="installed" value="false" /> No
-				</li>
-
+				<fieldset>
+				<legend>Creacion de usuario de prueba:</legend>
+				<ol>
+					<li>
+						<label>Nombre (Incluir Tester para que sea considerado fan):</label>
+						<input type="text" name="nombre" value="" />
+					</li>
+					<li>
+					<label>Aplicacion instalada:</label>
+					<input type="radio" name="installed" value="true" checked="checked" /> Si <input type="radio" name="installed" value="false" /> No
+					</li>
 				</ol>
 				</fieldset>
-				<p><input type="submit" value="Create Test User" /></p>
+				<p><input type="submit" value="Crear usuario de prueba" /></p>
 			</form>
 		</div>
 	</div>
