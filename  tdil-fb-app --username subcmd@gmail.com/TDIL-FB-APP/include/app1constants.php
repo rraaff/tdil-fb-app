@@ -1,14 +1,13 @@
 <?php 
-	Facebook::$CURL_OPTS[CURLOPT_CAINFO] = '/var/www/TDIL-FB-APP/include/fb_ca_chain_bundle.crt';
+	Facebook::$CURL_OPTS[CURLOPT_CAINFO] = '/var/www/TDIL-FB-APP/include/fb_ca_chain_bundle.crt'; // path al certificado
 	
-	define('APPLICATION1_ID','292861170783253');
-	define('APPLICATION1_SECRET','822b60809737ff91e6142f924e85e9d5');
+	define('APPLICATION1_ID','292861170783253'); // id de la app
+	define('APPLICATION1_SECRET','822b60809737ff91e6142f924e85e9d5'); // secret id de la app
 	$PAGEID = '';
-	define('PAGE_NAME','tdil.test.page');
-	define('APPLICATION1_URL','http://localhost/TDIL-FB-APP/app1');
+	define('PAGE_NAME','tdil.test.page'); // nombre de la pagina en la cual la app esta instalada
+	define('APPLICATION1_URL','http://localhost/TDIL-FB-APP/app1'); // Url de la aplicacion, debe ser https
 	
-	define('INVITATION_DELAY',1);
-	define('APP1_WIN',10);
+	define('APP1_WIN',10); // Numero de fans para ganar
 	
 	
 	

@@ -8,6 +8,7 @@
    <li>
     <a href="#">App 10x10=17</a>
     <ul>
+      <li><a href="boApp1Config.php">Configuracion de la applicacion</a></li>
       <li><a href="boApp1Stats.php">Estado de la applicacion</a></li>
       <li><a href="boApp1Search.php">Consultas</a></li>
     </ul>

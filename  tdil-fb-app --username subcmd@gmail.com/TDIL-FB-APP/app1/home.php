@@ -95,7 +95,7 @@
 		
 	mysql_select_db(DB_NAME,$connection);
 	
-	$SQL = "SELECT USER_APP1.*,WINNER_APP1.win_date FROM USER_APP1, WINNER_APP1 WHERE USER_APP1.fbid = WINNER_APP1.groupowner_fbid";
+	$SQL = "SELECT USER_APP1.*,WINNER_APP1.win_date FROM USER_APP1, WINNER_APP1 WHERE USER_APP1.fbid = WINNER_APP1.groupowner_fbid AND 1 = (select show_winner from CONFIG_APP1)";
 	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 	$num_rows = mysql_num_rows($result);
 	if ($num_rows == 1) { 
@@ -116,6 +116,7 @@
 	$num_rows = mysql_num_rows($result);
 	if ($num_rows > 0) {
 		// el usuario es group owner
+		
 		include("ownerhome.php");
 		closeConnection($connection);
 		return;
