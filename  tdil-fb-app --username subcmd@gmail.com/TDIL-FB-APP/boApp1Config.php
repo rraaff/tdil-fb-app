@@ -29,10 +29,10 @@
 		$message = 'Cambios guardados';
 	} 
 	
-	$query = "SELECT * FROM CONFIG_APP1";
+	$SQL = "SELECT * FROM CONFIG_APP1";
 	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 	$aRow = mysql_fetch_array( $result );
-	mysql_close(show_winner);
+	mysql_close($connection);
 ?>
 <html>
 <head>
