@@ -8,4 +8,4 @@ WHERE id = (SELECT max(id) from USER_APP1);
 INSERT INTO GROUP_APP1(groupowner_fbid,groupmember_fbid)
 SELECT fbid, (SELECT MAX(fbid) from USER_APP1)
 FROM USER_APP1
-WHERE inv_email = 'm'; 
+WHERE inv_email = 'a'; 

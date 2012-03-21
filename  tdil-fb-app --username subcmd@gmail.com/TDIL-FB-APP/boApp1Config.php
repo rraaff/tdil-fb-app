@@ -12,7 +12,7 @@
 		$invitation_days = $_POST['invitation_days'];
 		$email_daily_quota = $_POST['email_daily_quota'];
 		$fb_daily_quota = $_POST['fb_daily_quota'];
-		if ($_POST['show_winner'] == 'on') {
+		if (isset($_POST['show_winner'])) {
 			$show_winner = 1;
 		} else {
 			$show_winner = 0;
