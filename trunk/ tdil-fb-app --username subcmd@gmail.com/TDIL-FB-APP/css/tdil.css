@@ -79,6 +79,8 @@ body {
 	font-size: 12px;
 	font-weight: normal;
 	color: #58595b;
+	margin: 0px;
+	padding: 0px;
 }
 h1, h2, h3, h4 {
 	color:#802444;
