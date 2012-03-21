@@ -1,59 +1,40 @@
-Instalacion
-===========
+Instalación
 
-1) Registrar una nueva applicacion en facebook
-
-2) Descomprimir el zip
-
+1) Registrar una nueva aplicación en facebook
+2) Descomprimir el app10.zip
 3) Correr resources/database.sql como root del mysql
-
 4) Correr resources/fb_mgm.sql como FB_MGM_USER/FB_MGM_USER base FB_MGM
-
 5) Modificar y correr el script create_bo_users.sql para crear los usuarios de back end
-
 6) Insertar los datos iniciales, como ejemplo se tiene initialize_users.sql
-
 7) Copiar los archivos al root del servidor
-
 8) Modificar constantes.php con los datos del server de la base (constante DB_SERVER)
+9) Modificar app1constants.php con los datos de la aplicación 10 x 10: Cambiar el protocolo a https
+10) Modificar constantes_mail.php con los datos para envió de emails
+11) Usando el query email_inv.sql, sacar las URLs de invitación (modificar la URL de la pagina)
+12) Crear una pagina en Facebook
+13) Agregar la aplicación creada a la pagina
 
-9) Modificar app1constants.php con los datos de la aplicacion 10 x 10
-	Cambiar el protocolo a https
-
-10) Modificar constantes_mail.php con los datos para envio de emails
-
-11) Usando el query email_inv.sql, sacar las urls de invitacion (modificar la url de la pagina)
-
-12) Crear una pagina en facebook
-
-13) Agregar la aplicacion creada a la pagina
-
-Importante:
-El server donde este corriendo debe tener habilitado el uso de HTTPS
-Para pruebas se puede hacer cambiando manualmente la url del browser cuando de algun error.
-
+Importante: El server donde este corriendo debe tener habilitado el uso de HTTPS Para pruebas se puede hacer cambiando manualmente la URL del browser cuando de algún error.
 
 Accesos
-=======
 
 BackOffice: ./boLogin.php
 
-Invitacion por email app1:
-invitacion_app1.html
-Reemplazos
+Invitación por email app1: invitacion_app1.html
+
+Remplazos:
 {SERVER_NAME}
 {SENDER_NAME}
 {PAGE_LINK}
 
-Notificacion ganador app1:
-winner_app1.html
-Reemplazos
+Notificación ganador app1: winner_app1.html
+
+Remplazos:
 {SERVER_NAME}
 {WINNER_NAME}
 
 
-Prueba de la aplicacion
-===========
-Para realizar la prueba de la aplicacion se deberan dar de alta usuarios de facebook, algunos de los cuales deberan
+Prueba de la aplicación
+Para realizar la prueba de la aplicación se deberán dar de alta usuarios de Facebook, algunos de los cuales deberán
 ser amigos de forma de poder enviarse invitaciones.
-Puede utilizarse el query test-addfriend.sql modificandole el email para aumentar la cantidad de amigos de un usuario.
+Puede utilizarse el query test-addfriend.sql modificándole el email para aumentar la cantidad de amigos de un usuario.
