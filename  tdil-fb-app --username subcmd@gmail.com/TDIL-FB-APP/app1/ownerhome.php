@@ -47,6 +47,17 @@ body {
 	margin-left: auto;
 	padding-left: 285px;
 	width: 350px;
+	background-image: url(../images/emailinvitarCampo.png);
+	background-repeat: no-repeat;
+	background-position: 103px 3px;
+}
+#notInvitationBlock {
+	height: 100px;
+	margin-top: 460px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 285px;
+	width: 350px;
 }
 .galletaInput{
 	background: none;
@@ -85,15 +96,17 @@ body {
 </style>
 </head>
 <body>
-<div id="invitationBlock">
 <?php if ( $email_remaining > 0 ) { ?>
+<div id="invitationBlock">
   <form action="./inviteemail.php" onSubmit="return checkEmail();">
 		<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
 	<input type="text" name="inv_email" id="inv_email" class="galletaInput">
     <input type="submit" class="okButton">
   </form>
-  <?php } ?>
 </div>
+<?php } else { ?>
+<div id="notInvitationBlock"></div>
+<?php } ?>
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
