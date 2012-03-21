@@ -33,6 +33,7 @@
 		$request_ids = $_SESSION['request_ids'];
 	}
 	$ok_to_procced = 0;
+	$groupowner_fbid = 0;
 	/* Si viene con request_id, es una invitacion de facebook*/
 	if(!empty($request_ids)) {
 		/*
