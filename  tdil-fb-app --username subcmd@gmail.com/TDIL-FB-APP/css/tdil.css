@@ -1,3 +1,4 @@
+/*
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,p,table,tr,td {
 	margin:0;
 	padding:0;
@@ -68,6 +69,51 @@ input {
 	font-size: 10px;
 	margin: 0px;
 	padding: 0px;
-	/*border:1px dashed #212021;*/
+	/*border:1px dashed #212021;*
 	border:none;
+}
+*/
+
+body {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #58595b;
+}
+h1, h2, h3, h4 {
+	color:#802444;
+}
+h2 {
+	font-size:16px;
+	font-weight:normal;
+}
+a, a:hover, a:active, a:visited {
+	color:#802444;
+	text-decoration:underline;
+}
+a:hover {
+	text-decoration:underline;
+}
+.simpleText {
+	font-size: 12px;
+}
+.remarcado {
+	color:#802444;
+	font-weight:bold;
+}
+#textContent{
+	width: 700px;
+	margin-top: 180px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+#textContent #title {
+	text-align: center;
+	margin-right: auto;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-top: 0px;
+	height: 41px;
+	width: 368px;
 }

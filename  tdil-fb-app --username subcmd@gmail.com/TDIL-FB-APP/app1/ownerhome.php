@@ -32,7 +32,7 @@
 		}
 	}
 </script>
-
+<link href="../css/tdil.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 <!--
 body {
@@ -56,11 +56,11 @@ body {
 }
 .okButton {
 	font-size: 1px;
-	color: #FFFFFF;
-	background:none;
+	color: transparent;
+	background:transparent;
 	background-image: url(../images/button_ok.png);
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center -5px;
 	height: 69px;
 	width: 69px;
 	border-top-style: none;
@@ -68,12 +68,18 @@ body {
 	border-bottom-style: none;
 	border-left-style: none;
 	margin-left: 30px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	cursor:hand;
 }
-#buttonsLinks {
+#buttonsLinks  {
 	height: 60px;
 	width: 460px;
 	margin-right: auto;
 	margin-left: auto;
+	text-align: center;
+	margin-top: 30px;
 }
 -->
 </style>
@@ -84,7 +90,7 @@ body {
   <form action="./inviteemail.php" onSubmit="return checkEmail();">
 		<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
 	<input type="text" name="inv_email" id="inv_email" class="galletaInput">
-	<input type="submit" class="okButton">
+    <input type="submit" class="okButton">
   </form>
   <?php } ?>
 </div>
@@ -137,17 +143,12 @@ body {
    }(document));
 </script>
 <div id="buttonsLinks">
-	<img src="../images/null.gif" width="460" height="60" border="0" usemap="#Map">
-  <map name="Map">
-        <area shape="rect" coords="326,29,456,52" href="groupdetails.php">
-        <area shape="rect" coords="81,29,235,50" href="javascript:sendRequest();">
-  </map>
-</div>
 <?php if ($fb_remaining > 0) { ?>
-	<a href="#" onClick="sendRequest()">Send Application Request</a><br>
+	Envi&aacute; una <a href="#" onClick="sendRequest()">invitaci&oacute;n a un amigo</a>
 <?php } else { ?>
-	Send Application Request<br>
+	Ya enviaste todas las invitaciones que pod&iacute;as
 <?php } ?>
-<a href="groupdetails.php">Detalles de mi grupo</a>
+ o consult&aacute; <a href="groupdetails.php">el detalles de tu grupo</a>
+</div>
 </body>
 </html>
