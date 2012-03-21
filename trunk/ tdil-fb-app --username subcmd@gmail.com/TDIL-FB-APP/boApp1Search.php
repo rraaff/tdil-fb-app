@@ -129,7 +129,7 @@ function doSearch() {
                                 <th width="25%">FB usuario</th>
                                 <th width="25%">FB sexo</th>
                                 <th width="25%">Email</th>
-                                <th width="25%">Inicial</th>
+                                <th width="25%">Origen</th>
                                 <th width="25%">Participo</th>
                                 <th width="25%">Fans</th>
                                 <th width="25%">Grupo</th>
@@ -145,7 +145,7 @@ function doSearch() {
                                 <th width="25%">FB usuario</th>
                                 <th width="25%">FB sexo</th>
                                 <th width="25%">Email</th>
-                                <th width="25%">Inicial</th>
+                                <th width="25%">Origen</th>
                                 <th width="25%">Participo</th>
                                 <th width="25%">Fans</th>
                                 <th width="25%">Grupo</th>
@@ -154,6 +154,12 @@ function doSearch() {
                     </table>
                 </div>
             </div>
+            <div>
+            Origen: 1 base inicial<br>
+            Origen: 2 invitado por email<br>
+            Origen: 3 invitado por facebook<br>
+            </div>
+                    
         </div>
 	</div>
 </div>

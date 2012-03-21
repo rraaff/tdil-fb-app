@@ -56,7 +56,7 @@ function printTestUsers($accounts) {
 	$html = "";
 	if(isset($accounts['data']) && count($accounts['data'])) {
 		$html .= "<table>";
-		$html .= "<tr class=\"head\"><td colspan=\"4\">Usuarios de prueba</td></tr>";
+		$html .= "<tr class=\"head\"><td colspan=\"5\">Usuarios de prueba</td></tr>";
 		$html .= "<tr class=\"head\"><td>ID</td><td>Nombre</td><td>App user</td><td>Login URL</td><td>Borrar</td></tr>";
 		foreach($accounts['data'] as $arr) {
 			$html .= "<tr>";
