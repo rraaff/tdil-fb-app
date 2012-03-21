@@ -134,9 +134,32 @@
 	unset($_SESSION['request_ids']);
 ?>
 <?php 
-/* {PABLO} Esto se muestra para que termine el proceso de union al grupo*/
 if ($ok_to_procced == 1) { 
 	$redirect = 'https://www.facebook.com/'. PAGE_NAME . '?sk=app_'. APPLICATION1_ID;
 ?>
-	Para unirte al grupo tenes que cliquear <a href="<?php echo $redirect;?>" target="_top">Aca</a>
+<html>
+<link href="../css/tdil.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(../images/cleanBase.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#textContent{
+	width: 600px;
+	margin-top: 367px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+-->
+</style>
+
+<body>
+<div id="textContent">
+	<div id="contentSuccessfull">Para unirte al grupo tenes que cliquear <a href="<?php echo $redirect;?>" target="_top">Aca</a></div>
+</div>
+</body>
+</html>
 <?php } ?>
