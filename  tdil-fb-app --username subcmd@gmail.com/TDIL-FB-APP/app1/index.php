@@ -52,6 +52,7 @@
 			$request_content = json_decode(file_get_contents("https://graph.facebook.com/$request_id?$app_token"), TRUE);
 			// An example of how to get info from the previous call
 			$request_message = $request_content['message'];
+			print_r($request_content);
 			$from_id = $request_content['from']['id'];
 			// An easier way to extract info from the data field
 			// Now that we got the $item_id and the $item_type, process them
