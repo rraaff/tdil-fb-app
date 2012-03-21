@@ -21,6 +21,7 @@
 	}
 	/* Aca tengo que sacar cosas del signed_request y del usuario logueado*/
 	$inv_email = "";
+	$action = "";
 	$signed_request = $facebook->getSignedRequest();
 	if (!$signed_request) {
 		echo "External links no permitidos";
