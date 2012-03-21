@@ -20,16 +20,16 @@
 		unset($_SESSION['app_data']);
 	}
 	if ($user == 0) {
-		if (!empty($_REQUEST['request_ids'])) {
+		if (isset($_REQUEST['request_ids'])) {
 			$_SESSION['request_ids'] = $_REQUEST['request_ids']; // meto los datos en la session y redirijo
 		}
 		include("askpermissioncanvas.php");
 		return;
-	}
-	if(empty($_REQUEST['request_ids'])) {
-		$request_ids = $_SESSION['request_ids'];
 	} else {
+	if(isset($_REQUEST['request_ids'])) {
 		$request_ids = $_REQUEST['request_ids'];
+	} else {
+		$request_ids = $_SESSION['request_ids'];
 	}
 	$ok_to_procced = 0;
 	/* Si viene con request_id, es una invitacion de facebook*/
@@ -173,4 +173,5 @@ body {
 </div>
 </body>
 </html>
-<?php } ?>
+<?php } 
+} ?>
