@@ -45,9 +45,7 @@
 		$first = 0;
 		foreach($requests as $request_id) {
 			// If we have an authenticated user, this would return a recipient specific request: <request_id>_<recipient_id>
-			if($user) {
-				$request_id = $request_id . "_{$user}";
-			}
+			$request_id = $request_id . "_{$user}";
 			// Get the request details using Graph API
 			$request_content = json_decode(file_get_contents("https://graph.facebook.com/$request_id?$app_token"), TRUE);
 			// An example of how to get info from the previous call
