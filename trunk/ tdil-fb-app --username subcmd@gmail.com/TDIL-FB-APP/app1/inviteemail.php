@@ -135,11 +135,11 @@ body {
 /* {PABLO} Esta pagina muestra el resultado de la invitacion por email*/
 if ($mail_sent) { ?>
 <div id="textContent">
-	<div id="title"><img src="../images/tituloFelicitaciones.png" alt="Mi grupo de amigos" width="245" height="41"></div>
+	<div id="title"><img src="../images/tituloFelicitaciones.png" alt="Felicitaciones" width="245" height="41"></div>
 	<div id="contentSuccessfull">Invitaciones enviadas</div>
 <?php } else { ?>
 <div id="textContent">
-	<div id="title"><img src="../images/tituloErrores.png" alt="Mi grupo de amigos" width="265" height="42"></div>
+	<div id="title"><img src="../images/tituloErrores.png" alt="Uuuuooppsss" width="265" height="42"></div>
 	<div id="contentError">No se pudo enviar el E-mail de invitaci&oacute;n</div>
 <?php } 
 $redirect = 'https://www.facebook.com/'. PAGE_NAME . '?sk=app_'. APPLICATION1_ID;
