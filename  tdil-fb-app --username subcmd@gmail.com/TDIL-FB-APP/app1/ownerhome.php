@@ -38,7 +38,7 @@
 body {
 	background-image: url(../images/ownerhome.jpg);
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center top;
 }
 #invitationBlock {
 	height: 100px;
