@@ -79,7 +79,8 @@
 		$num_rows = mysql_num_rows($result);
 		if ($num_rows > 0) {
 			// el usuario es group owner
-			include("ownerhome.php");
+			$errorMessage = "Ya formás parte de un grupo";
+			include("showerror.php");
 			closeConnection($connection);
 			return;
 		}
@@ -95,7 +96,8 @@
 			$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$owner = mysql_fetch_array( $result );
 			$group_owner_name = $owner['fbname'];
-			include("memberhome.php");
+			$errorMessage = "Ya formás parte de un grupo";
+			include("showerror.php");
 			closeConnection($connection);
 			return;
 		} 
