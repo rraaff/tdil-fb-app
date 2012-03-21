@@ -99,13 +99,50 @@
 	} 
 	closeConnection($connection);
 ?>
+<html>
+<link href="../css/tdil.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(../images/cleanBase.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#textContent{
+	width: 700px;
+	margin-top: 180px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+#textContent #title {
+	text-align: center;
+	margin-right: auto;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-top: 0px;
+	height: 41px;
+	width: 368px;
+}
+#contentSuccessfull {}
+#contentError {
+
+}
+-->
+</style>
+<body>
 <?php 
 /* {PABLO} Esta pagina muestra el resultado de la invitacion por email*/
 if ($mail_sent) { ?>
-Invitaciones enviadas
+<div id="textContent">
+	<div id="title"><img src="../images/tituloFelicitaciones.png" alt="Mi grupo de amigos" width="245" height="41"></div>
+	<div id="contentSuccessfull">Invitaciones enviadas</div>
 <?php } else { ?>
-No se pudo enviar el mail
+<div id="textContent">
+	<div id="title"><img src="../images/tituloErrores.png" alt="Mi grupo de amigos" width="265" height="42"></div>
+	<div id="contentError">No se pudo enviar el E-mail de invitaci&oacute;n</div>
 <?php } 
 $redirect = 'https://www.facebook.com/'. PAGE_NAME . '?sk=app_'. APPLICATION1_ID;
 ?>
-<a href="<?php echo $redirect;?>" target="_top">Volver a la home</a>
+	<div align="center" style="margin-top:25px;"><a href="<?php echo $redirect;?>" target="_top">Volver a la p&aacute;gina de inicio de la aplicaci&oacute;n</a></div>
+</div>
