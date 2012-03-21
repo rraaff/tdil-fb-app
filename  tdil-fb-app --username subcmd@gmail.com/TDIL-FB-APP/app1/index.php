@@ -56,6 +56,8 @@
 			// An easier way to extract info from the data field
 			// Now that we got the $item_id and the $item_type, process them
 			// Or if the recevier is not yet a member, encourage him to claims his item (install your application)!
+			echo $from_id;
+			echo '<br>';
 			if($user) {
 				/*
 				 * When all is done, delete the requests because Facebook will not do it for you!
@@ -104,7 +106,7 @@
 			return;
 		} 
 		
-		$groupowner_fbid = quote_smart($groupowner_fbid, $connection);
+		//$groupowner_fbid = quote_smart($groupowner_fbid, $connection);
 		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $groupowner_fbid AND origin = 1";
 		$group_owner = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$num_rows = mysql_num_rows($group_owner);
