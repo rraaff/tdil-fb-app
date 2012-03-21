@@ -17,22 +17,25 @@
           target: make_pakage              
          ================================= -->
     <target name="make_package" description="description">
-    	<delete file="lasmoras.zip" failonerror="false"></delete>
+    	<delete file="fb_mgm.zip" failonerror="false"></delete>
     	<delete dir="tmp" failonerror="false"></delete>
-    	<mkdir dir="tmp/LasMoras"/>
+    	<mkdir dir="tmp/FB"/>
     	<copy todir="tmp" file="Instrucciones.txt"></copy>
     	<copy todir="tmp" file="database.sql"></copy>
-    	<copy todir="tmp" file="lasmoras.sql"></copy>
-    	<copy todir="tmp/LasMoras">
+    	<copy todir="tmp" file="fb_mgm.sql"></copy>
+    	<copy todir="tmp" file="create_bo_users.sql"></copy>
+    	<copy todir="tmp" file="initialize_users.sql"></copy>
+    	<copy todir="tmp/FB">
     		<fileset dir="../" id="id">
     			<exclude name="**/.settings/**"/>
 			    <exclude name="**/resources/**"/>
+    			<exclude name="**/testing/**"/>
 			   	<exclude name="**/deploy.sh"/>
     			<exclude name="**/.project"/>
     			<exclude name="**/.buildpath"/>
 			</fileset>
     	</copy>
-        <zip destfile="lasmoras.zip" basedir="tmp">		
+        <zip destfile="fb_mgm.zip" basedir="tmp">		
 		</zip>
     	<delete dir="tmp" failonerror="false"></delete>
     </target>
