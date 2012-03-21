@@ -9,7 +9,7 @@ body {
 	overflow:hidden;
 }
 #textContent{
-	width: 700px;
+	width: 500px;
 	margin-top: 180px;
 	margin-right: auto;
 	margin-left: auto;
