@@ -65,7 +65,8 @@
 			$user_app1 = mysql_fetch_array($result);
 			$user_app1id = $user_app1["id"];
 			if ($user_app1['participation'] == 1 || $user_app1['origin'] == 1) {
-				include("friendismember.php");
+				$errorMessage = "Esta persona ya está unida a un grupo";
+				include("showerror.php");
 				closeConnection($connection);
 				return;
 			} else {
