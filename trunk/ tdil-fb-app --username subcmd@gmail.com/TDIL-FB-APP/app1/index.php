@@ -107,7 +107,7 @@
 			return;
 		} 
 		$tojoin = quote_smart($tojoin, $connection);
-		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = (SELECT groupowner_fbid FROM FB_INV_APP1 WHERE request_id = $tojoin) AND origin = 1";
+		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = (SELECT groupowner_fbid FROM FB_INV_APP1 WHERE request_id = $tojoin AND groupmember_fbid = $fbid) AND origin = 1";
 		$group_owner = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$num_rows = mysql_num_rows($group_owner);
 		if ($num_rows > 0) {
