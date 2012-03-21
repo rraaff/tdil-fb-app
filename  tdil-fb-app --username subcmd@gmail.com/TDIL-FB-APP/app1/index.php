@@ -10,7 +10,7 @@
 			'appId'  => APPLICATION1_ID,
 			'secret' => APPLICATION1_SECRET,
 	));
-	$app_token = get_app_access(APPLICATION1_ID,APPLICATION1_SECRET);
+	
 	// Get User ID
 	$user = $facebook->getUser();
 	if(!isset($_SESSION)) {
@@ -26,6 +26,7 @@
 		include("askpermissioncanvas.php");
 		return;
 	} else {
+		$app_token = get_app_access(APPLICATION1_ID,APPLICATION1_SECRET);
 	if(isset($_REQUEST['request_ids'])) {
 		$request_ids = $_REQUEST['request_ids'];
 	} else {
