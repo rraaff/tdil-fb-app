@@ -33,7 +33,6 @@
 		$request_ids = $_SESSION['request_ids'];
 	}
 	$ok_to_procced = 0;
-	$groupowner_fbid = 0;
 	/* Si viene con request_id, es una invitacion de facebook*/
 	if(!empty($request_ids)) {
 		/*
@@ -43,22 +42,24 @@
 		// We may have more than one request, so it's better to loop
 		$requests = explode(',',$request_ids);
 		$first = 0;
+		$tojoin = 0;
 		foreach($requests as $request_id) {
 			// If we have an authenticated user, this would return a recipient specific request: <request_id>_<recipient_id>
-			$request_id = $request_id . '_' . $user;
-			echo $request_id;
-			echo '<br>';
+			
+			if ($tojoin == 0) {
+				$tojoin = $request_id;
+			}
+			if($user) {
+				$request_id = $request_id . "_{$user}";
+			}
 			// Get the request details using Graph API
 			$request_content = json_decode(file_get_contents("https://graph.facebook.com/$request_id?$app_token"), TRUE);
 			// An example of how to get info from the previous call
 			$request_message = $request_content['message'];
-			print_r($request_content);
 			$from_id = $request_content['from']['id'];
 			// An easier way to extract info from the data field
 			// Now that we got the $item_id and the $item_type, process them
 			// Or if the recevier is not yet a member, encourage him to claims his item (install your application)!
-			echo $from_id;
-			echo '<br>';
 			if($user) {
 				/*
 				 * When all is done, delete the requests because Facebook will not do it for you!
@@ -71,7 +72,6 @@
 			/* Lo uno solo al primer grupo*/
 			if ($first == 0) {
 				$first = 1;
-				$groupowner_fbid = $from_id; /*Tomo el grupo al cual se quiere unir el usuario */
 			}
 		}
 		// Esta todo ok, preparo la data para la app pendiente
@@ -106,9 +106,8 @@
 			closeConnection($connection);
 			return;
 		} 
-		
-		//$groupowner_fbid = quote_smart($groupowner_fbid, $connection);
-		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $groupowner_fbid AND origin = 1";
+		$tojoin = quote_smart($tojoin, $connection);
+		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = (SELECT groupowner_fbid FROM FB_INV_APP1 WHERE request_id = $tojoin) AND origin = 1";
 		$group_owner = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$num_rows = mysql_num_rows($group_owner);
 		if ($num_rows > 0) {
@@ -135,7 +134,6 @@
 				return;
 			}
 		} else {
-			echo $SQL;
 			$errorMessage = "Grupo invalido";
 			include("showerrorcanvas.php");
 			closeConnection($connection);
