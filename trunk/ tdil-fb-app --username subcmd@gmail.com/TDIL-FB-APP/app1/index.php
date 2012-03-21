@@ -122,14 +122,23 @@
 				$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 				$ok_to_procced = 1;
 			} else {
-				echo "Usuario inexistente";
+				$errorMessage = "Usuario inexistente";
+				include("showerror.php");
+				closeConnection($connection);
+				return;
 			}
 		} else {
-			echo "Grupo invalido";
+			$errorMessage = "Grupo invalido";
+			include("showerror.php");
+			closeConnection($connection);
+			return;
 		}
 		closeConnection($connection);
 	} else {
-		echo "La peticion ya expiro";
+		$errorMessage = "La peticion ya expiro";
+		include("showerror.php");
+		closeConnection($connection);
+		return;
 	}
 	unset($_SESSION['request_ids']);
 ?>

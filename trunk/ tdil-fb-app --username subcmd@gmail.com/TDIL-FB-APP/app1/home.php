@@ -202,7 +202,8 @@
 				return;
 				/* Se formo un grupo END */
 			} else {
-				echo "No tiene permisos para formar un grupo";
+				$errorMessage = "No tiene permisos para formar un grupo";
+				include("showerror.php");
 				closeConnection($connection);
 				return;
 			}
@@ -268,12 +269,14 @@
 						return;
 						/* Se formo un grupo END */
 					} else {
-						echo "El usuario no existe";
+						$errorMessage = "El usuario no existe";
+						include("showerror.php");
 						closeConnection($connection);
 						return;
 					}
 				} else {
-					echo "El grupo no existe";
+					$errorMessage = "El grupo no existe";
+					include("showerror.php");
 					closeConnection($connection);
 					return;
 				}
