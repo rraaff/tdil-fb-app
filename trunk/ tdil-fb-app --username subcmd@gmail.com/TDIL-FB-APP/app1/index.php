@@ -80,7 +80,7 @@
 		if ($num_rows > 0) {
 			// el usuario es group owner
 			$errorMessage = "Ya formás parte de un grupo";
-			include("showerror.php");
+			include("showerrorcanvas.php");
 			closeConnection($connection);
 			return;
 		}
@@ -97,7 +97,7 @@
 			$owner = mysql_fetch_array( $result );
 			$group_owner_name = $owner['fbname'];
 			$errorMessage = "Ya formás parte de un grupo";
-			include("showerror.php");
+			include("showerrorcanvas.php");
 			closeConnection($connection);
 			return;
 		} 
@@ -125,20 +125,20 @@
 				$ok_to_procced = 1;
 			} else {
 				$errorMessage = "Usuario inexistente";
-				include("showerror.php");
+				include("showerrorcanvas.php");
 				closeConnection($connection);
 				return;
 			}
 		} else {
 			$errorMessage = "Grupo invalido";
-			include("showerror.php");
+			include("showerrorcanvas.php");
 			closeConnection($connection);
 			return;
 		}
 		closeConnection($connection);
 	} else {
 		$errorMessage = "La peticion ya expiro";
-		include("showerror.php");
+		include("showerrorcanvas.php");
 		closeConnection($connection);
 		return;
 	}
