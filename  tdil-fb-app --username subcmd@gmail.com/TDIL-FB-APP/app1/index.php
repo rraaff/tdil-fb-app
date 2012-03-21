@@ -131,6 +131,7 @@
 				return;
 			}
 		} else {
+			echo $SQL;
 			$errorMessage = "Grupo invalido";
 			include("showerrorcanvas.php");
 			closeConnection($connection);
