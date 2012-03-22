@@ -14,6 +14,14 @@
     </ul>
   </li>
   <li>
+    <a href="#">App de a 2</a>
+    <ul>
+      <li><a href="boApp2Config.php">Configuracion de la applicacion</a></li>
+      <li><a href="boApp2Stats.php">Estado de la applicacion</a></li>
+      <li><a href="boApp2Search.php">Consultas</a></li>
+    </ul>
+  </li>
+  <li>
     <a href="boLogout.php">Salir</a>
   </li>
 </ul>
