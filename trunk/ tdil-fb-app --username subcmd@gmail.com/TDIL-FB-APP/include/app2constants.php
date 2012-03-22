@@ -1,8 +1,8 @@
 <?php 
 	Facebook::$CURL_OPTS[CURLOPT_CAINFO] = '/var/www/TDIL-FB-APP/include/fb_ca_chain_bundle.crt'; // path al certificado
 	
-	define('APPLICATION2_ID','292861170783253'); // id de la app
-	define('APPLICATION2_SECRET','822b60809737ff91e6142f924e85e9d5'); // secret id de la app
+	define('APPLICATION2_ID','373863869313904'); // id de la app
+	define('APPLICATION2_SECRET','b288c31fd46a3252bc96c077505008bc'); // secret id de la app
 	$PAGEID = '';
 	define('PAGE_NAME','tdil.test.page'); // nombre de la pagina en la cual la app esta instalada
 	define('APPLICATION2_URL','http://localhost/TDIL-FB-APP/app2'); // Url de la aplicacion, debe ser https
