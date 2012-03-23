@@ -17,6 +17,10 @@ CREATE TABLE `USER_APP2` (
   `participation` INT NULL ,
   `participation_code` VARCHAR(100) NULL ,
   `invitation_code` VARCHAR(100) NULL ,
+  `firstname` VARCHAR(4000) NULL ,
+  `lastname` VARCHAR(4000) NULL ,
+  `address` VARCHAR(4000) NULL ,
+  `phone` VARCHAR(50) NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fbidasc` (`fbid` ASC) );
   

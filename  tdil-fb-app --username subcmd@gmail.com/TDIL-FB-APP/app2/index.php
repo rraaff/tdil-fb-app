@@ -1,14 +1,14 @@
-<?php // TODO
+<?php
 /* Esta pagina se encarga de procesar las aceptaciones de app request */
 	include("../include/headers.php");
 	require("../include/funcionesDB.php");
 	
 	require '../include/facebook.php';
-	include("../include/app1constants.php"); 
+	include("../include/app2constants.php"); 
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
-			'appId'  => APPLICATION1_ID,
-			'secret' => APPLICATION1_SECRET,
+			'appId'  => APPLICATION2_ID,
+			'secret' => APPLICATION2_SECRET,
 	));
 	
 	// Get User ID
@@ -26,7 +26,7 @@
 		include("askpermissioncanvas.php");
 		return;
 	} else {
-		$app_token = get_app_access(APPLICATION1_ID,APPLICATION1_SECRET);
+		$app_token = get_app_access(APPLICATION2_ID,APPLICATION2_SECRET);
 	if(isset($_REQUEST['request_ids'])) {
 		$request_ids = $_REQUEST['request_ids'];
 	} else {
@@ -79,40 +79,33 @@
 		$connection = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die ("Problemas en la conexion");
 		mysql_select_db(DB_NAME,$connection);
 		
-		$SQL = "SELECT * FROM GROUP_APP1 WHERE groupowner_fbid = $user";
+		// Si ya se unio a un amigo, error
+		$SQL = "SELECT * FROM GROUP_APP2 WHERE groupmember_fbid = $user";
 		$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$num_rows = mysql_num_rows($result);
 		if ($num_rows > 0) {
-			// el usuario es group owner
-			$errorMessage = "Ya formás parte de un grupo";
+			$errorMessage = "Ya te uniste a un amigo";
 			include("showerrorcanvas.php");
 			closeConnection($connection);
 			return;
 		}
-		$SQL = "SELECT * FROM GROUP_APP1 WHERE groupmember_fbid = $fbid";
+		$tojoin = quote_smart($tojoin, $connection);
+		$SQL = "SELECT * FROM GROUP_APP2 WHERE groupowner_fbid = (SELECT groupowner_fbid FROM FB_INV_APP2 WHERE request_id = $tojoin AND groupmember_fbid = $fbid)";
 		$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$num_rows = mysql_num_rows($result);
 		if ($num_rows > 0) {
-			// el usuario es group member
-			$friend_group = mysql_fetch_array( $result );
-			$friend_groupid = $friend_group['groupowner_fbid'];
-			$friend_groupid = quote_smart($friend_groupid, $connection);
-			$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $friend_groupid";
-			$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
-			$owner = mysql_fetch_array( $result );
-			$group_owner_name = $owner['fbname'];
-			$errorMessage = "Ya formás parte de un grupo";
+			$errorMessage = "Tu amigo ya tiene otro amigo";
 			include("showerrorcanvas.php");
 			closeConnection($connection);
 			return;
-		} 
-		$tojoin = quote_smart($tojoin, $connection);
-		$SQL = "SELECT * FROM USER_APP1 WHERE fbid = (SELECT groupowner_fbid FROM FB_INV_APP1 WHERE request_id = $tojoin AND groupmember_fbid = $fbid) AND origin = 1";
+		}
+		
+		$SQL = "SELECT * FROM USER_APP2 WHERE fbid = (SELECT groupowner_fbid FROM FB_INV_APP2 WHERE request_id = $tojoin AND groupmember_fbid = $fbid)";
 		$group_owner = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$num_rows = mysql_num_rows($group_owner);
 		if ($num_rows > 0) {
 			$user_fbid = quote_smart($user, $connection);
-			$SQL = "SELECT * FROM USER_APP1 WHERE fbid = $user_fbid AND origin != 1";
+			$SQL = "SELECT * FROM USER_APP2 WHERE fbid = $user_fbid";
 			$group_member = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$num_rows = mysql_num_rows($group_member);
 			if ($num_rows == 1) {
@@ -121,10 +114,10 @@
 				$group_memberrow = mysql_fetch_array($group_member);
 				$iduser = $group_memberrow['id'];
 				// todo ok, registro la accion pendiente y muestro el link a tab para que termine de unirse al grupo
-				$SQL = "DELETE FROM ACTION_APP1 WHERE fbid = $user_fbid";
+				$SQL = "DELETE FROM ACTION_APP2 WHERE fbid = $user_fbid";
 				$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 				// inserto la ultima
-				$SQL = "INSERT INTO ACTION_APP1(fbid, userid, action, dataid) VALUES($user_fbid, $iduser, 'join_group',$idgroup)";
+				$SQL = "INSERT INTO ACTION_APP2(fbid, userid, action, dataid) VALUES($user_fbid, $iduser, 'join_group',$idgroup)";
 				$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 				$ok_to_procced = 1;
 			} else {
@@ -150,7 +143,7 @@
 ?>
 <?php 
 if ($ok_to_procced == 1) { 
-	$redirect = 'https://www.facebook.com/'. PAGE_NAME . '?sk=app_'. APPLICATION1_ID;
+	$redirect = 'https://www.facebook.com/'. PAGE_NAME . '?sk=app_'. APPLICATION2_ID;
 ?>
 <html>
 <link href="../css/tdil.css" rel="stylesheet" type="text/css">
