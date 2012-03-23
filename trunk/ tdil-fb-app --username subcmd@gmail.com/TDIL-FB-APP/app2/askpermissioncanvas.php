@@ -14,7 +14,7 @@ body {
 <body>
 <?php 
 $url = $facebook->getLoginUrl(array(
-		'redirect_uri' => APPLICATION1_URL . '/logincallbackcanvas.php'
+		'redirect_uri' => APPLICATION2_URL . '/logincallbackcanvas.php'
 ));
 echo '<a href="' . $url . '" target="_top"><img src="../images/null.gif" width="740" height="450" border="0"></a>';
 ?>

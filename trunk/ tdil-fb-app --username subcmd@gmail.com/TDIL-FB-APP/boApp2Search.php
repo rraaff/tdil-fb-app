@@ -75,11 +75,11 @@ function doSearch() {
             	<h2>Busquedas</h2>
                 <table width="350" cellspacing="10" cellpadding="0" align="center" border="0">
                     <tr>	
-                        <td>Fans de la pagina:</td>
+                        <td>Completo datos:</td>
                         <td><select id="sParticipation">
                                 <option value="-1">Todos</option>
-                                <option value="1">Fans</option>
-                                <option value="0">No fans</option>
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
                             </select>
                         </td>
                     </tr>
@@ -96,8 +96,8 @@ function doSearch() {
                         <td>Origen de pareja:</td>
                         <td><select id="sCoupleOrigin">
                                 <option value="-1">Todos</option>
-                                <option value="1">Origen</option>
-                                <option value="0">No origen</option>
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
                             </select>
                         </td>
                     </tr>
@@ -105,8 +105,8 @@ function doSearch() {
                         <td>Destino de pareja:</td>
                         <td><select id="sCoupleDest">
                                 <option value="-1">Todos</option>
-                                <option value="1">Destino</option>
-                                <option value="0">No destino</option>
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
                             </select>
                         </td>
                     </tr>
@@ -124,10 +124,11 @@ function doSearch() {
                             <tr>
                                 <th width="5%">FB id</th>
                                 <th width="25%">FB nombre</th>
-                                <th width="25%">FB usuario</th>
+                                <th width="25%">Nombre</th>
+                                <th width="25%">Apellido</th>
                                 <th width="25%">FB sexo</th>
-                                <th width="25%">Origen</th>
-                                <th width="25%">Destino</th>
+                                <th width="25%">Direccion</th>
+                                <th width="25%">Telefono</th>
                                 <th width="25%">Amigo al que se unio</th>
                                 <th width="25%">Amigo que se unio</th>
                             </tr>
@@ -139,10 +140,11 @@ function doSearch() {
                             <tr>
                                 <th width="5%">FB id</th>
                                 <th width="25%">FB nombre</th>
-                                <th width="25%">FB usuario</th>
+                                <th width="25%">Nombre</th>
+                                <th width="25%">Apellido</th>
                                 <th width="25%">FB sexo</th>
-                                <th width="25%">Origen</th>
-                                <th width="25%">Destino</th>
+                                <th width="25%">Direccion</th>
+                                <th width="25%">Telefono</th>
                                 <th width="25%">Amigo al que se unio</th>
                                 <th width="25%">Amigo que se unio</th>
                             </tr>
