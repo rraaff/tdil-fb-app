@@ -27,6 +27,16 @@
 		return;
 	}
 	
+	$SQL = "SELECT * FROM GROUP_APP2 WHERE groupowner_fbid = (SELECT fbid FROM USER_APP2 WHERE inv_email = $inv_email) AND groupmember_fbid = $fbid";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$num_rows = mysql_num_rows($result);
+	if ($num_rows > 0) {
+		$errorMessage = "Ya estas en pareja con ese amigo";
+		include("showerrorcanvas.php");
+		closeConnection($connection);
+		return;
+	}
+	
 	$SQL = "SELECT * FROM USER_APP2 WHERE fbid = $fbid";
 	$ownerid = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 	$num_rows = mysql_num_rows($ownerid);
@@ -47,11 +57,11 @@
 			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			
 			$mail = new PHPMailer(); // defaults to using php "mail()"
-			$mail->From       = EMAIL_FROM_APP1;
-			$mail->FromName   = EMAIL_FROM_NAME_APP1;
+			$mail->From       = EMAIL_FROM_APP2;
+			$mail->FromName   = EMAIL_FROM_NAME_APP2;
 			$mail->FromName = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->FromName);
 			//Headers
-			$mail->Subject    = APP1_SUMATE_SUBJECT;
+			$mail->Subject    = APP2_SUMATE_SUBJECT;
 			$mail->Subject = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->Subject);
 			$mail->AltBody    = BODY_ALT;
 			$body             = $mail->getFile('../invitacion_app2.html');
@@ -75,11 +85,11 @@
 			$SQL = "INSERT INTO EMAIL_INV_APP2 (groupowner_id,groupmember_id,followed, completed, creation_date) VALUES($groupownerid,$user_app1id,0,0,NOW())";
 			$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$mail = new PHPMailer(); // defaults to using php "mail()"
-			$mail->From       = EMAIL_FROM_APP1;
-			$mail->FromName   = EMAIL_FROM_NAME_APP1;
+			$mail->From       = EMAIL_FROM_APP2;
+			$mail->FromName   = EMAIL_FROM_NAME_APP2;
 			$mail->FromName = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->FromName);
 			//Headers
-			$mail->Subject    = APP1_SUMATE_SUBJECT;
+			$mail->Subject    = APP2_SUMATE_SUBJECT;
 			$mail->Subject = str_replace('{SENDER_NAME}', $groupownerrow["fbname"], $mail->Subject);
 			$mail->AltBody    = BODY_ALT;
 			$body             = $mail->getFile('../invitacion_app2.html');

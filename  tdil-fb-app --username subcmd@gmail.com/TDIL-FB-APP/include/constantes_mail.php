@@ -7,6 +7,11 @@
 	define('APP1_SUMATE_SUBJECT','Sumate a mi grupo'); // subject para la invitacion de un owner a otro usuarios
 	define('APP1_WINNER_SUBJECT','Ganaste'); // mail de ganador (ojo, quizas este circuito habrian que eliminarlo)
 	
+	define('EMAIL_FROM_APP2','mgodoy@mgodoy.com'); // email from para las invitaciones
+	define('EMAIL_FROM_NAME_APP2','Arlistan'); // name del email from para las invitaciones
+	
+	define('APP2_SUMATE_SUBJECT','Unite'); // subject para la invitacion de un owner a otro usuarios
+	
 	define('BODY_ALT','Para ver correctamente este email usar un visor html.');
 	
 ?>

@@ -90,6 +90,16 @@
 			return;
 		}
 		$tojoin = quote_smart($tojoin, $connection);
+		$SQL = "SELECT * FROM GROUP_APP2 WHERE groupowner_fbid = $user AND groupmember_fbid = (SELECT groupowner_fbid FROM FB_INV_APP2 WHERE request_id = $tojoin AND groupmember_fbid = $fbid)";
+		$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+		$num_rows = mysql_num_rows($result);
+		if ($num_rows > 0) {
+			$errorMessage = "Ya estas en pareja con ese amigo";
+			include("showerrorcanvas.php");
+			closeConnection($connection);
+			return;
+		}
+		
 		$SQL = "SELECT * FROM GROUP_APP2 WHERE groupowner_fbid = (SELECT groupowner_fbid FROM FB_INV_APP2 WHERE request_id = $tojoin AND groupmember_fbid = $fbid)";
 		$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 		$num_rows = mysql_num_rows($result);

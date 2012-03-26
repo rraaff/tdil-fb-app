@@ -62,13 +62,13 @@ if ($savingData == 0 && empty($signed_request['page']['liked'])) {
 		if (strpos($testuser['name'], 'Tester')) {
 			$fan = 1;
 		} else {
-			$_SESSION['app_data'] = $app_data; // meto los datos en la session y redirijo
+			$_SESSION['app2_data'] = $app_data; // meto los datos en la session y redirijo
 			$fan = 0;
 			include("onlyforfans.php");
 			return;
 		}
 	} else {
-		$_SESSION['app_data'] = $app_data; // meto los datos en la session y redirijo
+		$_SESSION['app2_data'] = $app_data; // meto los datos en la session y redirijo
 		$fan = 0;
 		include("onlyforfans.php");
 		return;
@@ -120,10 +120,20 @@ if ($savingData) {
 	$lastname = quote_smart($_POST['lastname'], $connection);
 	$address = quote_smart($_POST['address'], $connection);
 	$phone = quote_smart($_POST['phone'], $connection);
-	// TODO si existe update, sino insert, solo si se acepta cambiar datos luego de haberlos ingresado !!!!!!!!!!!
-	$SQL = "INSERT INTO USER_APP2 (fbid,fbname, fbusername, fbgender, origin, participation,firstname,lastname,address,phone) 
-	VALUES($fbid,$fbname,$fbusername,$fbgender,1,1, $firstname,$lastname,$address,$phone)"; // 3 is fb invitation
-	$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$SQL = "SELECT * FROM USER_APP2 WHERE fbid = $fbid";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$num_rows = mysql_num_rows($result);
+	if ($num_rows > 0) {
+		// si existia, lo actualizo
+		$SQL = "UPDATE USER_APP2 SET fbname = $fbname, fbusername = $fbusername, fbgender = $fbgender, 
+		participation = 1,firstname = $firstname,lastname = $lastname,address = $address,phone = $phone where fbid = $fbid";
+		$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	} else {
+		// si no existia, lo inserto
+		$SQL = "INSERT INTO USER_APP2 (fbid,fbname, fbusername, fbgender, origin, participation,firstname,lastname,address,phone) 
+		VALUES($fbid,$fbname,$fbusername,$fbgender,1,1, $firstname,$lastname,$address,$phone)"; // 3 is fb invitation
+		$result = mysql_query($SQL,$connection) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	}
 }
 
 $hasContactData = 0;
@@ -180,7 +190,7 @@ if ($isFriend == 0) {
 			$groupowner_fbid = $idgrouprow["fbid"];
 			$group_owner_name = $idgrouprow["fbname"];
 			$iduser = quote_smart($iduser, $connection);
-			$SQL = "SELECT * FROM USER_APP2 WHERE id = $iduser AND origin != 1";
+			$SQL = "SELECT * FROM USER_APP2 WHERE id = $iduser";
 			$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 			$num_rows = mysql_num_rows($result);
 			if ($num_rows > 0) {
@@ -221,6 +231,14 @@ if (!$hasFriend && $hasContactData) {
 	while ( $aRow = mysql_fetch_array( $result ) ) {
 		$excluded = $excluded . $aRow['groupmember_fbid'] . ',';
 	}
+	$SQL = "SELECT groupowner_fbid FROM GROUP_APP2 WHERE groupmember_fbid = $fbid";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$num_rows = mysql_num_rows($result);
+	if ($num_rows > 0) {
+		$recommender = mysql_fetch_array($result);
+		$excluded = $excluded . $recommender['groupowner_fbid'] . ',';
+	}
+	
 	$excluded =  substr($excluded, 0 , strlen($excluded)-1);
 	
 	$SQL = "SELECT (select fb_daily_quota FROM CONFIG_APP2) - COUNT(*) remaining FROM FB_INV_APP2 WHERE groupowner_fbid = $fbid AND creation_date >= CURDATE()";
@@ -241,6 +259,7 @@ closeConnection($connection);
 <script type='text/javascript' src='../js/jquery-1.7.min.js'></script>
 
 <script>
+
 	function checkEmail() {
 		var email = document.getElementById('inv_email');
 		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -255,14 +274,14 @@ closeConnection($connection);
 </head>
 <body>
 <?php if ($hasFriend) { ?>
-	Te vamos a manda el MMGG a tu domicilio
+	Te vamos a mandar la MMGG a tu domicilio
 <?php } else { ?>
 	<?php if ($hasContactData == 0) { ?>
 		<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-		Nombre: <input type="text" name="firstname"><br>
-		Apellido: <input type="text" name="lastname"><br>
-		Direccion: <input type="text" name="address"><br>
-		Telefono: <input type="text" name="phone"><br>
+		Nombre: <input type="text" name="firstname" id="firstname"><br>
+		Apellido: <input type="text" name="lastname" id="lastname"><br>
+		Direccion: <input type="text" name="address" id="address"><br>
+		Telefono: <input type="text" name="phone" id="phone"><br>
 		<input type="hidden" name="savecontactdata" value="true"><br>
 		<input type="submit" value="Grabar datos">
 		No tenes datos de contacto, para poder invitar a un amigo tenes que dejarlos primero
