@@ -145,6 +145,7 @@ $result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . 
 $num_rows = mysql_num_rows($result);
 if ($num_rows > 0) {
 	$hasContactData = 1;
+	$contactData = mysql_fetch_array($result);
 }
 
 // me fio si tiene amigo unido
@@ -259,6 +260,26 @@ closeConnection($connection);
 <script type='text/javascript' src='../js/jquery-1.7.min.js'></script>
 
 <script>
+	function checkContactData() {
+		var objdiv = document.getElementById("errmessage");
+		if (document.getElementById("firstname").value == "") {
+			objdiv.innerHTML = "Debe ingresar el nombre";
+			return false;
+		}
+		if (document.getElementById("lastname").value == "") {
+			objdiv.innerHTML = "Debe ingresar el apellido";
+			return false;
+		}
+		if (document.getElementById("address").value == "") {
+			objdiv.innerHTML = "Debe ingresar la direccion";
+			return false;
+		}
+		if (document.getElementById("phone").value == "") {
+			objdiv.innerHTML = "Debe ingresar el telefono";
+			return false;
+		}
+		return true;
+	}
 
 	function checkEmail() {
 		var email = document.getElementById('inv_email');
@@ -277,7 +298,8 @@ closeConnection($connection);
 	Te vamos a mandar la MMGG a tu domicilio
 <?php } else { ?>
 	<?php if ($hasContactData == 0) { ?>
-		<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+		<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" onSubmit="return checkContactData();">
+		<div id="errmessage"></div>
 		Nombre: <input type="text" name="firstname" id="firstname"><br>
 		Apellido: <input type="text" name="lastname" id="lastname"><br>
 		Direccion: <input type="text" name="address" id="address"><br>
@@ -288,6 +310,15 @@ closeConnection($connection);
 		Esto hace submit a esta misma pagina, primero debe grabar y sigue.
 		</form>
 	<?php } else { ?>
+		<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" onSubmit="return checkContactData();">
+		<div id="errmessage"></div>
+		Nombre: <input type="text" name="firstname" id="firstname" value="<?php echo $contactData['firstname'];?>"><br>
+		Apellido: <input type="text" name="lastname" id="lastname" value="<?php echo $contactData['lastname'];?>"><br>
+		Direccion: <input type="text" name="address" id="address" value="<?php echo $contactData['address'];?>"><br>
+		Telefono: <input type="text" name="phone" id="phone" value="<?php echo $contactData['phone'];?>"><br>
+		<input type="hidden" name="savecontactdata" value="true"><br>
+		<input type="submit" value="Grabar datos">
+		</form>
 		<body>
 <?php if ( $email_remaining > 0 ) { ?>
 <div id="invitationBlock">
