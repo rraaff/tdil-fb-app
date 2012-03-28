@@ -6,6 +6,7 @@ body {
 	background-image: url(../images/cleanBase.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
+	overflow:hidden !important;
 }
 #portaTable {
 	background-image: url(../images/headerTablas.jpg);

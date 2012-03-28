@@ -7,7 +7,7 @@ body {
 	background-image: url(../images/canvasBG.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
-	overflow:hidden;
+	overflow:hidden !important;
 }
 #textContent{
 	width: 500px;

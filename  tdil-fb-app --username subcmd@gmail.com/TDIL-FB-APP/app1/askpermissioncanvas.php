@@ -7,7 +7,7 @@ body {
 	background-image: url(../images/askpermisionCanvas.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
-	overflow:hidden;
+	overflow:hidden !important;
 }
 </style>
 </head>
