@@ -45,7 +45,7 @@ h3 {
 #content #promoTitle {
 	text-align: center;
 }
-input[type="button"] {
+input[type="button"],input[type="submit"] {
 	height: 30px;
 	width: 80px;
 }
