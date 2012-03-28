@@ -41,7 +41,7 @@
 		include("askpermission.php");
 		return;
 	}
-	$fbid = $signed_request['user_id'];
+	$fbid = $user;
 	$page_id = $signed_request['page']['id']; /*TODO Limitar a una pagina cuanto este productivo*/
 	//if ($page_id != $PAGEID) {
 	//	die("No allowed");
