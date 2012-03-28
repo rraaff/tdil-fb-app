@@ -47,13 +47,13 @@
 <body>
 <div id="content">
 	<div id="header"></div>
-	<div id="promoTitle"><h1>Bienvenido al BackOffice de la promoci&oacute;n <span class="remarcado">ARLISTAN 10 + 10 = 17.</span></h1></div>
+	<div id="promoTitle"><h1>Bienvenido al BackOffice de la promoci&oacute;n <span class="remarcado">Degustaci&oacute;n exclusiva.</span></h1></div>
   <FORM NAME ="form1" METHOD ="POST" ACTION ="boLogin.php">
     <div id="login">
       <div id="field1">Usuario: <INPUT TYPE = 'TEXT' Name ='usuario'  value="" maxlength="20"></div>
         <div id="field2">Clave: <input type = 'password' name ='password'  value="" maxlength="20" AUTOCOMPLETE="off"></div>
         <div id="errorMessage"><span class="remarcado"><?PHP print $errorMessage;?></span></div>
-        <div id="buttonAreas"><input type="submit" name="Submit1" value="Ingresar" class="ingresarButton"></div>
+        <div id="buttonAreas"><input type="submit" name="Submit1" value="Ingresar"></div>
     </div>
     </FORM>
 </div>

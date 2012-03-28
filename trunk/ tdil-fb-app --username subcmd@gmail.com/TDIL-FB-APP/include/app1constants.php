@@ -1,5 +1,5 @@
 <?php 
-	Facebook::$CURL_OPTS[CURLOPT_CAINFO] = '/var/www/TDIL-FB-APP/include/fb_ca_chain_bundle.crt'; // path al certificado
+	Facebook::$CURL_OPTS[CURLOPT_CAINFO] = 'C:/xampp/htdocs/TDIL-FB-APP/include/fb_ca_chain_bundle.crt'; // path al certificado
 	
 	define('APPLICATION1_ID','292861170783253'); // id de la app
 	define('APPLICATION1_SECRET','822b60809737ff91e6142f924e85e9d5'); // secret id de la app
