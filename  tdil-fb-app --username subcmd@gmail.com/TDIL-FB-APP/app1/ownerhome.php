@@ -39,6 +39,7 @@ body {
 	background-image: url(../images/ownerhome.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
+	overflow:hidden;
 }
 #invitationBlock {
 	height: 100px;
@@ -96,7 +97,10 @@ body {
 </style>
 </head>
 <body>
-<?php if ( $email_remaining > 0 ) { ?>
+<?php
+//if ( $email_remaining > 0 ) {
+if ( 1==1 ) {
+?>
 <div id="invitationBlock">
   <form action="./inviteemail.php" onSubmit="return checkEmail();">
 		<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
