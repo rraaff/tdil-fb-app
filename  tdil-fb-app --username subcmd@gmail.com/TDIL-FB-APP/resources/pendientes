@@ -15,3 +15,7 @@ SELECT DATE_FORMAT(creation_date, '%Y-%m-%d'), count(1) FROM GROUP_APP1 GROUP BY
 
 App2
 Completa...
+
+Mensaje de invitaciones pendientes
+Ver tema del mensaje de error al acceder por canvas directo, quizas link al tab
+

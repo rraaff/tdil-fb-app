@@ -35,12 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['savecontactdata'])) {
 		return;
 	}
 }
-/* si el usuario es nulo, no lo autorizo */
-if ($user == 0) {
-	$_SESSION['app2_data'] = $app_data; // meto los datos en la session y redirijo
-	include("askpermission.php");
-	return;
-}
 $app_data = null;
 if (isset($_SESSION['app2_data'])) {
 	$app_data = $_SESSION['app2_data'];
@@ -49,8 +43,14 @@ if (isset($_SESSION['app2_data'])) {
 		$app_data = $signed_request["app_data"];
 	}
 }
+/* si el usuario es nulo, no lo autorizo */
+if ($user == 0) {
+	$_SESSION['app2_data'] = $app_data; // meto los datos en la session y redirijo
+	include("askpermission.php");
+	return;
+}
 $fbid = $user;
-$page_id = $signed_request['page']['id']; /*TODO Limitar a una pagina cuanto este productivo*/
+//$page_id = $signed_request['page']['id']; /*TODO Limitar a una pagina cuanto este productivo*/
 //if ($page_id != $PAGEID) {
 //	die("No allowed");
 //}
