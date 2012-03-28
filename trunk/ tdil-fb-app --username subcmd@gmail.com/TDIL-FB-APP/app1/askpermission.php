@@ -4,7 +4,9 @@
 <html>
 <body>
 <style>
-
+body {
+	overflow:hidden !important;
+}
 </style>
 
 <?php 

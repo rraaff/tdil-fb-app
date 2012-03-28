@@ -14,6 +14,7 @@ body {
 	background-image: url(../images/cleanBase.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
+	overflow:hidden !important;
 }
 #textContent{
 	width: 600px;
