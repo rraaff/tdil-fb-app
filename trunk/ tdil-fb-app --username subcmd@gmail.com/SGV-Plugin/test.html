@@ -1,0 +1,58 @@
+<html>
+<head>
+
+    <style type="text/css">
+        #canvas { width: 100%; height: 100%; border: 1px solid #484; }
+		#resizable { width: 100px; height: 100px; background: silver; }
+		#resizable2 { width: 100px; height: 100px; background: silver; }
+    </style>
+
+    <link type="text/css" href="./css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.svg.js"></script>
+    <script type="text/javascript" src="./js/jquery.svgdom.js"></script>
+    <script type="text/javascript" src="./js/jquery.svganim.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready ( function () {
+			
+			
+			$("#canvas").resizable();
+			$("#canvas").resize(function(){
+				var elem = $(this);    
+				// Update the info div width and height - replace this with your own code
+				// to do something useful!
+				//$('#window-info').text( 'window width: ' + elem.width() + ', height: ' + elem.height() );
+			  });
+			$("#resizable2").resizable();
+			
+			var block = $('#canvas').svg({loadURL: 'http://localhost/svg/lion.svg'});
+        });
+
+		var scale = 1;
+		function scaleDown() {
+			var svg = $('#canvas').svg('get');
+			var g = $('g', svg.root())[0];
+			scale = scale - 0.1;
+			g.setAttribute('transform', 'scale('+scale+')');
+		}
+		function scaleUp() {
+			var svg = $('#canvas').svg('get');
+			var g = $('g', svg.root())[0];
+			scale = scale + 0.1;
+			g.setAttribute('transform', 'scale('+scale+')');
+		}
+    </script>
+</head>
+<body>
+	<input type="button" onclick="scaleDown()" value="-">
+	<input type="button" onclick="scaleUp()" value="+">
+    <div id='console'></div>
+    <div id='canvas' style="width: 600px; height: 800px;"></div>
+    
+    <div id="resizable">
+		<div id="canvas1"></div>
+	</div>
+<div id="resizable2"></div>
+</body>
