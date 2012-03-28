@@ -21,7 +21,7 @@
 	$ownerid = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 	$num_rows = mysql_num_rows($ownerid);
 	// el usuario es group owner
-	if ($num_rows == 1) {
+	if ($num_rows = 1) {
 		$groupownerrow = mysql_fetch_array($ownerid);
 		$groupownerid = $groupownerrow["id"];
 		$SQL = "SELECT * FROM USER_APP1 WHERE upper(inv_email) = upper($inv_email)";
@@ -108,6 +108,7 @@ body {
 	background-image: url(../images/cleanBase.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
+	overflow:hidden !important;
 }
 #textContent{
 	width: 700px;
