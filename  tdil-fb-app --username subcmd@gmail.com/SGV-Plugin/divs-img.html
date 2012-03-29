@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<!-- saved from url=(0054)http://jqueryui.com/demos/droppable/photo-manager.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>jQuery UI Droppable - SVG</title>
+	<title>jQuery UI Droppable - Simple photo manager</title>
 	<link rel="stylesheet" href="./themes/base/jquery.ui.all.css">
 	<script src="./jQuery UI Droppable - Simple photo manager_files/jquery-1.7.1.min.js"></script>
 	<script src="./jQuery UI Droppable - Simple photo manager_files/jquery.ui.position.js"></script>
@@ -34,8 +35,6 @@
 	#trash .gallery h5 { display: none; }
 	</style>
 	<script>
-		var svgThumbWidth = 50;
-		var svgThumbHeigth = 50;
 	$(function() {
 		// there's the gallery and the trash
 		var $gallery = $( "#gallery" ),
@@ -43,27 +42,66 @@
 
 		$gallery.sortable();
 
+		// let the gallery items be draggable
+		/*$( "div", $gallery ).draggable({
+			cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+			revert: "invalid", // when not dropped, the item will revert back to its initial position
+			containment: $( "#demo-frame" ).length ? "#demo-frame" : "document", // stick to demo-frame if present
+			helper: "clone",
+			cursor: "move",
+			connectToSortable: "#gallery"
+		});
+		// let the trash be droppable, accepting the gallery items
+		$trash.droppable({
+			accept: "#gallery > div",
+			activeClass: "ui-state-highlight",
+			drop: function( event, ui ) {
+				deleteImage( ui.draggable );
+			}
+		});*/
+
 		// image deletion function
 		var recycle_icon = "<a href='link/to/recycle/script/when/we/have/js/off' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
 		function deleteImage( $item ) {
+			$item.fadeOut(function() {
+				var $list = $( "div", $trash ).length ?
+					$( "div", $trash ) :
+					$( "<div class='gallery ui-helper-reset'/>" ).appendTo( $trash );
+
+				$item.find( "a.ui-icon-trash" ).remove();
+				$item.append( recycle_icon ).appendTo( $list ).fadeIn(function() {
+					$item
+						.animate({ width: "48px" })
+						.find( "img" )
+							.animate({ height: "36px" });
+				});
+			});
+		}
+		
+		function initDelete( $item ) {
 			var $list = $( "div", $trash ).length ?
-			$( "div", $trash )[0] :
+				$( "div", $trash ) :
 				$( "<div class='gallery ui-helper-reset'/>" ).appendTo( $trash );
 			$item.find( "a.ui-icon-trash" ).remove();
 			$item.append( recycle_icon ).appendTo( $list );
 		}
-		
+
 		// image recycle function
 		var trash_icon = "<a href='link/to/trash/script/when/we/have/js/off' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
 		function recycleImage( $item ) {
-			$item.remove();
-			$item
-			.find( "a.ui-icon-refresh" )
-				.remove()
-			.end()
-			.css( "width", "96px")
-			.append( trash_icon )
-			.appendTo( $gallery );
+			$item.fadeOut(function() {
+				$item
+					.find( "a.ui-icon-refresh" )
+						.remove()
+					.end()
+					.css( "width", "96px")
+					.append( trash_icon )
+					.find( "img" )
+						.css( "height", "72px" )
+					.end()
+					.appendTo( $gallery )
+					.fadeIn();
+			});
 		}
 
 		// image preview function, demonstrating the ui.dialog used as a modal window
@@ -103,74 +141,67 @@
 			return false;
 		});
 		
+		initDelete($( "#initrash1" ));
 	});
 	
 	 $(document).ready ( function () {	
-			var block = $('#canvas00').svg({loadURL: './svg/gfloppy.svg', onLoad: function () {scale($('#canvas00'));}});
-			var block = $('#canvas01').svg({loadURL: './svg/antenna.svg', onLoad: function () {scale($('#canvas01'));}});
-			var block = $('#canvas02').svg({loadURL: './svg/penguin.svg', onLoad: function () {scale($('#canvas02'));}});
-			var block = $('#canvas03').svg({loadURL: './svg/laptop.svg', onLoad: function () {scale($('#canvas03'));}});
-			var block = $('#canvas04').svg({loadURL: './svg/modem.svg', onLoad: function () {scale($('#canvas04'));}});
-			var block = $('#canvas05').svg({loadURL: './svg/monitor.svg', onLoad: function () {scale($('#canvas05'));}});
-			
+			var block = $('#canvas').svg({loadURL: 'http://localhost/svg/lion.svg'});
 	});
-	 
-	function scale(objCanvas) {
-		var svg = objCanvas.svg('get');
-			var g = $('g', svg.root())[0];
-			g.setAttribute('transform', 'scale(0.1)');
-	}
 	
-	function scale1() {
-		var svg = $('#canvas00').svg('get');
+	function scale() {
+		var svg = $('#canvas').svg('get');
 			var g = $('g', svg.root())[0];
 			g.setAttribute('transform', 'scale(0.1)');
 	}
 	</script>
 </head>
 <body>
+<input type="button" onclick="scale()" value="scale">
 <div class="demo ui-widget ui-helper-clearfix">
 
 <div id="gallery" class="gallery ui-helper-reset ui-helper-clearfix ui-droppable">
 	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 00</h5>
-		<div style="width: 100px; height: 63px" id="canvas00"></div>
+		<h5 class="ui-widget-header">High Tatras</h5>
+		<img src="./jQuery UI Droppable - Simple photo manager_files/high_tatras_min.jpg" alt="The peaks of High Tatras" width="96" height="72">
 		<a href="http://jqueryui.com/demos/droppable/images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+	</div>
+	<div class="ui-widget-content ui-corner-tr ui-draggable">
+		<h5 class="ui-widget-header">High Tatras 2</h5>
+		<img src="./jQuery UI Droppable - Simple photo manager_files/high_tatras2_min.jpg" alt="The chalet at the Green mountain lake" width="96" height="72">
+		<a href="http://jqueryui.com/demos/droppable/images/high_tatras2.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+	</div>
+	<div class="ui-widget-content ui-corner-tr ui-draggable">
+		<h5 class="ui-widget-header">High Tatras 3</h5>
+		<img src="./jQuery UI Droppable - Simple photo manager_files/high_tatras3_min.jpg" alt="Planning the ascent" width="96" height="72">
+		<a href="http://jqueryui.com/demos/droppable/images/high_tatras3.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+	</div>
+	<div class="ui-widget-content ui-corner-tr ui-draggable">
+		<h5 class="ui-widget-header">High Tatras 4</h5>
+		<img src="./jQuery UI Droppable - Simple photo manager_files/high_tatras4_min.jpg" alt="On top of Kozi kopka" width="96" height="72">
+		<a href="http://jqueryui.com/demos/droppable/images/high_tatras4.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+	</div>
+	<div class="ui-widget-content ui-corner-tr ui-draggable">
+		<h5 class="ui-widget-header">vicky</h5>
+		<img src="./jQuery UI Droppable - Simple photo manager_files/vicky.jpg" alt="On top of Kozi kopka" width="96" height="72">
+		<a href="http://jqueryui.com/demos/droppable/images/high_tatras4.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
 		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
 	</div>
 	
 	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 01</h5>
-		<div style="width: 100px; height: 63px" id="canvas01"></div>
+		<h5 class="ui-widget-header">High Tatras</h5>
+		<div style="width: 96px; height: 72px" id="canvas"></div>
 		<a href="http://jqueryui.com/demos/droppable/images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
 		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
 	</div>
 	
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 02</h5>
-		<div style="width: 100px; height: 63px" id="canvas02"></div>
-		<a href="http://jqueryui.com/demos/droppable/images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-	</div>
-
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 03</h5>
-		<div style="width: 100px; height: 63px" id="canvas03"></div>
-		<a href="http://jqueryui.com/demos/droppable/images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-	</div>
-	
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 04</h5>
-		<div style="width: 100px; height: 63px" id="canvas04"></div>
-		<a href="http://jqueryui.com/demos/droppable/images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-	</div>
-	
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 05</h5>
-		<div style="width: 100px; height: 63px" id="canvas05"></div>
-		<a href="http://jqueryui.com/demos/droppable/images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+	<div class="ui-widget-content ui-corner-tr ui-draggable" id="initrash1">
+		<h5 class="ui-widget-header">vicky2</h5>
+		<img src="./jQuery UI Droppable - Simple photo manager_files/vicky.jpg" alt="On top of Kozi kopka" width="96" height="72">
+		<a href="http://jqueryui.com/demos/droppable/images/high_tatras4.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
 		<a href="http://jqueryui.com/demos/droppable/link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
 	</div>
 </div>
@@ -179,6 +210,8 @@
 
 <div id="trash" class="ui-widget-content ui-state-default ui-droppable">
 	<h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Trash</h4>
+	
+	
 </div>
 
 <div class="demo-description">
