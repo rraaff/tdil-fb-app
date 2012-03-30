@@ -70,7 +70,8 @@ CREATE TABLE `CONFIG_APP2` (
   `email_daily_quota` INT NOT NULL ,
   `fb_daily_quota` INT NOT NULL ,
   `show_winner` INT NULL ,
+  `active` INT NULL ,
   `winner_pubdate` DATE NULL,
   PRIMARY KEY (`id`));
   
-INSERT INTO CONFIG_APP2 (invitation_days, email_daily_quota, fb_daily_quota,show_winner) VALUES(1,1,1,0);
+INSERT INTO CONFIG_APP2 (invitation_days, email_daily_quota, fb_daily_quota,show_winner,active) VALUES(1,1,1,0,1);
