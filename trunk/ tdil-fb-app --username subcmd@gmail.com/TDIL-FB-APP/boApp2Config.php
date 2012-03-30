@@ -12,14 +12,19 @@
 		$invitation_days = $_POST['invitation_days'];
 		$email_daily_quota = $_POST['email_daily_quota'];
 		$fb_daily_quota = $_POST['fb_daily_quota'];
+		if (isset($_POST['active'])) {
+			$active = 1;
+		} else {
+			$active = 0;
+		}
 	
 		$invitation_days = quote_smart($invitation_days, $connection);
 		$email_daily_quota = quote_smart($email_daily_quota, $connection);
 		$fb_daily_quota = quote_smart($fb_daily_quota, $connection);
-		$show_winner = quote_smart($show_winner, $connection);
+		$active = quote_smart($active, $connection);
 	
 		$SQL = "UPDATE CONFIG_APP2 SET invitation_days = $invitation_days, email_daily_quota = $email_daily_quota
-		, fb_daily_quota = $fb_daily_quota";
+		, fb_daily_quota = $fb_daily_quota, active = $active";
 		$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());	
 		$message = 'Cambios guardados';
 	} 
@@ -77,6 +82,11 @@
                     <tr>
                         <td>App requests diarios:</td>
                         <td><input type="text" name="fb_daily_quota" id="fb_daily_quota" value="<?php echo $aRow['fb_daily_quota'];?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Activa:</td>
+                        <td><input type="checkbox" name="active" id="active" <?php if ($aRow['active']) {echo "checked";} ;?>>
                         </td>
                     </tr>
                     <tr>
