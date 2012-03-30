@@ -251,6 +251,11 @@ if (!$hasFriend && $hasContactData) {
 	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
 	$aRow = mysql_fetch_array( $result );
 	$email_remaining = $aRow['remaining'];
+	
+	$SQL = "select active FROM CONFIG_APP2";
+	$result = mysql_query($SQL) or die("MySQL-err.Query: " . $SQL . " - Error: (" . mysql_errno() . ") " . mysql_error());
+	$aRow = mysql_fetch_array( $result );
+	$active = $aRow['active'];
 }
 
 closeConnection($connection);
@@ -320,16 +325,18 @@ closeConnection($connection);
 		<input type="submit" value="Grabar datos">
 		</form>
 		<body>
-<?php if ( $email_remaining > 0 ) { ?>
-<div id="invitationBlock">
-  <form action="./inviteemail.php" onSubmit="return checkEmail();">
-		<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
-	<input type="text" name="inv_email" id="inv_email" class="galletaInput">
-    <input type="submit" class="okButton">
-  </form>
-</div>
-<?php } else { ?>
-<div id="notInvitationBlock"></div>
+<?php if ($active) { ?>
+	<?php if ( $email_remaining > 0) { ?>
+	<div id="invitationBlock">
+	  <form action="./inviteemail.php" onSubmit="return checkEmail();">
+			<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
+		<input type="text" name="inv_email" id="inv_email" class="galletaInput">
+	    <input type="submit" class="okButton">
+	  </form>
+	</div>
+	<?php } else { ?>
+	<div id="notInvitationBlock"></div>
+	<?php } ?>
 <?php } ?>
 <div id="fb-root"></div>
 <script>
@@ -380,10 +387,14 @@ closeConnection($connection);
    }(document));
 </script>
 <div id="buttonsLinks">
-<?php if ($fb_remaining > 0) { ?>
-	Envi&aacute; una <a href="#" onClick="sendRequest()">invitaci&oacute;n a un amigo</a>
+<?php if ($active) { ?>
+	<?php if ($fb_remaining > 0) { ?>
+		Envi&aacute; una <a href="#" onClick="sendRequest()">invitaci&oacute;n a un amigo</a>
+	<?php } else { ?>
+		Ya enviaste todas las invitaciones que pod&iacute;as
+	<?php } ?>
 <?php } else { ?>
-	Ya enviaste todas las invitaciones que pod&iacute;as
+		La promoción ya no esta activa.
 <?php } ?>
 </div>
 	<?php }  ?>
