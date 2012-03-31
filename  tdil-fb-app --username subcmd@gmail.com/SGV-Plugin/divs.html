@@ -23,6 +23,7 @@
 	#trash h4 { line-height: 16px; margin: 0 0 0.4em; }
 	#trash h4 .ui-icon { float: left; }
 	#trash .gallery h5 { display: none; }
+	
 	</style>
 	<script>
 		var svgThumbWidth = 50;
@@ -97,25 +98,33 @@
 	});
 	
 	 $(document).ready ( function () {	
-			var block = $('#canvas00').svg({loadURL: './svg/gfloppy.svg', onLoad: function () {scale($('#canvas00'));}});
+			var block = $('#canvas00').svg({loadURL: './svg/gfloppy.svg', onLoad: function () {scale1($('#canvas00'));}});
 			var block = $('#canvas01').svg({loadURL: './svg/antenna.svg', onLoad: function () {scale($('#canvas01'));}});
 			var block = $('#canvas02').svg({loadURL: './svg/penguin.svg', onLoad: function () {scale($('#canvas02'));}});
 			var block = $('#canvas03').svg({loadURL: './svg/laptop.svg', onLoad: function () {scale($('#canvas03'));}});
 			var block = $('#canvas04').svg({loadURL: './svg/modem.svg', onLoad: function () {scale($('#canvas04'));}});
 			var block = $('#canvas05').svg({loadURL: './svg/monitor.svg', onLoad: function () {scale($('#canvas05'));}});
 			
+			var block = $('#canvas07').svg({loadURL: './svg/monitor.svg', onLoad: function () {scale1($('#canvas07'));}});
 	});
-	 
+	
 	function scale(objCanvas) {
 		var svg = objCanvas.svg('get');
-			var g = $('g', svg.root())[0];
-			g.setAttribute('transform', 'scale(0.1)');
+		var g = $('g', svg.root())[0];
+		//alert(svg.width);
+		//alert( svg._width());
+		//g.setAttribute('transform', 'scale(0.1)');
+		//alert( svg._width());
+		g.setAttribute('transform', 'scale(0.1)');
 	}
 	
-	function scale1() {
-		var svg = $('#canvas00').svg('get');
-			var g = $('g', svg.root())[0];
-			g.setAttribute('transform', 'scale(0.1)');
+	function scale1(objCanvas) {
+		var svg = objCanvas.svg('get');
+		var g = $('g', svg.root())[0];
+		//alert( svg._width());
+    	//alert( svg._svg.width);
+    	//alert( svg._svg.width.baseVal.valueInSpecifiedUnits);
+		g.setAttribute('transform', 'scale(0.1)');
 	}
 	</script>
 </head>
@@ -173,11 +182,11 @@
 </div>
 
 <div class="demo-description">
-<p>You can delete an image either by dragging it to the Trash or by clicking the trash icon.</p>
-<p>You can "recycle" an image by dragging it back to the gallery or by clicking the recycle icon.</p>
-<p>You can view larger image by clicking the zoom icon. jQuery UI dialog widget is used for the modal window.</p>
+No esta funcional el abrir el svg, falta el enganche de esa parte.
+Los svg tienen que tener un tag <g> agrupandolos, de lo contrario no pueden ser escalados.
+Falta la aplicacion de la grafica.
 </div><!-- End demo-description -->
 
-
+<div id="canvas07" style="width: 50px; height: 50px;"></div>
 
 </body></html>
