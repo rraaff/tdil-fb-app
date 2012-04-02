@@ -26,8 +26,8 @@
 	
 	</style>
 	<script>
-		var svgThumbWidth = 100;
-		var svgThumbHeigth = 63;
+		var svgThumbWidth = 50;
+		var svgThumbHeigth = 50;
 	$(function() {
 		// there's the gallery and the trash
 		var $gallery = $( "#gallery" ),
@@ -92,22 +92,41 @@
 		 loadSVG($("#canvas04"), './svg/modem.svg');
 		 loadSVG($("#canvas05"), './svg/monitor.svg');
 		 loadSVG($("#canvas07"), './svg/Subtes-2008.svg');
+		 	/*$("#canvas00").svg({
+		        onLoad: function() {
+		            var svg = $("#canvas00").svg('get');
+		            svg.load('./svg/gfloppy.svg', {addTo: true,  changeSize: true, onLoad: function () {scale1($('#canvas00'));}});
+		        }
+		 	});*/
+		 
+			/*var block = $('#canvas01').svg({loadURL: './svg/antenna.svg',  onLoad: function () {scale($('#canvas01'));}});
+			var block = $('#canvas02').svg({loadURL: './svg/penguin.svg', onLoad: function () {scale($('#canvas02'));}});
+			var block = $('#canvas03').svg({loadURL: './svg/laptop.svg', onLoad: function () {scale($('#canvas03'));}});
+			var block = $('#canvas04').svg({loadURL: './svg/modem.svg', onLoad: function () {scale($('#canvas04'));}});
+			var block = $('#canvas05').svg({loadURL: './svg/monitor.svg', onLoad: function () {scale($('#canvas05'));}});
+			
+			$("#canvas07").svg({
+		        onLoad: function() {
+		            var svg = $("#canvas07").svg('get');
+		            svg.load('./svg/Subtes-2008.svg', {addTo: true,  changeSize: true, onLoad: function () {scale1($('#canvas07'));}});
+		        }
+		 	});*/
+			
+			$(function() {
+				$("#dialogContainer").dialog({
+					title: 'Some title',
+					resizable: false,
+					bgiframe: true,
+					overlay: { opacity: 0.3, background: "white" },
+					position: [0, 0],
+					autoOpen: false,
+					height: 'auto',
+					width: 'auto',
+					modal: true,
+					close: function(event, ui) {$('#dialogDiv').svg('destroy');}
+				});
 
-		 $(function() {
-			$("#dialogContainer").dialog({
-				title: 'Some title',
-				resizable: false,
-				bgiframe: true,
-				overlay: { opacity: 0.3, background: "white" },
-				position: [0, 0],
-				autoOpen: false,
-				height: 'auto',
-				width: 'auto',
-				modal: true,
-				close: function(event, ui) {$('#dialogDiv').svg('destroy');}
 			});
-
-		});
 	});
 	 
 	 function loadSVG(divObj, svgUrl) {
@@ -119,6 +138,12 @@
 	 	});
 	 }
 	
+	function scale(objCanvas) {
+		var svg = objCanvas.svg('get');
+		var g = $('g', svg.root())[0];
+		g.setAttribute('transform', 'scale(0.1)');
+	}
+	
 	function scale1(objCanvas) {
 		var svg = objCanvas.svg('get');
 		var g = $('g', svg.root())[0];
@@ -126,8 +151,8 @@
     	svg._svg.height.baseVal.convertToSpecifiedUnits(5);
     	var widthPX = svg._svg.width.baseVal.valueInSpecifiedUnits;
     	var heightPX = svg._svg.height.baseVal.valueInSpecifiedUnits;
-    	var scalew = svgThumbWidth / widthPX;
-    	var scaleh = svgThumbHeigth / heightPX;
+    	var scalew = 63 / widthPX;
+    	var scaleh = 63 / heightPX;
     	var scale = 0;
     	if (scalew < scaleh) {
     		scale = scalew;
