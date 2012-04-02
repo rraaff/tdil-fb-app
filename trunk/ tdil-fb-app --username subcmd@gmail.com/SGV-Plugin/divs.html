@@ -1,216 +1,288 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
-	<title>jQuery UI Droppable - SVG</title>
-	<link rel="stylesheet" href="./themes/base/jquery.ui.all.css">
-	<script src="./js/jquery-1.7.1.min.js"></script>
-	<script src="./js/jquery-ui-1.8.18.custom.min.js"></script>
-	<script type="text/javascript" src="http://localhost/svg/js/jquery.svg.js"></script>
-    <script type="text/javascript" src="http://localhost/svg/js/jquery.svgdom.js"></script>
-    <script type="text/javascript" src="http://localhost/svg/js/jquery.svganim.js"></script>
-    
-	<link rel="stylesheet" href="./themes/demos.css">
-	<style>
-	#gallery { float: left; width: 400px; min-height: 12em; } * html #gallery { height: 12em; } /* IE6 */
-	.gallery.custom-state-active { background: #eee; }
-	.gallery div { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
-	.gallery div h5 { margin: 0 0 0.4em; cursor: move; }
-	.gallery div a { float: right; }
-	.gallery div a.ui-icon-zoomin { float: left; }
-	.gallery div img { width: 100%; cursor: move; }
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>jQuery UI Droppable - SVG</title>
+<link rel="stylesheet" href="./themes/base/jquery.ui.all.css">
+<script src="./js/jquery-1.7.1.min.js"></script>
+<script src="./js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="./js/jquery.svg.js"></script>
+<script type="text/javascript" src="./js/jquery.svgdom.js"></script>
+<script type="text/javascript" src="./js/jquery.svganim.js"></script>
 
-	#trash { float: bottom; width: 100%; min-height: 10em; padding: 1%;} * html #trash { height: 10em; } /* IE6 */
-	#trash h4 { line-height: 16px; margin: 0 0 0.4em; }
-	#trash h4 .ui-icon { float: left; }
-	#trash .gallery h5 { display: none; }
+<link rel="stylesheet" href="./themes/demos.css">
+<style>
+#gallery {
+	float: left;
+	width: 400px;
+	min-height: 12em;
+}
+
+* html #gallery {
+	height: 12em;
+} /* IE6 */
+.gallery.custom-state-active {
+	background: #eee;
+}
+
+.gallery div {
+	float: left;
+	width: 96px;
+	padding: 0.4em;
+	margin: 0 0.4em 0.4em 0;
+	text-align: center;
+}
+
+.gallery div h5 {
+	margin: 0 0 0.4em;
+	cursor: move;
+}
+
+.gallery div a {
+	float: right;
+}
+
+.gallery div a.ui-icon-zoomin {
 	
-	</style>
-	<script>
-		var svgThumbWidth = 100;
-		var svgThumbHeigth = 63;
+}
+
+.gallery div img {
+	width: 100%;
+	cursor: move;
+}
+
+#trash {
+	float: bottom;
+	width: 400px;
+	min-height: 10em;
+	padding: 1%;
+}
+
+* html #trash {
+	height: 10em;
+} /* IE6 */
+#trash h4 {
+	line-height: 16px;
+	margin: 0 0 0.4em;
+}
+
+#trash h4 .ui-icon {
+}
+
+#trash .gallery .svgcanvas {
+	display: none;
+}
+</style>
+<script>
+	var svgThumbWidth = 100;
+	var svgThumbHeigth = 63;
 	$(function() {
 		// there's the gallery and the trash
-		var $gallery = $( "#gallery" ),
-			$trash = $( "#trash" );
+		var $gallery = $("#gallery"), $trash = $("#trash");
 
 		$gallery.sortable();
 
 		// image deletion function
-		var recycle_icon = "<a href='#' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
-		function deleteImage( $item ) {
-			var $list = $( "div", $trash ).length ?
-			$( "div", $trash )[0] :
-				$( "<div class='gallery ui-helper-reset'/>" ).appendTo( $trash );
-			$item.find( "a.ui-icon-trash" ).remove();
-			$item.append( recycle_icon ).appendTo( $list );
+		//var recycle_icon = "<a href='#' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
+		function deleteImage($item) {
+			if (!$item.attr('closed') || $item.attr('closed') == '0') {
+				var $list = $("div", $trash).length ? $("div", $trash)[0] : $(
+						"<div class='gallery ui-helper-reset'/>").appendTo($trash);
+				$item.appendTo($list);
+				$item.attr('closed', '1');
+			}
 		}
-		
+
 		// image recycle function
-		var trash_icon = "<a href='#' title='Delete this image' class='ui-icon ui-icon-trash'>Delete image</a>";
-		function recycleImage( $item ) {
-			$item.remove();
-			$item
-			.find( "a.ui-icon-refresh" )
-				.remove()
-			.end()
-			.css( "width", "96px")
-			.append( trash_icon )
-			.appendTo( $gallery );
+		// var trash_icon = "<a href='#' title='Delete this image' class='ui-icon ui-icon-trash'></a>";
+		function recycleImage($item) {
+			$item.appendTo($gallery);
+			$item.attr('closed', '0');
 		}
 
 		// image preview function, demonstrating the ui.dialog used as a modal window
-		function viewLargerImage( $link ) {
-			$('#dialogDiv').svg();
-			var svg = $("#dialogDiv").svg('get');
-            svg.load($link.attr( "href" ), {addTo: true,  changeSize: true});
-			$("#dialogContainer").dialog("open");
-			return;
+		function viewLargerImage($item, $link) {
+			if (!$item.attr('closed') || $item.attr('closed') == '0') {
+				$('#dialogDiv').svg();
+				var svg = $("#dialogDiv").svg('get');
+				svg.load($link.attr("href"), {
+					addTo : true,
+					changeSize : true
+				});
+				$('#dialogContainer').dialog("option" , "title" , $item.prop('innerText'));
+				$("#dialogContainer").dialog("open");
+				return;
+			} else {
+				recycleImage($item);
+			}
 		}
 
 		// resolve the icons behavior with event delegation
-		$( "div.gallery > div" ).click(function( event ) {
-			var $item = $( this ),
-				$target = $( event.target );
-			if ( $target.is( "a.ui-icon-trash" ) ) {
-				deleteImage( $item );
-			} else if ( $target.is( "a.ui-icon-zoomin" ) ) {
-				viewLargerImage( $target );
-			} else if ( $target.is( "a.ui-icon-refresh" ) ) {
-				recycleImage( $item );
+		$("div.gallery > div").click(function(event) {
+			var $item = $(this), $target = $(event.target);
+			if ($target.is("a.ui-icon-trash")) {
+				deleteImage($item);
+			} else if ($target.is("a.ui-icon-zoomin")) {
+				// si esta normal, agrando, si esta min, vuelvo al panel
+				viewLargerImage($item, $target);
+			} else if ($target.is("a.ui-icon-refresh")) {
+				recycleImage($item);
 			}
 
 			return false;
 		});
-		
+
 	});
-	
-	 $(document).ready ( function () {
-		 loadSVG($("#canvas00"), './svg/gfloppy.svg');
-		 loadSVG($("#canvas01"), './svg/antenna.svg');
-		 loadSVG($("#canvas02"), './svg/penguin.svg');
-		 loadSVG($("#canvas03"), './svg/laptop.svg');
-		 loadSVG($("#canvas04"), './svg/modem.svg');
-		 loadSVG($("#canvas05"), './svg/monitor.svg');
-		 loadSVG($("#canvas07"), './svg/Subtes-2008.svg');
 
-		 $(function() {
+	$(document).ready(function() {
+		loadSVG($("#canvas00"), './svg/gfloppy.svg');
+		loadSVG($("#canvas01"), './svg/antenna.svg');
+		loadSVG($("#canvas02"), './svg/penguin.svg');
+		loadSVG($("#canvas03"), './svg/laptop.svg');
+		loadSVG($("#canvas04"), './svg/modem.svg');
+		loadSVG($("#canvas05"), './svg/monitor.svg');
+		loadSVG($("#canvas07"), './svg/Subtes-2008.svg');
+
+		$(function() {
 			$("#dialogContainer").dialog({
-				title: 'Some title',
-				resizable: false,
-				bgiframe: true,
-				overlay: { opacity: 0.3, background: "white" },
-				position: [0, 0],
-				autoOpen: false,
-				height: 'auto',
-				width: 'auto',
-				modal: true,
-				close: function(event, ui) {$('#dialogDiv').svg('destroy');}
+				title : 'Some title',
+				resizable : false,
+				bgiframe : true,
+				overlay : {
+					opacity : 0.3,
+					background : "white"
+				},
+				position : [ 0, 0 ],
+				autoOpen : false,
+				height : 'auto',
+				width : 'auto',
+				modal : true,
+				close : function(event, ui) {
+					$('#dialogDiv').svg('destroy');
+				}
 			});
-
 		});
 	});
-	 
-	 function loadSVG(divObj, svgUrl) {
-		 divObj.svg({
-	        onLoad: function() {
-	            var svg = divObj.svg('get');
-	            svg.load(svgUrl, {addTo: true,  changeSize: true, onLoad: function () {scale1(divObj);}});
-	        }
-	 	});
-	 }
 	
+	function loadSVG(divObj, svgUrl) {
+		divObj.svg({
+			onLoad : function() {
+				var svg = divObj.svg('get');
+				svg.load(svgUrl, {
+					addTo : true,
+					changeSize : true,
+					onLoad : function() {
+						scale1(divObj);
+					}
+				});
+			}
+		});
+	}
+
 	function scale1(objCanvas) {
 		var svg = objCanvas.svg('get');
 		var g = $('g', svg.root())[0];
 		svg._svg.width.baseVal.convertToSpecifiedUnits(5);
-    	svg._svg.height.baseVal.convertToSpecifiedUnits(5);
-    	var widthPX = svg._svg.width.baseVal.valueInSpecifiedUnits;
-    	var heightPX = svg._svg.height.baseVal.valueInSpecifiedUnits;
-    	var scalew = svgThumbWidth / widthPX;
-    	var scaleh = svgThumbHeigth / heightPX;
-    	var scale = 0;
-    	if (scalew < scaleh) {
-    		scale = scalew;
-    	} else {
-    		scale = scaleh;
-    	}
-    	g.setAttribute('transform', 'scale('+scale+')');
+		svg._svg.height.baseVal.convertToSpecifiedUnits(5);
+		var widthPX = svg._svg.width.baseVal.valueInSpecifiedUnits;
+		var heightPX = svg._svg.height.baseVal.valueInSpecifiedUnits;
+		var scalew = svgThumbWidth / widthPX;
+		var scaleh = svgThumbHeigth / heightPX;
+		var scale = 0;
+		if (scalew < scaleh) {
+			scale = scalew;
+		} else {
+			scale = scaleh;
+		}
+		g.setAttribute('transform', 'scale(' + scale + ')');
 	}
-	
-	</script>
+</script>
 </head>
 <body>
-<div class="demo ui-widget ui-helper-clearfix">
+	<div class="demo ui-widget ui-helper-clearfix">
 
-<div id="gallery" class="gallery ui-helper-reset ui-helper-clearfix ui-droppable">
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 00</h5>
-		<div style="width: 100px; height: 63px" id="canvas00"></div>
-		<a href="./svg/gfloppy.svg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+		<div id="gallery"
+			class="gallery ui-helper-reset ui-helper-clearfix ui-droppable">
+			
+			<div class="ui-widget-content ui-corner-tr ui-draggable">
+				<h5 class="ui-widget-header">
+					Floppy 
+						<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
+						<a href="./svg/gfloppy.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+				</h5>
+				<div style="width: 100px; height: 63px" id="canvas00" class="svgcanvas"></div>
+			</div>
+
+			<div class="ui-widget-content ui-corner-tr ui-draggable">
+				<h5 class="ui-widget-header">Antenna
+					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
+					<a href="./svg/antenna.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+				</h5>
+				<div style="width: 100px; height: 63px" id="canvas01" class="svgcanvas"></div>
+			</div>
+
+			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div02">
+				<h5 class="ui-widget-header">Penguin
+					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
+					<a href="./svg/penguin.svg" title="Penguin" class="ui-icon ui-icon-zoomin"></a>
+				</h5>
+				<div style="width: 100px; height: 63px" id="canvas02" class="svgcanvas"></div>
+			</div>
+
+			<div class="ui-widget-content ui-corner-tr ui-draggable">
+				<h5 class="ui-widget-header">Laptop
+					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
+					<a href="./svg/laptop.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+				</h5>
+				<div style="width: 100px; height: 63px" id="canvas03" class="svgcanvas"></div>
+			</div>
+
+			<div class="ui-widget-content ui-corner-tr ui-draggable">
+				<h5 class="ui-widget-header">Modem
+					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
+					<a href="./svg/modem.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+				</h5>
+				<div style="width: 100px; height: 63px" id="canvas04" class="svgcanvas"></div>
+			</div>
+
+			<div class="ui-widget-content ui-corner-tr ui-draggable">
+				<h5 class="ui-widget-header">Monitor
+					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
+					<a href="./svg/monitor.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+				</h5>
+				<div style="width: 100px; height: 63px" id="canvas05" class="svgcanvas"></div>
+			</div>
+
+			<div class="ui-widget-content ui-corner-tr ui-draggable">
+				<h5 class="ui-widget-header">Subtes
+					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
+					<a href="./svg/Subtes-2008.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+				</h5>
+				<div style="width: 100px; height: 63px" id="canvas07" class="svgcanvas"></div>
+			</div>
+
+		</div>
+
 	</div>
-	
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 01</h5>
-		<div style="width: 100px; height: 63px" id="canvas01"></div>
-		<a href="./svg/antenna.svg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-	</div>
-	
-	<div class="ui-widget-content ui-corner-tr ui-draggable" id="div02">
-		<h5 class="ui-widget-header">SVG 02</h5>
-		<div style="width: 100px; height: 63px" id="canvas02"></div>
-		<a href="./svg/penguin.svg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+	<!-- End demo -->
+
+	<div id="trash" class="ui-widget-content ui-state-default ui-droppable">
+
 	</div>
 
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 03</h5>
-		<div style="width: 100px; height: 63px" id="canvas03"></div>
-		<a href="./svg/laptop.svg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+	<div class="demo-description">
+		Los
+		svg tienen que tener un tag
+		<g> agrupandolos, de lo contrario no pueden ser escalados. Falta
+		la aplicacion de la grafica. 
 	</div>
-	
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 04</h5>
-		<div style="width: 100px; height: 63px" id="canvas04"></div>
-		<a href="./svg/modem.svg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+	<!-- End demo-description -->
+
+
+	<div id="dialogContainer" title="Basic dialog">
+		<div id="dialogDiv"></div>
 	</div>
-	
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 05</h5>
-		<div style="width: 100px; height: 63px" id="canvas05"></div>
-		<a href="./svg/monitor.svg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-	</div>
-	
-	<div class="ui-widget-content ui-corner-tr ui-draggable">
-		<h5 class="ui-widget-header">SVG 05</h5>
-		<div style="width: 100px; height: 63px" id="canvas07"></div>
-		<a href="./svg/Subtes-2008.svg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-		<a href="#" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-	</div>
-	
-</div>
 
-</div><!-- End demo -->
-
-<div id="trash" class="ui-widget-content ui-state-default ui-droppable">
-	<h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Trash</h4>
-</div>
-
-<div class="demo-description">
-No esta funcional el abrir el svg, falta el enganche de esa parte.
-Los svg tienen que tener un tag <g> agrupandolos, de lo contrario no pueden ser escalados.
-Falta la aplicacion de la grafica.
-</div><!-- End demo-description -->
-
-
-<div id="dialogContainer" title="Basic dialog">
-	<div id="dialogDiv"></div>
-</div>
-
-
-
-</body></html>
+</body>
+</html>
