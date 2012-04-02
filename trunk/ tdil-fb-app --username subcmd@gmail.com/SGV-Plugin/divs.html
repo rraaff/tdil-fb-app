@@ -10,6 +10,7 @@
 <script type="text/javascript" src="./js/jquery.svg.js"></script>
 <script type="text/javascript" src="./js/jquery.svgdom.js"></script>
 <script type="text/javascript" src="./js/jquery.svganim.js"></script>
+<script type="text/javascript" src="./js/jquery.cookie.js"></script>
 
 <link rel="stylesheet" href="./themes/demos.css">
 <style>
@@ -77,12 +78,68 @@
 <script>
 	var svgThumbWidth = 100;
 	var svgThumbHeigth = 63;
-	$(function() {
+	
+	// set the list selector
+	var setSelector = "#gallery";
+	// set the cookie name
+	var setCookieName = "galleryOrder";
+	// set the cookie expiry time (days):
+	var setCookieExpiry = 7;
+
+	var restoring = false;
+	
+	/////////////////////////////////////////////////////////////////
+	/////  YOU PROBABLY WON'T NEED TO EDIT BELOW  ///////////////////
+	/////////////////////////////////////////////////////////////////
+	 
+	// function that writes the list order to a cookie
+	function saveOrder() {
+		if (restoring) {
+			return;
+		}
+		// save custom order to cookie
+		$.cookie(setCookieName, $(setSelector).sortable("toArray"), { expires: setCookieExpiry, path: "/" });
+	}
+	
+	$(function() {	
+		
 		// there's the gallery and the trash
 		var $gallery = $("#gallery"), $trash = $("#trash");
 
-		$gallery.sortable();
+		$gallery.sortable({update: function() { saveOrder(); }});
 
+		// function that restores the list order from a cookie
+		function restoreOrder() {
+			restoring = true;
+			var list = $(setSelector);
+			if (list == null) return;
+			// fetch the cookie value (saved order)
+			var cookie = $.cookie(setCookieName);
+			if (!cookie) return;
+			// make array from saved order
+			var IDs = cookie.split(",");
+			// fetch current order
+			var items = list.sortable("toArray");
+			// make array from current order
+			var rebuild = new Array();
+			for ( var v=0, len=items.length; v<len; v++) {
+				rebuild[items[v]] = items[v];
+			}
+			
+			for (var i = 0, n = items.length; i < n; i++) {
+				// item id from saved order
+				var itemID = items[i];
+				deleteImage($("#" + itemID));
+			}
+			
+			for (var i = 0, n = IDs.length; i < n; i++) {
+				// item id from saved order
+				var itemID = IDs[i];
+				recycleImage($("#" + itemID));
+			}
+			restoring = false;
+		}
+		
 		// image deletion function
 		//var recycle_icon = "<a href='#' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
 		function deleteImage($item) {
@@ -91,6 +148,7 @@
 						"<div class='gallery ui-helper-reset'/>").appendTo($trash);
 				$item.appendTo($list);
 				$item.attr('closed', '1');
+				saveOrder();
 			}
 		}
 
@@ -99,6 +157,7 @@
 		function recycleImage($item) {
 			$item.appendTo($gallery);
 			$item.attr('closed', '0');
+			saveOrder();
 		}
 
 		// image preview function, demonstrating the ui.dialog used as a modal window
@@ -110,7 +169,7 @@
 					addTo : true,
 					changeSize : true
 				});
-				$('#dialogContainer').dialog("option" , "title" , $item.prop('innerText'));
+				$('#dialogContainer').dialog("option" , "title" , $link.attr("title"));
 				$("#dialogContainer").dialog("open");
 				return;
 			} else {
@@ -133,9 +192,8 @@
 			return false;
 		});
 
-	});
-
-	$(document).ready(function() {
+		restoring = true;
+		// seccion de carga de los svgs
 		loadSVG($("#canvas00"), './svg/gfloppy.svg');
 		loadSVG($("#canvas01"), './svg/antenna.svg');
 		loadSVG($("#canvas02"), './svg/penguin.svg');
@@ -144,6 +202,15 @@
 		loadSVG($("#canvas05"), './svg/monitor.svg');
 		loadSVG($("#canvas07"), './svg/Subtes-2008.svg');
 
+		// ejemplo de svg inicialmente borrado
+		deleteImage($("#div07"));
+		restoring = false;
+		
+		// recarga de estado desde la cookie
+		restoreOrder();
+		restoring = false;
+		
+		// dialogo que mostrara el svg en tamaño original
 		$(function() {
 			$("#dialogContainer").dialog({
 				title : 'Some title',
@@ -164,7 +231,7 @@
 			});
 		});
 	});
-	
+
 	function loadSVG(divObj, svgUrl) {
 		divObj.svg({
 			onLoad : function() {
@@ -205,19 +272,19 @@
 		<div id="gallery"
 			class="gallery ui-helper-reset ui-helper-clearfix ui-droppable">
 			
-			<div class="ui-widget-content ui-corner-tr ui-draggable">
+			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div00">
 				<h5 class="ui-widget-header">
 					Floppy 
 						<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
-						<a href="./svg/gfloppy.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+						<a href="./svg/gfloppy.svg" title="Floppy" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
 				<div style="width: 100px; height: 63px" id="canvas00" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable">
+			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div01">
 				<h5 class="ui-widget-header">Antenna
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
-					<a href="./svg/antenna.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+					<a href="./svg/antenna.svg" title="Antenna" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
 				<div style="width: 100px; height: 63px" id="canvas01" class="svgcanvas"></div>
 			</div>
@@ -230,34 +297,34 @@
 				<div style="width: 100px; height: 63px" id="canvas02" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable">
+			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div03">
 				<h5 class="ui-widget-header">Laptop
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
-					<a href="./svg/laptop.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+					<a href="./svg/laptop.svg" title="Laptop" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
 				<div style="width: 100px; height: 63px" id="canvas03" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable">
+			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div04">
 				<h5 class="ui-widget-header">Modem
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
-					<a href="./svg/modem.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+					<a href="./svg/modem.svg" title="Modem" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
 				<div style="width: 100px; height: 63px" id="canvas04" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable">
+			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div05">
 				<h5 class="ui-widget-header">Monitor
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
-					<a href="./svg/monitor.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+					<a href="./svg/monitor.svg" title="Monitor" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
 				<div style="width: 100px; height: 63px" id="canvas05" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable">
+			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div07">
 				<h5 class="ui-widget-header">Subtes
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
-					<a href="./svg/Subtes-2008.svg" title=" image" class="ui-icon ui-icon-zoomin"></a>
+					<a href="./svg/Subtes-2008.svg" title="Subtes" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
 				<div style="width: 100px; height: 63px" id="canvas07" class="svgcanvas"></div>
 			</div>
@@ -272,10 +339,8 @@
 	</div>
 
 	<div class="demo-description">
-		Los
-		svg tienen que tener un tag
-		<g> agrupandolos, de lo contrario no pueden ser escalados. Falta
-		la aplicacion de la grafica. 
+		Los svg tienen que tener un tag	<g> agrupandolos, de lo contrario no pueden ser escalados.<br>
+		Falta la aplicacion de la grafica. 
 	</div>
 	<!-- End demo-description -->
 
