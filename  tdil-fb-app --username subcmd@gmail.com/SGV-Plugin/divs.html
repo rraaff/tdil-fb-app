@@ -76,39 +76,32 @@
 }
 </style>
 <script>
-	var svgThumbWidth = 100;
-	var svgThumbHeigth = 63;
-	
-	// set the list selector
-	var setSelector = "#gallery";
-	// set the cookie name
-	var setCookieName = "galleryOrder";
-	// set the cookie expiry time (days):
-	var setCookieExpiry = 7;
 
+	// Variables que pueden ser editadas
+	// Ancho destino de las miniaturas
+	var svgThumbWidth = 100;
+	// Alto destino de las miniaturas
+	var svgThumbHeigth = 63;
+	// Duracion de la cookie (dias)
+	var setCookieExpiry = 7;
+	// Fin variables
+	
+	var setSelector = "#gallery";
+	var setCookieName = "galleryOrder";
 	var restoring = false;
 	
-	/////////////////////////////////////////////////////////////////
-	/////  YOU PROBABLY WON'T NEED TO EDIT BELOW  ///////////////////
-	/////////////////////////////////////////////////////////////////
-	 
-	// function that writes the list order to a cookie
+	// Funcion que salva el estado de la galeria en la cookie
 	function saveOrder() {
-		if (restoring) {
-			return;
-		}
-		// save custom order to cookie
+		if (restoring) {return;	}
 		$.cookie(setCookieName, $(setSelector).sortable("toArray"), { expires: setCookieExpiry, path: "/" });
 	}
 	
 	$(function() {	
-		
-		// there's the gallery and the trash
+		// Galeria y trash
 		var $gallery = $("#gallery"), $trash = $("#trash");
-
 		$gallery.sortable({update: function() { saveOrder(); }});
 
-		// function that restores the list order from a cookie
+		// Funcion que restaura los items de la galeria de la cookie
 		function restoreOrder() {
 			restoring = true;
 			var list = $(setSelector);
@@ -125,13 +118,11 @@
 			for ( var v=0, len=items.length; v<len; v++) {
 				rebuild[items[v]] = items[v];
 			}
-			
 			for (var i = 0, n = items.length; i < n; i++) {
 				// item id from saved order
 				var itemID = items[i];
 				deleteImage($("#" + itemID));
 			}
-			
 			for (var i = 0, n = IDs.length; i < n; i++) {
 				// item id from saved order
 				var itemID = IDs[i];
@@ -140,8 +131,7 @@
 			restoring = false;
 		}
 		
-		// image deletion function
-		//var recycle_icon = "<a href='#' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
+		// Funcion que quita un svg de la galeria
 		function deleteImage($item) {
 			if (!$item.attr('closed') || $item.attr('closed') == '0') {
 				var $list = $("div", $trash).length ? $("div", $trash)[0] : $(
@@ -152,15 +142,15 @@
 			}
 		}
 
-		// image recycle function
-		// var trash_icon = "<a href='#' title='Delete this image' class='ui-icon ui-icon-trash'></a>";
+		// Funcion que vuelve un svg a la galeria
 		function recycleImage($item) {
 			$item.appendTo($gallery);
 			$item.attr('closed', '0');
 			saveOrder();
 		}
 
-		// image preview function, demonstrating the ui.dialog used as a modal window
+		// Imagen que muestra un svg en su tamaño original
+		// Si esta minimizado, lo vuelve a la lista de visibles
 		function viewLargerImage($item, $link) {
 			if (!$item.attr('closed') || $item.attr('closed') == '0') {
 				$('#dialogDiv').svg();
@@ -177,7 +167,7 @@
 			}
 		}
 
-		// resolve the icons behavior with event delegation
+		// Funcion que maneja el onlick de los iconos
 		$("div.gallery > div").click(function(event) {
 			var $item = $(this), $target = $(event.target);
 			if ($target.is("a.ui-icon-trash")) {
@@ -188,11 +178,11 @@
 			} else if ($target.is("a.ui-icon-refresh")) {
 				recycleImage($item);
 			}
-
 			return false;
 		});
 
 		restoring = true;
+		
 		// seccion de carga de los svgs
 		loadSVG($("#canvas00"), './svg/gfloppy.svg');
 		loadSVG($("#canvas01"), './svg/antenna.svg');
@@ -204,13 +194,13 @@
 
 		// ejemplo de svg inicialmente borrado
 		deleteImage($("#div07"));
-		restoring = false;
 		
+		restoring = false;
 		// recarga de estado desde la cookie
 		restoreOrder();
 		restoring = false;
 		
-		// dialogo que mostrara el svg en tamaño original
+		// dialogo que mostrara el svg en tamaño original en un nuevo layer
 		$(function() {
 			$("#dialogContainer").dialog({
 				title : 'Some title',
@@ -232,6 +222,7 @@
 		});
 	});
 
+	// Funcion que carga el svg
 	function loadSVG(divObj, svgUrl) {
 		divObj.svg({
 			onLoad : function() {
@@ -240,14 +231,15 @@
 					addTo : true,
 					changeSize : true,
 					onLoad : function() {
-						scale1(divObj);
+						scale(divObj);
 					}
 				});
 			}
 		});
 	}
 
-	function scale1(objCanvas) {
+	// Funcion que escala un svg cargado usando como destino svgThumbWidth y svgThumbHeight
+	function scale(objCanvas) {
 		var svg = objCanvas.svg('get');
 		var g = $('g', svg.root())[0];
 		svg._svg.width.baseVal.convertToSpecifiedUnits(5);
@@ -269,9 +261,10 @@
 <body>
 	<div class="demo ui-widget ui-helper-clearfix">
 
-		<div id="gallery"
-			class="gallery ui-helper-reset ui-helper-clearfix ui-droppable">
+		<!-- Inicio de la galeria -->
+		<div id="gallery" class="gallery ui-helper-reset ui-helper-clearfix ui-droppable">
 			
+			<!-- Contenedor del svg -->
 			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div00">
 				<h5 class="ui-widget-header">
 					Floppy 
