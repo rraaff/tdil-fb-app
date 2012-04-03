@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Nov 30, 2011 6:16:12 PM                                                        
+
+     Package    
+     description
+                   
+     mgodoy                                                                
+     ====================================================================== -->
+<project name="Package" default="make_package">
+    <description>
+            ANT file para armar el paquete de entrega
+    </description>
+	
+	
+    <!-- ================================= 
+          target: make_pakage              
+         ================================= -->
+    <target name="make_package" description="description">
+    	<delete file="svg.zip" failonerror="false"></delete>
+    	<delete dir="tmp" failonerror="false"></delete>
+    	<mkdir dir="tmp/svg"/>
+    	<copy todir="tmp/svg">
+    		<fileset dir="../" id="id">
+    			<exclude name="**/to_delete/**"/>
+			    <exclude name="**/resources/**"/>
+    			<exclude name="**/.project"/>
+    			<exclude name="**/.buildpath"/>
+			</fileset>
+    	</copy>
+        <zip destfile="svg.zip" basedir="tmp">		
+		</zip>
+    	<delete dir="tmp" failonerror="false"></delete>
+    </target>
+
+</project>
