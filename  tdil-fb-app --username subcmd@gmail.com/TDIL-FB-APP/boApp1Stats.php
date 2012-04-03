@@ -10,7 +10,7 @@
 		UNION ALL
 		SELECT 'Grupos formados', COUNT(1) FROM GROUP_APP1 WHERE groupmember_fbid = 0
 		UNION ALL 
-		SELECT 'Invitados', COUNT(1) FROM USER_APP1 WHERE ORIGIN = 0
+		SELECT 'Invitados', COUNT(1) FROM USER_APP1 WHERE ORIGIN != 1
 		UNION ALL 
 		SELECT 'Grupo con mas integrantes', MAX(CANT - 1) FROM (SELECT count(1) CANT FROM GROUP_APP1 GROUP BY groupowner_fbid) GROUPS";
 
