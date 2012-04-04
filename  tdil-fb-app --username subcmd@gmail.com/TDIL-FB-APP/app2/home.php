@@ -297,40 +297,123 @@ closeConnection($connection);
 	}
 </script>
 <link href="../css/tdil.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(../images/homeBaseApp2.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	overflow:hidden !important;
+}
+#baseDatosDeContacto {
+	height:318px;
+	margin-top:180px;
+	background-image: url(../images/homeData.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+form, div, table, tr, td {
+	font-size:12px;
+}
+#baseDatosDeContacto #acomodador {
+	margin-left:346px;
+	padding-top:100px !important;
+}
+.okButton {
+	font-size: 1px;
+	color: transparent;
+	background:transparent;
+	background-image: url(../images/button_ok.png);
+	background-repeat: no-repeat;
+	background-position: center -5px;
+	height: 69px;
+	width: 69px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin: 0px;
+	cursor:hand;
+}
+#invitationBlock {
+	margin-left:346px;
+}
+#buttonsLinks {
+	margin-left:346px;
+}
+</style>
 </head>
 <body>
 <?php if ($hasFriend) { ?>
-	Te vamos a mandar la MMGG a tu domicilio
+	<div style="height:318px; margin-top:180px;"><img src="../images/homeHasFriend.png" width="795" height="318" border="0"></div>
 <?php } else { ?>
 	<?php if ($hasContactData == 0) { ?>
 		<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" onSubmit="return checkContactData();">
-		<div id="errmessage"></div>
-		Nombre: <input type="text" name="firstname" id="firstname"><br>
-		Apellido: <input type="text" name="lastname" id="lastname"><br>
-		Direccion: <input type="text" name="address" id="address"><br>
-		Telefono: <input type="text" name="phone" id="phone"><br>
-		<input type="hidden" name="savecontactdata" value="true"><br>
-		<input type="submit" value="Grabar datos">
-		No tenes datos de contacto, para poder invitar a un amigo tenes que dejarlos primero
-		Esto hace submit a esta misma pagina, primero debe grabar y sigue.
+			<div id="baseDatosDeContacto">
+				<div id="errmessage"></div>
+				<div id="acomodador">
+					<table cellpadding="5" cellspacing="0" border="0" align="left">
+						<tr>
+							<td>Nombre: </td>
+							<td><input type="text" name="firstname" id="firstname"></td>
+						</tr>
+						<tr>
+							<td>Apellido: </td>
+							<td><input type="text" name="lastname" id="lastname"></td>
+						</tr>
+						<tr>
+							<td>Direccion: </td>
+							<td><input type="text" name="address" id="address"></td>
+						</tr>
+						<tr>
+							<td>Telefono: </td>
+							<td><input type="text" name="phone" id="phone"></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><input type="hidden" name="savecontactdata" value="true"><input type="submit" value="Grabar datos"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><span class="remarcado">No tenes datos de contacto.</span><br/>Para poder invitar a un amigo tenes que dejarlos primero.</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</form>
 	<?php } else { ?>
 		<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" onSubmit="return checkContactData();">
-		<div id="errmessage"></div>
-		Nombre: <input type="text" name="firstname" id="firstname" value="<?php echo $contactData['firstname'];?>"><br>
-		Apellido: <input type="text" name="lastname" id="lastname" value="<?php echo $contactData['lastname'];?>"><br>
-		Direccion: <input type="text" name="address" id="address" value="<?php echo $contactData['address'];?>"><br>
-		Telefono: <input type="text" name="phone" id="phone" value="<?php echo $contactData['phone'];?>"><br>
-		<input type="hidden" name="savecontactdata" value="true"><br>
-		<input type="submit" value="Grabar datos">
+			<div id="baseDatosDeContacto" style="margin-top:100px; height:315px;">
+				<div id="errmessage"></div>
+				<div id="acomodador">
+					<table cellpadding="5" cellspacing="0" border="0" align="left">
+						<tr>
+							<td>Nombre: </td>
+							<td><input type="text" name="firstname" id="firstname" value="<?php echo $contactData['firstname'];?>"></td>
+						</tr>
+						<tr>
+							<td>Apellido: </td>
+							<td><input type="text" name="lastname" id="lastname" value="<?php echo $contactData['lastname'];?>"></td>
+						</tr>
+						<tr>
+							<td>Direccion: </td>
+							<td><input type="text" name="address" id="address" value="<?php echo $contactData['address'];?>"></td>
+						<tr>
+							<td>Telefono: </td>
+							<td><input type="text" name="phone" id="phone" value="<?php echo $contactData['phone'];?>"></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"><input type="hidden" name="savecontactdata" value="true"><input type="submit" value="Grabar datos"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</form>
 		<body>
 <?php if ($active) { ?>
 	<?php if ( $email_remaining > 0) { ?>
 	<div id="invitationBlock">
 	  <form action="./inviteemail.php" onSubmit="return checkEmail();">
-			<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
-		<input type="text" name="inv_email" id="inv_email" class="galletaInput">
+		<input type="hidden" name="fbid" value="<?php echo $fbid;?>">
+		E-Mail de tu amigo: <input type="text" name="inv_email" id="inv_email" class="galletaInput">
 	    <input type="submit" class="okButton">
 	  </form>
 	</div>
@@ -389,7 +472,7 @@ closeConnection($connection);
 <div id="buttonsLinks">
 <?php if ($active) { ?>
 	<?php if ($fb_remaining > 0) { ?>
-		Envi&aacute; una <a href="#" onClick="sendRequest()">invitaci&oacute;n a un amigo</a>
+		Envi&aacute; una <a href="#" onClick="sendRequest()">invitaci&oacute;n a un amigo</a> por Facebook
 	<?php } else { ?>
 		Ya enviaste todas las invitaciones que pod&iacute;as
 	<?php } ?>
