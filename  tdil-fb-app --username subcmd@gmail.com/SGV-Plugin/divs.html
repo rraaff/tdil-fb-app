@@ -16,7 +16,7 @@
 <style>
 #gallery {
 	float: left;
-	width: 400px;
+	width: 100%;
 	min-height: 12em;
 }
 
@@ -29,17 +29,57 @@
 
 .gallery div {
 	float: left;
-	width: 96px;
-	padding: 0.4em;
-	margin: 0 0.4em 0.4em 0;
-	text-align: center;
+	
+	/*padding: 0.4em;
+	margin: 0 0.4em 0.4em 0;*/
+}
+.ui-widget-content {
+	/*  esto le agregué en DG */
+	width: 415px;
+	padding: 5px;
+	margin: 10px;
+	text-align: left;
+	background-color:#ABB2B2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ABB2B2), to(#E6E6E6) );
+	background: -webkit-linear-gradient(#ABB2B2, #E6E6E6);
+	background: -moz-linear-gradient(center top, #ABB2B2 0%, #E6E6E6 100%);
+	background: -moz-gradient(center top, #ABB2B2 0%, #E6E6E6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ABB2B2, endColorstr=#E6E6E6 );
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ABB2B2,endColorstr=#E6E6E6)";
+	height: 280px;
+	border: 1px solid;
+	border-color: #fff;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 .gallery div h5 {
-	margin: 0 0 0.4em;
 	cursor: move;
+	/*  esto le agregué en DG */
+	font-size: 12px;
+	background:none;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0.4em;
+	margin-left: 0;
+	padding: 10px;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: double;
+	border-left-style: none;
+	border-bottom-color: #E6E6E6;
 }
-
+.ui-dialog-titlebar {
+	background:none;
+	border:none;
+}
 .gallery div a {
 	float: right;
 }
@@ -70,6 +110,15 @@
 
 #trash h4 .ui-icon {
 }
+.svgcanvas {
+	background-color: #FFFFFF;
+	margin: 5px;
+	width:403px;
+	height:230px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
 
 #trash .gallery .svgcanvas {
 	display: none;
@@ -79,9 +128,9 @@
 
 	// Variables que pueden ser editadas
 	// Ancho destino de las miniaturas
-	var svgThumbWidth = 100;
+	var svgThumbWidth = 400;
 	// Alto destino de las miniaturas
-	var svgThumbHeigth = 63;
+	var svgThumbHeigth = 233;
 	// Duracion de la cookie (dias)
 	var setCookieExpiry = 7;
 	// Fin variables
@@ -207,8 +256,8 @@
 				resizable : false,
 				bgiframe : true,
 				overlay : {
-					opacity : 0.3,
-					background : "white"
+					opacity : 0.8,
+					background : "#000"
 				},
 				position : [ 0, 0 ],
 				autoOpen : false,
@@ -271,7 +320,7 @@
 						<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 						<a href="./svg/gfloppy.svg" title="Floppy" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
-				<div style="width: 100px; height: 63px" id="canvas00" class="svgcanvas"></div>
+				<div id="canvas00" class="svgcanvas"></div>
 			</div>
 
 			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div01">
@@ -279,7 +328,7 @@
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/antenna.svg" title="Antenna" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
-				<div style="width: 100px; height: 63px" id="canvas01" class="svgcanvas"></div>
+				<div id="canvas01" class="svgcanvas"></div>
 			</div>
 
 			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div02">
@@ -287,7 +336,7 @@
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/penguin.svg" title="Penguin" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
-				<div style="width: 100px; height: 63px" id="canvas02" class="svgcanvas"></div>
+				<div id="canvas02" class="svgcanvas"></div>
 			</div>
 
 			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div03">
@@ -295,7 +344,7 @@
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/laptop.svg" title="Laptop" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
-				<div style="width: 100px; height: 63px" id="canvas03" class="svgcanvas"></div>
+				<div id="canvas03" class="svgcanvas"></div>
 			</div>
 
 			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div04">
@@ -303,7 +352,7 @@
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/modem.svg" title="Modem" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
-				<div style="width: 100px; height: 63px" id="canvas04" class="svgcanvas"></div>
+				<div id="canvas04" class="svgcanvas"></div>
 			</div>
 
 			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div05">
@@ -311,7 +360,7 @@
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/monitor.svg" title="Monitor" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
-				<div style="width: 100px; height: 63px" id="canvas05" class="svgcanvas"></div>
+				<div id="canvas05" class="svgcanvas"></div>
 			</div>
 
 			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div07">
@@ -319,7 +368,7 @@
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/Subtes-2008.svg" title="Subtes" class="ui-icon ui-icon-zoomin"></a>
 				</h5>
-				<div style="width: 100px; height: 63px" id="canvas07" class="svgcanvas"></div>
+				<div id="canvas07" class="svgcanvas"></div>
 			</div>
 
 		</div>
@@ -331,11 +380,11 @@
 
 	</div>
 
-	<div class="demo-description">
+	<!--div class="demo-description">
 		Los svg tienen que tener un tag	<g> agrupandolos, de lo contrario no pueden ser escalados.<br>
 		Falta la aplicacion de la grafica. 
-	</div>
-	<!-- End demo-description -->
+	</div-->
+<!-- End demo-description -->
 
 
 	<div id="dialogContainer" title="Basic dialog">

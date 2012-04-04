@@ -1,17 +1,26 @@
 Instrucciones:
 
+
 Para utilizar el codigo provisto se deben seguir los siguientes pasos:
+
+
 
 1) Modificar la seccion que tiene el comentario:
 // seccion de carga de los svgs
 Cargando dentro de la misma los svgs con un codigo como el que sigue:
 loadSVG($("#canvas00"), './svg/gfloppy.svg');
+
 El primer parametro es el id del canvas donde se cargara el svg, el segundo el svg en cuestion.
+
+
 
 2) Por cada svg a cargar se debe agregar la siguiente seccion dentro de la galeria
 
+
 <!-- Contenedor del svg -->
+
 <div class="ui-widget-content ui-corner-tr ui-draggable" id="div00">
+
 	<h5 class="ui-widget-header">
 		Floppy 
 			<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
@@ -20,7 +29,14 @@ El primer parametro es el id del canvas donde se cargara el svg, el segundo el s
 	<div style="width: 100px; height: 63px" id="canvas00" class="svgcanvas"></div>
 </div>
 
+
+
 El div externo debe tener un identificador unico (ej: div00), y el mismo debe mantenerse entre diferentes renderings, ya que es la base del guardado del estado en la cookie.
+
+
 Dentro del tag h5 va el titulo de la miniatura.
+
 El tag <a href="./svg/gfloppy.svg" title="Floppy" class="ui-icon ui-icon-zoomin"></a> lleva como href el svg, y como title el titulo que se mostrara en la ventana maximizada.
+
+
 El tag <div style="width: 100px; height: 63px" id="canvas00" class="svgcanvas"></div> debe tener un id que coincida con el llamado en el punto 1.

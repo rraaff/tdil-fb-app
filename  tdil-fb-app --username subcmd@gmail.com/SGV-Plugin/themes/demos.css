@@ -1,6 +1,4 @@
-body {
-	font-size: 62.5%;
-}
+body { font-size: 62.5%; }
 
 table {
 	font-size: 1em;
@@ -11,6 +9,18 @@ table {
 
 body {
 	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	background-color:#E6E6E6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#C7C9C9) );
+	background: -webkit-linear-gradient(#E6E6E6, #C7C9C9);
+	background: -moz-linear-gradient(center top, #E6E6E6 0%, #C7C9C9 100%);
+	background: -moz-gradient(center top, #E6E6E6 0%, #C7C9C9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#E6E6E6, endColorstr=#C7C9C9 );
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#E6E6E6,endColorstr=#C7C9C9)";
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }
 
 /* Layout
