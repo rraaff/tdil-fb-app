@@ -4,14 +4,14 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(../images/canvasBG.jpg);
+	background-image: url(../images/canvasBGApp2.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
-	overflow:hidden;
+	overflow:hidden !important;
 }
 #textContent{
 	width: 500px;
-	margin-top: 180px;
+	margin-top: 130px;
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;

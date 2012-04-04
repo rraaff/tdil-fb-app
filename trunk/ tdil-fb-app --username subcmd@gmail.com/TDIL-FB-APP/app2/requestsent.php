@@ -11,13 +11,14 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(../images/cleanBase.jpg);
+	background-image: url(../images/homeBaseApp2.jpg);
 	background-repeat: no-repeat;
-	background-position: left top;
+	background-position: center top;
+	overflow:hidden !important;
 }
 #textContent{
 	width: 600px;
-	margin-top: 367px;
+	margin-top: 130px;
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;

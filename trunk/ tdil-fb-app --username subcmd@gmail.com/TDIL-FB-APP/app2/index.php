@@ -160,15 +160,15 @@ if ($ok_to_procced == 1) {
 <style type="text/css">
 <!--
 body {
-	background-image: url(../images/cleanBase.jpg);
+	background-image: url(../images/acceptBGApp2.jpg);
 	background-repeat: no-repeat;
 	background-position: left top;
+	overflow:hidden !important;
 }
 #textContent{
-	width: 600px;
-	margin-top: 367px;
-	margin-right: auto;
-	margin-left: auto;
+	width: 159px;
+	margin-top: 307px;
+	margin-right: 90px;
 	text-align: center;
 }
 -->
@@ -176,7 +176,7 @@ body {
 
 <body>
 <div id="textContent">
-	<div id="contentSuccessfull">Para unirte al grupo tenes que cliquear <a href="<?php echo $redirect;?>" target="_top">Aca</a></div>
+	<div id="contentSuccessfull"><a href="<?php echo $redirect;?>" target="_top"><img src="../images/button_here.png" alt="clic ac&aacute;" width="159" height="58" border="0"></a></div>
 </div>
 </body>
 </html>
