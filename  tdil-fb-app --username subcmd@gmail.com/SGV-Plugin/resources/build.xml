@@ -23,6 +23,7 @@
     	<copy todir="tmp/svg">
     		<fileset dir="../" id="id">
     			<exclude name="**/to_delete/**"/>
+    			<exclude name="**/svg1/**"/>
 			    <exclude name="**/resources/**"/>
     			<exclude name="**/.project"/>
     			<exclude name="**/.buildpath"/>
