@@ -1,0 +1,27 @@
+Instalación
+
+1) Registrar una nueva aplicación en facebook
+2) Descomprimir el app2.zip
+3) Correr resources/fb_mgm_dea2.sql como FB_MGM_USER/FB_MGM_USER base FB_MGM
+4) Copiar los archivos al root del servidor
+5) Modificar app2constants.php con los datos de la aplicación De a 2: Cambiar el protocolo a https
+6) Modificar constantes_mail.php con los datos para envió de emails
+7) Crear una pagina en Facebook
+8) Agregar la aplicación creada a la pagina
+
+Importante: El server donde este corriendo debe tener habilitado el uso de HTTPS Para pruebas se puede hacer cambiando manualmente la URL del browser cuando de algún error.
+
+Accesos
+
+BackOffice: ./boLogin.php
+
+Invitación por email app2: invitacion_app2.html
+
+Remplazos:
+{SERVER_NAME}
+{SENDER_NAME}
+{PAGE_LINK}
+
+Prueba de la aplicación
+Para realizar la prueba de la aplicación se deberán dar de alta usuarios de Facebook, algunos de los cuales deberán
+ser amigos de forma de poder enviarse invitaciones.

@@ -7,7 +7,7 @@
                    
      mgodoy                                                                
      ====================================================================== -->
-<project name="Package" default="make_package">
+<project name="Package" default="app2">
     <description>
             ANT file para armar el paquete de entrega de FB_MGM
     </description>
@@ -16,7 +16,7 @@
     <!-- ================================= 
           target: make_pakage              
          ================================= -->
-    <target name="make_package" description="description">
+    <!--target name="make_package" description="description">
     	<delete file="fb_mgm.zip" failonerror="false"></delete>
     	<delete dir="tmp" failonerror="false"></delete>
     	<mkdir dir="tmp/FB"/>
@@ -43,6 +43,32 @@
         <zip destfile="fb_mgm.zip" basedir="tmp">		
 		</zip>
     	<delete dir="tmp" failonerror="false"></delete>
-    </target>
+    </target-->
+	
+	<target name="app2" description="description">
+	    	<delete file="app2.zip" failonerror="false"></delete>
+	    	<delete dir="tmp" failonerror="false"></delete>
+	    	<mkdir dir="tmp/FB"/>
+	    	<copy todir="tmp" file="InstruccionesApp2.txt"></copy>
+	    	<copy todir="tmp" file="fb_mgm_dea2.sql"></copy>
+	    	<copy todir="tmp/FB">
+	    		<fileset dir="../" id="id">
+	    			<exclude name="**/.settings/**"/>
+				    <exclude name="**/resources/**"/>
+	    			<exclude name="**/testing/**"/>
+				   	<exclude name="**/deploy.sh"/>
+	    			<exclude name="**/.project"/>
+	    			<exclude name="**/database.sql"/>
+	    			<exclude name="**/.buildpath"/>
+	    			<exclude name="**/constantes.php"/>
+	    			<exclude name="**/app1constants.php"/>
+	    			<exclude name="**/constantes_mail.php"/>
+	    			<exclude name="**/invitacion_app1.html"/>
+				</fileset>
+	    	</copy>
+	        <zip destfile="app2.zip" basedir="tmp">		
+			</zip>
+	    	<delete dir="tmp" failonerror="false"></delete>
+	    </target>
 
 </project>
