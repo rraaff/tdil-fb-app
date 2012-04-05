@@ -35,7 +35,7 @@
 }
 .ui-widget-content {
 	/*  esto le agregué en DG */
-	width: 415px;
+	width: 30%;
 	padding: 5px;
 	margin: 10px;
 	text-align: left;
@@ -46,7 +46,7 @@
 	background: -moz-gradient(center top, #ABB2B2 0%, #E6E6E6 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ABB2B2, endColorstr=#E6E6E6 );
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ABB2B2,endColorstr=#E6E6E6)";
-	height: 280px;
+	height: 50%;
 	border: 1px solid;
 	border-color: #fff;
 	-webkit-border-radius: 20px;
@@ -95,7 +95,7 @@
 
 #trash {
 	float: bottom;
-	width: 400px;
+	width: 95%;
 	min-height: 10em;
 	padding: 1%;
 }
@@ -110,11 +110,10 @@
 
 #trash h4 .ui-icon {
 }
-.svgcanvas {
+.gallery .svgcanvas {
 	background-color: #FFFFFF;
 	margin: 5px;
-	width:403px;
-	height:230px;
+	width:97%;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
@@ -122,15 +121,29 @@
 
 #trash .gallery .svgcanvas {
 	display: none;
+	width: 150px;
+	height: 0px;
+}
+
+#trash .gallery .ui-widget-content {
+width: 150px;
+height: 50px;
+}
+
+#dialogDiv {
+	display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 </style>
 <script>
+	
 
 	// Variables que pueden ser editadas
 	// Ancho destino de las miniaturas
-	var svgThumbWidth = 400;
+	var svgThumbWidth = screen.width / 3;
 	// Alto destino de las miniaturas
-	var svgThumbHeigth = 233;
+	var svgThumbHeigth = (screen.height / 4) - 20;
 	// Duracion de la cookie (dias)
 	var setCookieExpiry = 7;
 	// Fin variables
@@ -139,6 +152,14 @@
 	var setCookieName = "galleryOrder";
 	var restoring = false;
 	
+	var originalWidth = [];
+	var originalHeight = [];
+	var actualWidth = [];
+	var actualHeight = [];
+	
+	var svgWidth = [];
+	var svgHeight = [];
+	
 	// Funcion que salva el estado de la galeria en la cookie
 	function saveOrder() {
 		if (restoring) {return;	}
@@ -146,6 +167,7 @@
 	}
 	
 	$(function() {	
+		$('.gallery .svgcanvas').css('height', (screen.height / 4) - 25);
 		// Galeria y trash
 		var $gallery = $("#gallery"), $trash = $("#trash");
 		$gallery.sortable({update: function() { saveOrder(); }});
@@ -182,6 +204,13 @@
 		
 		// Funcion que quita un svg de la galeria
 		function deleteImage($item) {
+			if (actualWidth[$item.prop("id")]) {
+				// resize
+				$item.css('width', 150);
+				$item.css('height', 50);
+			}
+			$item.resizable( "option", "disabled", true );
+			
 			if (!$item.attr('closed') || $item.attr('closed') == '0') {
 				var $list = $("div", $trash).length ? $("div", $trash)[0] : $(
 						"<div class='gallery ui-helper-reset'/>").appendTo($trash);
@@ -195,6 +224,7 @@
 		function recycleImage($item) {
 			$item.appendTo($gallery);
 			$item.attr('closed', '0');
+			$item.resizable( "option", "disabled", false);
 			saveOrder();
 		}
 
@@ -208,10 +238,20 @@
 					addTo : true,
 					changeSize : true
 				});
+				var x = (screen.width / 2) - (svgWidth[$link.attr("href")] / 2);
+				if (x < 0) {
+					x = 0;
+				}
+				$('#dialogContainer').dialog('option', 'position', [x,0]);
 				$('#dialogContainer').dialog("option" , "title" , $link.attr("title"));
 				$("#dialogContainer").dialog("open");
 				return;
 			} else {
+				if (actualWidth[$item.prop("id")]) {
+					// resize
+					$item.css('width', actualWidth[$item.prop("id")]);
+					$item.css('height', actualHeight[$item.prop("id")]);
+				}
 				recycleImage($item);
 			}
 		}
@@ -233,13 +273,13 @@
 		restoring = true;
 		
 		// seccion de carga de los svgs
-		loadSVG($("#canvas00"), './svg/gfloppy.svg');
-		loadSVG($("#canvas01"), './svg/antenna.svg');
-		loadSVG($("#canvas02"), './svg/penguin.svg');
-		loadSVG($("#canvas03"), './svg/laptop.svg');
-		loadSVG($("#canvas04"), './svg/modem.svg');
-		loadSVG($("#canvas05"), './svg/monitor.svg');
-		loadSVG($("#canvas07"), './svg/Subtes-2008.svg');
+		loadSVG($("#div00"), $("#canvas00"), './svg/gfloppy.svg');
+		loadSVG($("#div01"), $("#canvas01"), './svg/antenna.svg');
+		loadSVG($("#div02"), $("#canvas02"), './svg/penguin.svg');
+		loadSVG($("#div03"), $("#canvas03"), './svg/laptop.svg');
+		loadSVG($("#div04"), $("#canvas04"), './svg/modem.svg');
+		loadSVG($("#div05"), $("#canvas05"), './svg/monitor.svg');
+		loadSVG($("#div07"), $("#canvas07"), './svg/Subtes-2008.svg');
 
 		// ejemplo de svg inicialmente borrado
 		deleteImage($("#div07"));
@@ -254,12 +294,12 @@
 			$("#dialogContainer").dialog({
 				title : 'Some title',
 				resizable : false,
+				position: 'center',
 				bgiframe : true,
 				overlay : {
 					opacity : 0.8,
 					background : "#000"
 				},
-				position : [ 0, 0 ],
 				autoOpen : false,
 				height : 'auto',
 				width : 'auto',
@@ -272,7 +312,7 @@
 	});
 
 	// Funcion que carga el svg
-	function loadSVG(divObj, svgUrl) {
+	function loadSVG(containerDiv, divObj, svgUrl) {
 		divObj.svg({
 			onLoad : function() {
 				var svg = divObj.svg('get');
@@ -280,23 +320,54 @@
 					addTo : true,
 					changeSize : true,
 					onLoad : function() {
-						scale(divObj);
+						scale(divObj,svgUrl);
 					}
 				});
 			}
 		});
+		containerDiv.resizable({ alsoResize: '#' + divObj.prop("id") });
+		containerDiv.resize(function(ev,ui){
+			var elem = $(this);    
+			originalWidth[containerDiv.prop("id")] = ui.originalSize.width;
+			originalHeight[containerDiv.prop("id")] = ui.originalSize.height;
+			
+			actualWidth[containerDiv.prop("id")] = ui.size.width;
+			actualHeight[containerDiv.prop("id")] = ui.size.height;
+			
+			rescale(divObj, elem.width() - 15, elem.height() - 50);
+		  });
 	}
-
+	
 	// Funcion que escala un svg cargado usando como destino svgThumbWidth y svgThumbHeight
-	function scale(objCanvas) {
+	function scale(objCanvas, svgUrl) {
 		var svg = objCanvas.svg('get');
 		var g = $('g', svg.root())[0];
 		svg._svg.width.baseVal.convertToSpecifiedUnits(5);
 		svg._svg.height.baseVal.convertToSpecifiedUnits(5);
 		var widthPX = svg._svg.width.baseVal.valueInSpecifiedUnits;
 		var heightPX = svg._svg.height.baseVal.valueInSpecifiedUnits;
+		svgWidth[svgUrl] = widthPX;
+		svgHeight[svgUrl] = widthPX;
 		var scalew = svgThumbWidth / widthPX;
 		var scaleh = svgThumbHeigth / heightPX;
+		var scale = 0;
+		if (scalew < scaleh) {
+			scale = scalew;
+		} else {
+			scale = scaleh;
+		}
+		g.setAttribute('transform', 'scale(' + scale + ')');
+	}
+	
+	function rescale(objCanvas, width, height) {
+		var svg = objCanvas.svg('get');
+		var g = $('g', svg.root())[0];
+		svg._svg.width.baseVal.convertToSpecifiedUnits(5);
+		svg._svg.height.baseVal.convertToSpecifiedUnits(5);
+		var widthPX = svg._svg.width.baseVal.valueInSpecifiedUnits;
+		var heightPX = svg._svg.height.baseVal.valueInSpecifiedUnits;
+		var scalew = width / widthPX;
+		var scaleh = height / heightPX;
 		var scale = 0;
 		if (scalew < scaleh) {
 			scale = scalew;
@@ -314,7 +385,7 @@
 		<div id="gallery" class="gallery ui-helper-reset ui-helper-clearfix ui-droppable">
 			
 			<!-- Contenedor del svg -->
-			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div00">
+			<div class="ui-widget-content ui-corner-tr " id="div00">
 				<h5 class="ui-widget-header">
 					Floppy 
 						<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
@@ -323,7 +394,7 @@
 				<div id="canvas00" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div01">
+			<div class="ui-widget-content ui-corner-tr " id="div01">
 				<h5 class="ui-widget-header">Antenna
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/antenna.svg" title="Antenna" class="ui-icon ui-icon-zoomin"></a>
@@ -331,7 +402,7 @@
 				<div id="canvas01" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div02">
+			<div class="ui-widget-content ui-corner-tr " id="div02">
 				<h5 class="ui-widget-header">Penguin
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/penguin.svg" title="Penguin" class="ui-icon ui-icon-zoomin"></a>
@@ -339,7 +410,7 @@
 				<div id="canvas02" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div03">
+			<div class="ui-widget-content ui-corner-tr " id="div03">
 				<h5 class="ui-widget-header">Laptop
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/laptop.svg" title="Laptop" class="ui-icon ui-icon-zoomin"></a>
@@ -347,7 +418,7 @@
 				<div id="canvas03" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div04">
+			<div class="ui-widget-content ui-corner-tr " id="div04">
 				<h5 class="ui-widget-header">Modem
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/modem.svg" title="Modem" class="ui-icon ui-icon-zoomin"></a>
@@ -355,7 +426,7 @@
 				<div id="canvas04" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div05">
+			<div class="ui-widget-content ui-corner-tr " id="div05">
 				<h5 class="ui-widget-header">Monitor
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/monitor.svg" title="Monitor" class="ui-icon ui-icon-zoomin"></a>
@@ -363,7 +434,7 @@
 				<div id="canvas05" class="svgcanvas"></div>
 			</div>
 
-			<div class="ui-widget-content ui-corner-tr ui-draggable" id="div07">
+			<div class="ui-widget-content ui-corner-tr " id="div07">
 				<h5 class="ui-widget-header">Subtes
 					<a href="#" title="Delete this image" class="ui-icon ui-icon-trash"></a>
 					<a href="./svg/Subtes-2008.svg" title="Subtes" class="ui-icon ui-icon-zoomin"></a>
@@ -377,7 +448,7 @@
 	<!-- End demo -->
 
 	<div id="trash" class="ui-widget-content ui-state-default ui-droppable">
-
+		
 	</div>
 
 	<!--div class="demo-description">
@@ -388,7 +459,9 @@
 
 
 	<div id="dialogContainer" title="Basic dialog">
+		<center>
 		<div id="dialogDiv"></div>
+		</center>
 	</div>
 
 </body>
