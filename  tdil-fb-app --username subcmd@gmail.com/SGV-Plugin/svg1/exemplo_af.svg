@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="100%" viewBox="727 924 2064 876" width="100%" fill="#C0C0C0" image-rendering="optimizeSpeed" onload="SVG_doc_loaded(evt);" PB:pid="" xlink:xid="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:PB="urn:osisoft-com-pb" xmlns:PBI="urn:osisoft-com-interface" xmlns:PBD="urn:osisoft-com-data" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance">
+	<defs><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Estado" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor10" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Nome" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor5" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Pressão;kgf/cm2" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor7" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Temperatura;°C" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor8" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Vazão;m3/d" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor9" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Estado" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor11" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Nome" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor6" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Pressão;kgf/cm2" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor12" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Temperatura;°C" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor13" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Vazão;m3/d" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor14" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste|Estado" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor10_MS" PB:Type="7" PB:Parent="Valor10">
+			</PBI:Symbol>
+			<PBI:Symbol name="Valor11_MS" PB:Type="7" PB:Parent="Valor11">
+			</PBI:Symbol>
+			<PBI:Symbol name="Valor2" PB:Type="7">
+			</PBI:Symbol>
+			<PBI:Symbol name="Valor2_MS" PB:Type="7" PB:Parent="Valor2">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste|Nome" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor1" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste|Vazão Total Fórmula;m3/d" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor4" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses><PBD:DataSetUses tag="AF2_DS.\\PEEPVM\Peep Teste\FPSO Teste|Vazão Total Rollup;m3/d" PB:Parent="AF2_DS" PB:BO="PWSPIDataSetsBO.CBODataSets">
+			<PBI:Symbol name="Valor3" PB:Type="7">
+			</PBI:Symbol>
+		</PBD:DataSetUses>
+	</defs>
+	<rect x="0" y="0" width="3295" height="1800" PB:DocMajorVersionNum="3" PB:DocMinorVersionNum="25" PB:DocGroup="1" PB:wnHeight="378" PB:wnWidth="808" PB:wnState="2" PB:Zoom="100" PB:LocalID="1033" PB:DisplayServerTimeZone="True" PB:Type="55" PB:NamedValues="MRD.IsNewDisplay,False">
+	</rect>
+	<PB:Dataset id="AF2_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="10000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="True">
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste|Nome_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste|Estado_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste|Vazão Total Rollup;m3/d_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste|Vazão Total Fórmula;m3/d_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Nome_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Nome_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Pressão;kgf/cm2_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Temperatura;°C_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Vazão;m3/d_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Estado_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Estado_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Pressão;kgf/cm2_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Temperatura;°C_DP"/>
+		<PB:DSDatapoint id="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Vazão;m3/d_DP"/>
+	</PB:Dataset>
+	<PB:Dataset id="MODULEDB_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="5000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="False">
+	</PB:Dataset>
+	<PB:Dataset id="E_DS_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="5000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="False">
+	</PB:Dataset>
+	<polygon id="Retângulo1" points="974,392 2320,392 2320,1768 974,1768" fill="none" stroke="#000000" stroke-width="6px" PB:IsMultiState="False" PB:Type="2" PB:LineStyle="0">
+	</polygon>
+	<polygon id="Retângulo3" points="1701,1188 2257,1188 2257,1712 1701,1712" fill="none" stroke="#000000" stroke-width="6px" PB:IsMultiState="False" PB:Type="2" PB:LineStyle="0">
+	</polygon>
+	<polygon id="Retângulo2" points="1037,1191 1593,1191 1593,1715 1037,1715" fill="none" stroke="#000000" stroke-width="6px" PB:IsMultiState="False" PB:Type="2" PB:LineStyle="0">
+	</polygon>
+	<g id="Valor1" fill="#000000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="False" PB:IsMultiState="False" PB:NumberFormat="General" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste|Nome" PB:PtTagStatus="0" PB:PtTagTime="12/31/1969 9:00:00 PM" PB:PtTagValue="FPSO Teste" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor1_pbTextBoundingRectEl" x="1411" y="339" width="498" height="98" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor1_pbTextEl" x="1660" y="412" fill="#000000" stroke="none" font-family="Arial" font-size="79.9999968210857" font-weight="bold" text-anchor="middle" PBD:Property="value">FPSO Teste</text>
+	</g>
+	<g id="Texto2" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto2_pbTextBoundingRectEl" x="1034" y="982" width="529" height="64" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Texto2_pbTextEl" x="1034" y="1030" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold">Vazão Total - Rollup</text>
+	</g>
+	<g id="Texto3" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto3_pbTextBoundingRectEl" x="1034" y="1053" width="580" height="64" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Texto3_pbTextEl" x="1034" y="1101" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold">Vazão Total - Fórmula</text>
+	</g>
+	<g id="Valor2" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="False" PB:IsMultiState="True" PB:NumberFormat="General" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste|Estado" PB:PtTagStatus="0" PB:PtTagTime="12/31/1969 9:00:00 PM" PB:PtTagValue="Produzindo" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor2_pbTextBoundingRectEl" x="1499" y="447" width="322" height="64" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor2_pbTextEl" x="1660" y="495" fill="#FF0000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" text-anchor="middle" PB:FillColor="#000000" PBD:Property="value">Produzindo<PB:MultiState id="Valor2_MS" BlinkBadData="0" ColorBadData="none" CurrentState="1" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste|Estado" TagName="AF2.\\PEEPVM\Peep Teste\FPSO Teste|Estado" PtTagValue="Produzindo" StateCount="2">
+				<PB:MSState id="Valor2_MSS1" Blink="0" Color="#FFFFFF" LowerValue="0" UpperValue="0"/>
+				<PB:MSState id="Valor2_MSS2" Blink="0" Color="#FF0000" LowerValue="1" UpperValue="1"/>
+			</PB:MultiState>
+		</text>
+	</g>
+	<g id="Valor3" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste|Vazão Total Rollup;m3/d" PB:PtTagStatus="0" PB:PtTagTime="12/31/1969 9:00:00 PM" PB:PtTagValue="1596.99 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor3_pbTextBoundingRectEl" x="1889" y="982" width="371" height="64" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor3_pbTextEl" x="2260" y="1030" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" text-anchor="end" PBD:Property="value">1596.99 </text>
+	</g>
+	<g id="Valor4" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste|Vazão Total Fórmula;m3/d" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:32:14 PM" PB:PtTagValue="1596.99 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor4_pbTextBoundingRectEl" x="1889" y="1053" width="371" height="64" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor4_pbTextEl" x="2260" y="1101" fill="#000000" stroke="none" font-family="Arial" font-size="53.3333312140572" font-weight="bold" text-anchor="end" PBD:Property="value">1596.99 </text>
+	</g>
+	<g id="Valor5" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="False" PB:IsMultiState="False" PB:NumberFormat="General" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Nome" PB:PtTagStatus="0" PB:PtTagTime="12/31/1969 9:00:00 PM" PB:PtTagValue="Poço 1" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor5_pbTextBoundingRectEl" x="1196" y="1151" width="228" height="77" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor5_pbTextEl" x="1310" y="1209" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold" text-anchor="middle" PBD:Property="value">Poço 1</text>
+	</g>
+	<g id="Valor6" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="False" PB:IsMultiState="False" PB:NumberFormat="General" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Nome" PB:PtTagStatus="0" PB:PtTagTime="12/31/1969 9:00:00 PM" PB:PtTagValue="Poço 2" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor6_pbTextBoundingRectEl" x="1849" y="1148" width="228" height="77" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor6_pbTextEl" x="1963" y="1206" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold" text-anchor="middle" PBD:Property="value">Poço 2</text>
+	</g>
+	<g id="Texto1" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto1_pbTextBoundingRectEl" x="1068" y="1328" width="167" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Texto1_pbTextEl" x="1068" y="1365.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Pressão</text>
+	</g>
+	<g id="Valor7" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Pressão;kgf/cm2" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:32:14 PM" PB:PtTagValue="4.49 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor7_pbTextBoundingRectEl" x="1301" y="1328" width="262" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor7_pbTextEl" x="1563" y="1366" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="end" PBD:Property="value">4.49 </text>
+	</g>
+	<g id="Texto4" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto4_pbTextBoundingRectEl" x="1069" y="1471" width="257" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Texto4_pbTextEl" x="1069" y="1508.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Temperatura</text>
+	</g>
+	<g id="Valor8" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Temperatura;°C" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor8_pbTextBoundingRectEl" x="1365" y="1471" width="199" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor8_pbTextEl" x="1564" y="1508" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="end" PBD:Property="value">144.95 </text>
+	</g>
+	<g id="Texto5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto5_pbTextBoundingRectEl" x="1068" y="1611" width="127" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Texto5_pbTextEl" x="1068" y="1648.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Vazão</text>
+	</g>
+	<g id="Valor9" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Vazão;m3/d" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:32:14 PM" PB:PtTagValue="63.88 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor9_pbTextBoundingRectEl" x="1338" y="1611" width="225" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor9_pbTextEl" x="1563" y="1648" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="end" PBD:Property="value">63.88 </text>
+	</g>
+	<g id="Valor10" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="False" PB:IsMultiState="True" PB:NumberFormat="General" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 1|Estado" PB:PtTagStatus="0" PB:PtTagTime="12/31/1969 9:00:00 PM" PB:PtTagValue="Aberto" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor10_pbTextBoundingRectEl" x="1237" y="1241" width="146" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor10_pbTextEl" x="1310" y="1278" fill="#FF0000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" PB:FillColor="#000000" PBD:Property="value">Aberto<PB:MultiState id="Valor10_MS" BlinkBadData="0" ColorBadData="none" CurrentState="1" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste|Estado" TagName="AF2.\\PEEPVM\Peep Teste\FPSO Teste|Estado" PtTagValue="Aberto" StateCount="2">
+				<PB:MSState id="Valor10_MSS1" Blink="0" Color="#FFFFFF" LowerValue="0" UpperValue="0"/>
+				<PB:MSState id="Valor10_MSS2" Blink="0" Color="#FF0000" LowerValue="1" UpperValue="1"/>
+			</PB:MultiState>
+		</text>
+	</g>
+	<g id="Valor11" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="False" PB:IsMultiState="True" PB:NumberFormat="General" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Estado" PB:PtTagStatus="0" PB:PtTagTime="12/31/1969 9:00:00 PM" PB:PtTagValue="Aberto" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor11_pbTextBoundingRectEl" x="1890" y="1238" width="146" height="50" fill="#C0C0C0" stroke-width="0">
+		</rect>
+		<text id="Valor11_pbTextEl" x="1963" y="1276" fill="#FF0000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="middle" PB:FillColor="#000000" PBD:Property="value">Aberto<PB:MultiState id="Valor11_MS" BlinkBadData="0" ColorBadData="none" CurrentState="1" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste|Estado" TagName="AF2.\\PEEPVM\Peep Teste\FPSO Teste|Estado" PtTagValue="Aberto" StateCount="2">
+				<PB:MSState id="Valor11_MSS1" Blink="0" Color="#FFFFFF" LowerValue="0" UpperValue="0"/>
+				<PB:MSState id="Valor11_MSS2" Blink="0" Color="#FF0000" LowerValue="1" UpperValue="1"/>
+			</PB:MultiState>
+		</text>
+	</g>
+	<g id="Texto6" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto6_pbTextBoundingRectEl" x="1732" y="1328" width="167" height="50" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto6_pbTextEl" x="1732" y="1365.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Pressão</text>
+	</g>
+	<g id="Texto7" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto7_pbTextBoundingRectEl" x="1733" y="1471" width="257" height="50" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto7_pbTextEl" x="1733" y="1508.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Temperatura</text>
+	</g>
+	<g id="Texto8" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto8_pbTextBoundingRectEl" x="1732" y="1611" width="127" height="50" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto8_pbTextEl" x="1732" y="1648.5" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold">Vazão</text>
+	</g>
+	<g id="Valor12" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Pressão;kgf/cm2" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor12_pbTextBoundingRectEl" x="1917" y="1328" width="310" height="50" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor12_pbTextEl" x="2227" y="1366" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="end" PBD:Property="value">144.95 </text>
+	</g>
+	<g id="Valor13" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Temperatura;°C" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:32:14 PM" PB:PtTagValue="17.71 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor13_pbTextBoundingRectEl" x="2053" y="1471" width="175" height="50" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor13_pbTextEl" x="2228" y="1508" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="end" PBD:Property="value">17.71 </text>
+	</g>
+	<g id="Valor14" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="2" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:DatasetName="AF2_DS" PBD:DatasetColumn="\\PEEPVM\Peep Teste\FPSO Teste\Poço 2|Vazão;m3/d" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:32:14 PM" PB:PtTagValue="1533.11 " PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor14_pbTextBoundingRectEl" x="1954" y="1611" width="273" height="50" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor14_pbTextEl" x="2227" y="1648" fill="#000000" stroke="none" font-family="Arial" font-size="39.9999984105429" font-weight="bold" text-anchor="end" PBD:Property="value">1533.11 </text>
+	</g>
+	<polygon id="RetTitulo" points="3295,198 -5,198 -5,0 3295,0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3px" PB:IsMultiState="False" PB:Type="2" PB:LineStyle="0">
+	</polygon>
+	<g id="GrBR" x="-5" y="0" height="198" width="704" PB:IsMultiState="False" PB:Type="13" PB:ImageSizing="1" PB:ImageOriginalFormat="0" PB:ImageIndex="1" PB:Linked="False" xlink:href="exemplo_af_GrBR_1.jpg" PB:Visible="True">
+		<image x="13" y="0" width="669" height="198" xlink:href="svg1/exemplo_af_GrBR_1.jpg">
+		</image>
+	</g>
+	<g id="TxtTitulo" fill="#000000" stroke="none" font-family="Arial" font-size="66.6666640175714" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="TxtTitulo_pbTextBoundingRectEl" x="1066" y="56" width="1458" height="85" fill="none" stroke-width="0">
+		</rect>
+		<text id="TxtTitulo_pbTextEl" x="1066" y="119.75" fill="#000000" stroke="none" font-family="Arial" font-size="66.6666640175714" font-weight="bold">UO-BS - Vigilância de Poços - FPSO Teste</text>
+	</g>
+	<g id="GrGIOp" x="2943" y="0" height="198" width="352" PB:IsMultiState="False" PB:Type="13" PB:ImageSizing="1" PB:ImageOriginalFormat="0" PB:ImageIndex="1" PB:Linked="False" xlink:href="exemplo_af_GrGIOp_1.jpg" PB:Visible="True">
+		<image x="2943" y="0" width="352" height="198" xlink:href="svg1/exemplo_af_GrGIOp_1.jpg">
+		</image>
+	</g>
+	<g id="Gráfico1" x="1280" y="519" height="437" width="733" PB:IsMultiState="False" PB:Type="13" PB:ImageSizing="1" PB:ImageOriginalFormat="0" PB:ImageIndex="1" PB:Linked="False" xlink:href="exemplo_af_Gráfico1_1.jpg" PB:Visible="True">
+		<image x="1306" y="519" width="680" height="437" xlink:href="svg1/exemplo_af_Grafico1_1.jpg">
+		</image>
+	</g>
+	<script language="JavaScript" type="text/javascript"> 
+        
+        function SVG_doc_loaded(evt)
+	{
+	    var parentDoc = evt.getTarget().getOwnerDocument();
+	    var elem = parentDoc.createElement("Ready");
+	    evt.getTarget().appendChild(elem);
+
+        }</script>
+</svg>

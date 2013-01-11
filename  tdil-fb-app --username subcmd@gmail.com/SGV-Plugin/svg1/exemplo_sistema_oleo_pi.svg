@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="100%" viewBox="0 0 2340 1020" width="100%" fill="#C8C8C8" image-rendering="optimizeSpeed" onload="SVG_doc_loaded(evt);" PB:pid="" xlink:xid="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:PB="urn:osisoft-com-pb" xmlns:PBI="urn:osisoft-com-interface" xmlns:PBD="urn:osisoft-com-data" xmlns:xsi="http://www.w3.org/1999/XMLSchema/instance">
+	<defs><PBD:TagUses tag="\\peepvm\cdt158" PB:BO="PWSPIEventsBO.cBOEvents">
+			<PBI:Symbol name="Barra1" PB:Type="12"/>
+			<PBI:Symbol name="Barra2" PB:Type="12"/>
+			<PBI:Symbol name="Barra3" PB:Type="12"/>
+			<PBI:Symbol name="Valor1" PB:Type="7"/>
+			<PBI:Symbol name="Valor10" PB:Type="7"/>
+			<PBI:Symbol name="Valor11" PB:Type="7"/>
+			<PBI:Symbol name="Valor12" PB:Type="7"/>
+			<PBI:Symbol name="Valor13" PB:Type="7"/>
+			<PBI:Symbol name="Valor2" PB:Type="7"/>
+			<PBI:Symbol name="Valor3" PB:Type="7"/>
+			<PBI:Symbol name="Valor4" PB:Type="7"/>
+			<PBI:Symbol name="Valor5" PB:Type="7"/>
+			<PBI:Symbol name="Valor6" PB:Type="7"/>
+			<PBI:Symbol name="Valor7" PB:Type="7"/>
+			<PBI:Symbol name="Valor8" PB:Type="7"/>
+			<PBI:Symbol name="Valor9" PB:Type="7"/>
+		</PBD:TagUses>
+		<PBD:LinkUses xlink:href="exemplo_tendencias.svg" PB:ButtonRelativePath="exemplo_tendencias.svg">
+			<PBI:Symbol name="Botão10"/>
+		</PBD:LinkUses>
+	</defs>
+	<rect x="0" y="0" width="3690" height="1920" PB:DocMajorVersionNum="3" PB:DocMinorVersionNum="25" PB:DocGroup="1" PB:wnHeight="378" PB:wnWidth="808" PB:wnState="2" PB:Zoom="90" PB:LocalID="1033" PB:DisplayServerTimeZone="True" PB:Type="55" PB:NamedValues="MRD.IsNewDisplay,False">
+	</rect>
+	<PB:Dataset id="AF2_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="10000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="True">
+	</PB:Dataset>
+	<PB:Dataset id="MODULEDB_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="5000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="False">
+	</PB:Dataset>
+	<PB:Dataset id="E_DS_DS" PB:Type="57" PB:Context="2" PB:Description="" PB:RefreshInterval="5000" PB:Stepped="False" PB:DSType="3" PB:DSVisible="False">
+	</PB:Dataset>
+	<g id="Verysmoothtank4_1" PB:FillColor="16777215" transform="translate(644,855)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="148250782" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0,0.5,1 2,1,0.5,0 ">
+		<rect id="Verysmoothtank4_1_pbBoundingRectEl" x="644" y="855" width="347" height="176" fill="none" stroke-width="0">
+		</rect>
+		<svg height="176" viewBox="0 0 999 504" width="347" preserveAspectRatio="none">
+			<path style="fill:#666;stroke:#000;stroke-width:2" d="M870,499 l31,-8 22,-17 20,-24 14,-24 12,-27 9,-30 8,-33 5,-35 2,-24 0,-13 0,-12 -1,-38 -4,-36 -7,-33 -9,-31 -11,-28 -13,-25 -19,-27 -23,-18 -30,-11 -6,-1 -742,0 -31,8 -23,17 -20,25 -13,23 -12,27 -10,30 -7,33 -5,35 -2,25 -1,12 0,13 2,37 4,36 7,34 9,31 10,28 14,24 19,27 22,19 31,11 6,0 742,0z">
+			</path>
+			<path style="fill:#737373" d="M5,251 l9,-85 26,-77 42,-48 46,-16 742,0 46,16 42,48 27,77 9,85 -9,85 -27,77 -42,49 -46,16 -742,0 -46,-16 -42,-49 -26,-77 -9,-85z">
+			</path>
+			<path style="fill:#7d7d7d" d="M5,251 l9,-77 26,-70 42,-44 46,-15 742,0 46,15 42,44 27,70 9,77 -9,77 -27,71 -42,43 -46,15 -742,0 -46,-15 -42,-43 -26,-71 -9,-77z">
+			</path>
+			<path style="fill:#8a8a8a" d="M5,251 l9,-69 26,-63 42,-40 46,-13 742,0 46,13 42,40 27,63 9,69 -9,70 -27,63 -42,39 -46,14 -742,0 -46,-14 -42,-39 -26,-63 -9,-70z">
+			</path>
+			<path style="fill:#949494" d="M5,251 l9,-61 26,-56 42,-36 46,-11 742,0 46,11 42,36 27,56 9,61 -9,62 -27,56 -42,35 -46,12 -742,0 -46,-12 -42,-35 -26,-56 -9,-62z">
+			</path>
+			<path style="fill:#a1a1a1" d="M5,251 l9,-54 26,-49 42,-31 46,-10 742,0 46,10 42,31 27,49 9,54 -9,54 -27,49 -42,31 -46,11 -742,0 -46,-11 -42,-31 -26,-49 -9,-54z">
+			</path>
+			<path style="fill:#ababab" d="M5,251 l9,-46 26,-42 42,-27 46,-8 742,0 46,8 42,27 27,42 9,46 -9,47 -27,42 -42,26 -46,9 -742,0 -46,-9 -42,-26 -26,-42 -9,-47z">
+			</path>
+			<path style="fill:#b8b8b8" d="M5,251 l9,-38 26,-35 42,-23 46,-7 742,0 46,7 42,23 27,35 9,38 -9,39 -27,35 -42,22 -46,7 -742,0 -46,-7 -42,-22 -26,-35 -9,-39z">
+			</path>
+			<path style="fill:#c2c2c2" d="M5,251 l9,-31 26,-28 42,-17 46,-6 742,0 46,6 42,17 27,28 9,31 -9,31 -27,28 -42,18 -46,6 -742,0 -46,-6 -42,-18 -26,-28 -9,-31z">
+			</path>
+			<path style="fill:#cfcfcf" d="M5,251 l9,-23 26,-21 42,-13 46,-5 742,0 46,5 42,13 27,21 9,23 -9,24 -27,20 -42,14 -46,4 -742,0 -46,-4 -42,-14 -26,-20 -9,-24z">
+			</path>
+			<path style="fill:#d9d9d9" d="M5,251 l9,-15 26,-14 42,-9 46,-3 742,0 46,3 42,9 27,14 9,15 -9,16 -27,14 -42,9 -46,3 -742,0 -46,-3 -42,-9 -26,-14 -9,-16z">
+			</path>
+			<ellipse cx="498" cy="251" rx="494" ry="20" style="fill:#e5e5e5">
+			</ellipse>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M128,499 l0,-495">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M870,499 l0,-495">
+			</path>
+		</svg>
+	</g>
+	<g id="Conector3" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:ConnectionTo="Verysmoothtank4_1,1" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector3_Polyline" fill="none" stroke="#5C5C5C" stroke-width="3px" points="376,941 376,944 609,944 609,943 644,943" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector3_Arrow" fill="#5C5C5C" stroke="#5C5C5C" stroke-width="3px" d="M 644 943 L 620 953 L 620 933 z">
+		</path>
+	</g>
+	<g id="Conector4" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:ConnectionFrom="Verysmoothtank4_1,2" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector4_Polyline" fill="none" stroke="#5C5C5C" stroke-width="3px" points="991,943 1308,943 1308,976" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector4_Arrow" fill="#5C5C5C" stroke="#5C5C5C" stroke-width="3px" d="M 1308 976 L 1318 952 L 1298 952 z">
+		</path>
+	</g>
+	<g id="Heatexchanger6_2" PB:FillColor="16777215" transform="translate(1276,990)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="1956131863" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0.885416666666667,0.946428571428571,2 ">
+		<rect id="Heatexchanger6_2_pbBoundingRectEl" x="1276" y="990" width="192" height="112" fill="none" stroke-width="0">
+		</rect>
+		<svg height="112" viewBox="0 0 999 316" width="192" preserveAspectRatio="none">
+			<path style="fill:#a6a6a6;stroke:#000;stroke-width:2" d="M832,5 l45,0 0,17 -45,0 0,-17z">
+			</path>
+			<path style="fill:#a6a6a6;stroke:#000;stroke-width:2" d="M122,5 l44,0 0,17 -44,0 0,-17z">
+			</path>
+			<path style="fill:#d9d9d9" d="M139,5 l10,0 0,17 -10,0 0,-17z">
+			</path>
+			<path style="fill:#d9d9d9" d="M849,5 l11,0 0,17 -11,0 0,-17z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M89,155 l-17,0 0,150 17,0 0,-150z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M926,155 l-16,0 0,150 16,0 0,-150z">
+			</path>
+			<path style="fill:#999;stroke:#000;stroke-width:2" d="M965,132 l0,-110 10,5 6,8 5,12 5,15 2,9 2,8 1,10 1,10 1,11 1,11 0,23 -1,11 -1,10 -1,11 -1,9 -2,10 -4,16 -5,14 -6,10 -6,6 -7,3 0,-112z">
+			</path>
+			<path style="fill:#999;stroke:#000;stroke-width:2" d="M33,133 l0,111 -10,-5 -6,-9 -5,-11 -5,-16 -2,-8 -2,-9 -1,-10 -1,-10 -1,-11 0,-11 0,-22 0,-11 1,-11 1,-10 1,-10 2,-9 4,-16 5,-14 6,-10 6,-7 7,-2 0,111z">
+			</path>
+			<path style="fill:#bfbfbf" d="M33,133 l0,72 -10,-3 -7,-10 -4,-8 -3,-11 -2,-12 -2,-14 0,-7 0,-15 1,-14 2,-12 2,-12 4,-10 4,-8 9,-7 6,-1 0,72z">
+			</path>
+			<path style="fill:#bfbfbf" d="M965,132 l0,-71 10,3 7,9 4,9 3,11 2,12 2,13 0,7 0,15 -1,14 -2,13 -2,12 -4,9 -4,8 -8,7 -7,1 0,-72z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M965,0 l-44,0 0,266 44,0 0,-266z">
+			</path>
+			<path style="fill:#7f7f7f" d="M77,22 l844,0 0,222 -844,0 0,-222z">
+			</path>
+			<path style="fill:#7f7f7f" d="M77,0 l-44,0 0,266 44,0 0,-266z">
+			</path>
+			<path style="fill:#a6a6a6" d="M965,26 l-44,0 0,214 44,0 0,-214z">
+			</path>
+			<path style="fill:#a6a6a6" d="M77,44 l844,0 0,178 -844,0 0,-178z">
+			</path>
+			<path style="fill:#a6a6a6" d="M77,26 l-44,0 0,214 44,0 0,-214z">
+			</path>
+			<path style="fill:#bfbfbf" d="M965,40 l-44,0 0,186 44,0 0,-186z">
+			</path>
+			<path style="fill:#bfbfbf" d="M77,55 l844,0 0,156 -844,0 0,-156z">
+			</path>
+			<path style="fill:#bfbfbf" d="M77,40 l-44,0 0,186 44,0 0,-186z">
+			</path>
+			<path style="fill:#e5e5e5" d="M965,93 l-44,0 0,80 44,0 0,-80z">
+			</path>
+			<path style="fill:#e5e5e5" d="M77,100 l844,0 0,66 -844,0 0,-66z">
+			</path>
+			<path style="fill:#e5e5e5" d="M77,93 l-44,0 0,80 44,0 0,-80z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M943,0 l0,266">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M77,22 l844,0 0,222 -844,0 0,-222">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M77,0 l-44,0 0,266 44,0 0,-266">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M55,0 l0,266">
+			</path>
+			<path style="fill:#b2b2b2;stroke:#000;stroke-width:2" d="M33,305 l89,0 0,11 -89,0 0,-11z">
+			</path>
+			<path style="fill:#b2b2b2;stroke:#000;stroke-width:2" d="M877,305 l88,0 0,11 -88,0 0,-11z">
+			</path>
+			<path style="fill:#666" d="M122,141 l-4,-10 4,-9 9,-3 9,3 4,9 -4,10 -9,3 -9,-3z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+		</svg>
+	</g>
+	<g id="Verysmoothtank4_2" PB:FillColor="16777215" transform="translate(1725,808)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="148250782" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0,0.5,1 2,1,0.5,0 ">
+		<rect id="Verysmoothtank4_2_pbBoundingRectEl" x="1725" y="808" width="347" height="176" fill="none" stroke-width="0">
+		</rect>
+		<svg height="176" viewBox="0 0 999 504" width="347" preserveAspectRatio="none">
+			<path style="fill:#666;stroke:#000;stroke-width:2" d="M870,499 l31,-8 22,-17 20,-24 14,-24 12,-27 9,-30 8,-33 5,-35 2,-24 0,-13 0,-12 -1,-38 -4,-36 -7,-33 -9,-31 -11,-28 -13,-25 -19,-27 -23,-18 -30,-11 -6,-1 -742,0 -31,8 -23,17 -20,25 -13,23 -12,27 -10,30 -7,33 -5,35 -2,25 -1,12 0,13 2,37 4,36 7,34 9,31 10,28 14,24 19,27 22,19 31,11 6,0 742,0z">
+			</path>
+			<path style="fill:#737373" d="M5,251 l9,-85 26,-77 42,-48 46,-16 742,0 46,16 42,48 27,77 9,85 -9,85 -27,77 -42,49 -46,16 -742,0 -46,-16 -42,-49 -26,-77 -9,-85z">
+			</path>
+			<path style="fill:#7d7d7d" d="M5,251 l9,-77 26,-70 42,-44 46,-15 742,0 46,15 42,44 27,70 9,77 -9,77 -27,71 -42,43 -46,15 -742,0 -46,-15 -42,-43 -26,-71 -9,-77z">
+			</path>
+			<path style="fill:#8a8a8a" d="M5,251 l9,-69 26,-63 42,-40 46,-13 742,0 46,13 42,40 27,63 9,69 -9,70 -27,63 -42,39 -46,14 -742,0 -46,-14 -42,-39 -26,-63 -9,-70z">
+			</path>
+			<path style="fill:#949494" d="M5,251 l9,-61 26,-56 42,-36 46,-11 742,0 46,11 42,36 27,56 9,61 -9,62 -27,56 -42,35 -46,12 -742,0 -46,-12 -42,-35 -26,-56 -9,-62z">
+			</path>
+			<path style="fill:#a1a1a1" d="M5,251 l9,-54 26,-49 42,-31 46,-10 742,0 46,10 42,31 27,49 9,54 -9,54 -27,49 -42,31 -46,11 -742,0 -46,-11 -42,-31 -26,-49 -9,-54z">
+			</path>
+			<path style="fill:#ababab" d="M5,251 l9,-46 26,-42 42,-27 46,-8 742,0 46,8 42,27 27,42 9,46 -9,47 -27,42 -42,26 -46,9 -742,0 -46,-9 -42,-26 -26,-42 -9,-47z">
+			</path>
+			<path style="fill:#b8b8b8" d="M5,251 l9,-38 26,-35 42,-23 46,-7 742,0 46,7 42,23 27,35 9,38 -9,39 -27,35 -42,22 -46,7 -742,0 -46,-7 -42,-22 -26,-35 -9,-39z">
+			</path>
+			<path style="fill:#c2c2c2" d="M5,251 l9,-31 26,-28 42,-17 46,-6 742,0 46,6 42,17 27,28 9,31 -9,31 -27,28 -42,18 -46,6 -742,0 -46,-6 -42,-18 -26,-28 -9,-31z">
+			</path>
+			<path style="fill:#cfcfcf" d="M5,251 l9,-23 26,-21 42,-13 46,-5 742,0 46,5 42,13 27,21 9,23 -9,24 -27,20 -42,14 -46,4 -742,0 -46,-4 -42,-14 -26,-20 -9,-24z">
+			</path>
+			<path style="fill:#d9d9d9" d="M5,251 l9,-15 26,-14 42,-9 46,-3 742,0 46,3 42,9 27,14 9,15 -9,16 -27,14 -42,9 -46,3 -742,0 -46,-3 -42,-9 -26,-14 -9,-16z">
+			</path>
+			<ellipse cx="498" cy="251" rx="494" ry="20" style="fill:#e5e5e5">
+			</ellipse>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M128,499 l0,-495">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M870,499 l0,-495">
+			</path>
+		</svg>
+	</g>
+	<g id="Verysmoothtank4_3" PB:FillColor="16777215" transform="translate(1925,1161)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="148250782" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0,0.494318181818182,1 2,1,0.5,0 ">
+		<rect id="Verysmoothtank4_3_pbBoundingRectEl" x="1925" y="1161" width="347" height="176" fill="none" stroke-width="0">
+		</rect>
+		<svg height="176" viewBox="0 0 999 504" width="347" preserveAspectRatio="none">
+			<path style="fill:#666;stroke:#000;stroke-width:2" d="M870,499 l31,-8 22,-17 20,-24 14,-24 12,-27 9,-30 8,-33 5,-35 2,-24 0,-13 0,-12 -1,-38 -4,-36 -7,-33 -9,-31 -11,-28 -13,-25 -19,-27 -23,-18 -30,-11 -6,-1 -742,0 -31,8 -23,17 -20,25 -13,23 -12,27 -10,30 -7,33 -5,35 -2,25 -1,12 0,13 2,37 4,36 7,34 9,31 10,28 14,24 19,27 22,19 31,11 6,0 742,0z">
+			</path>
+			<path style="fill:#737373" d="M5,251 l9,-85 26,-77 42,-48 46,-16 742,0 46,16 42,48 27,77 9,85 -9,85 -27,77 -42,49 -46,16 -742,0 -46,-16 -42,-49 -26,-77 -9,-85z">
+			</path>
+			<path style="fill:#7d7d7d" d="M5,251 l9,-77 26,-70 42,-44 46,-15 742,0 46,15 42,44 27,70 9,77 -9,77 -27,71 -42,43 -46,15 -742,0 -46,-15 -42,-43 -26,-71 -9,-77z">
+			</path>
+			<path style="fill:#8a8a8a" d="M5,251 l9,-69 26,-63 42,-40 46,-13 742,0 46,13 42,40 27,63 9,69 -9,70 -27,63 -42,39 -46,14 -742,0 -46,-14 -42,-39 -26,-63 -9,-70z">
+			</path>
+			<path style="fill:#949494" d="M5,251 l9,-61 26,-56 42,-36 46,-11 742,0 46,11 42,36 27,56 9,61 -9,62 -27,56 -42,35 -46,12 -742,0 -46,-12 -42,-35 -26,-56 -9,-62z">
+			</path>
+			<path style="fill:#a1a1a1" d="M5,251 l9,-54 26,-49 42,-31 46,-10 742,0 46,10 42,31 27,49 9,54 -9,54 -27,49 -42,31 -46,11 -742,0 -46,-11 -42,-31 -26,-49 -9,-54z">
+			</path>
+			<path style="fill:#ababab" d="M5,251 l9,-46 26,-42 42,-27 46,-8 742,0 46,8 42,27 27,42 9,46 -9,47 -27,42 -42,26 -46,9 -742,0 -46,-9 -42,-26 -26,-42 -9,-47z">
+			</path>
+			<path style="fill:#b8b8b8" d="M5,251 l9,-38 26,-35 42,-23 46,-7 742,0 46,7 42,23 27,35 9,38 -9,39 -27,35 -42,22 -46,7 -742,0 -46,-7 -42,-22 -26,-35 -9,-39z">
+			</path>
+			<path style="fill:#c2c2c2" d="M5,251 l9,-31 26,-28 42,-17 46,-6 742,0 46,6 42,17 27,28 9,31 -9,31 -27,28 -42,18 -46,6 -742,0 -46,-6 -42,-18 -26,-28 -9,-31z">
+			</path>
+			<path style="fill:#cfcfcf" d="M5,251 l9,-23 26,-21 42,-13 46,-5 742,0 46,5 42,13 27,21 9,23 -9,24 -27,20 -42,14 -46,4 -742,0 -46,-4 -42,-14 -26,-20 -9,-24z">
+			</path>
+			<path style="fill:#d9d9d9" d="M5,251 l9,-15 26,-14 42,-9 46,-3 742,0 46,3 42,9 27,14 9,15 -9,16 -27,14 -42,9 -46,3 -742,0 -46,-3 -42,-9 -26,-14 -9,-16z">
+			</path>
+			<ellipse cx="498" cy="251" rx="494" ry="20" style="fill:#e5e5e5">
+			</ellipse>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M128,499 l0,-495">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M870,499 l0,-495">
+			</path>
+		</svg>
+	</g>
+	<g id="Conector5" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:ConnectionTo="Verysmoothtank4_2,1" PB:ConnectionFrom="Heatexchanger6_2,1" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector5_Polyline" fill="none" stroke="#5C5C5C" stroke-width="3px" points="1446,1096 1446,1141 1682,1141 1682,896 1725,896" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector5_Arrow" fill="#5C5C5C" stroke="#5C5C5C" stroke-width="3px" d="M 1725 896 L 1701 906 L 1701 886 z">
+		</path>
+	</g>
+	<g id="Conector6" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:ConnectionFrom="Verysmoothtank4_2,2" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector6_Polyline" fill="none" stroke="#5C5C5C" stroke-width="3px" points="2072,896 2105,896 2105,1157" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector6_Arrow" fill="#5C5C5C" stroke="#5C5C5C" stroke-width="3px" d="M 2105 1157 L 2115 1133 L 2095 1133 z">
+		</path>
+	</g>
+	<g id="Classicpump1_1" PB:FillColor="16777215" transform="translate(2483,1205)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="114057212" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0,0.493975903614458,1 2,1,0.5,0 ">
+		<rect id="Classicpump1_1_pbBoundingRectEl" x="2483" y="1205" width="114" height="83" fill="none" stroke-width="0">
+		</rect>
+		<svg height="83" viewBox="0 0 999 999" width="114" preserveAspectRatio="none">
+			<path style="fill:#b2b2b2;stroke:#000;stroke-width:2" d="M125,707 l-125,292 833,0 -126,-292 -582,0z">
+			</path>
+			<path style="fill:#7f7f7f" d="M125,707 l-11,26 -13,31 -12,28 -11,26 -11,26 -11,26 -13,29 -14,33 -4,9 24,-10 47,-18 48,-15 48,-13 49,-10 50,-7 50,-5 50,-3 50,0 50,3 50,5 50,7 49,10 48,13 48,15 47,18 24,10 -4,-9 -11,-25 -13,-30 -11,-27 -11,-26 -11,-26 -12,-27 -13,-30 -10,-25 -4,-9 -19,0 -563,0z">
+			</path>
+			<path style="fill:#b2b2b2;stroke:#000;stroke-width:2" d="M415,0 l584,0 0,333 -176,0 5,30 4,31 0,42 -4,42 -9,41 -12,39 -16,38 -19,35 -23,34 -25,30 -29,29 -30,25 -34,23 -35,19 -38,16 -39,12 -41,9 -42,4 -21,1 -21,-1 -42,-4 -40,-9 -39,-12 -37,-16 -36,-19 -33,-23 -31,-25 -28,-29 -26,-30 -22,-34 -19,-35 -16,-38 -12,-39 -9,-41 -4,-42 0,-21 0,-21 4,-42 9,-40 12,-39 16,-37 19,-36 22,-33 26,-31 28,-28 31,-26 33,-22 36,-19 37,-16 39,-12 40,-9 42,-4 21,0z">
+			</path>
+			<path style="fill:#e5e5e5" d="M93,503 l42,-10 -5,-29 -4,-30 0,-34 3,-29 5,-29 9,-27 11,-26 13,-25 16,-23 18,-21 19,-20 22,-18 23,-16 25,-14 26,-11 27,-8 28,-6 29,-3 30,0 28,4 27,6 4,1 12,-42 -5,-1 -31,-5 -33,-3 -6,0 -5,-1 -6,0 -34,2 -33,5 -31,8 -30,12 -29,14 -28,16 -25,20 -24,21 -21,24 -20,25 -16,28 -14,29 -12,30 -8,31 -5,33 -1,17 -1,17 0,6 2,33 5,33 2,11 1,5z">
+			</path>
+			<path style="fill:#e5e5e5" d="M711,119 l288,0 0,-62 -374,-2 6,4 5,3 6,4 6,4 5,4 6,4 6,4 5,4 5,4 6,4 5,4 5,5 5,4 5,4 5,4 5,4z">
+			</path>
+			<path style="fill:#7f7f7f" d="M823,333 l176,0 0,-126 -222,0 4,8 4,7 4,7 3,8 4,8 3,8 4,8 3,8 3,8 2,8 3,8 2,8 2,8 2,8 1,8 2,8z">
+			</path>
+			<path style="fill:#7f7f7f" d="M739,329 l-42,10 5,29 4,29 0,33 -3,30 -5,28 -9,28 -11,26 -13,25 -16,23 -18,22 -30,29 -22,16 -24,15 -26,12 -27,10 -28,7 -29,4 -30,2 -32,-2 -28,-5 -14,-3 -10,40 5,1 31,6 32,4 5,0 6,1 5,0 34,-2 33,-5 32,-8 31,-12 29,-14 28,-16 25,-20 24,-21 21,-24 20,-25 16,-28 14,-29 12,-31 8,-32 5,-33 1,-17 1,-17 0,-5 -3,-33 -5,-32 -2,-11 0,-5z">
+			</path>
+		</svg>
+	</g>
+	<g id="Conector9" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:ConnectionTo="Classicpump1_1,1" PB:ConnectionFrom="Verysmoothtank4_3,2" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector9_Polyline" fill="none" stroke="#5C5C5C" stroke-width="3px" points="2272,1249 2272,1246 2483,1246" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector9_Arrow" fill="#5C5C5C" stroke="#5C5C5C" stroke-width="3px" d="M 2483 1246 L 2459 1256 L 2459 1236 z">
+		</path>
+	</g>
+	<g id="Conector11" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:Flow="0">
+		<polyline id="Conector11_Polyline" fill="none" stroke="#5C5C5C" stroke-width="3px" points="2598,1220 2739,1220" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector11_Arrow" fill="#5C5C5C" stroke="#5C5C5C" stroke-width="3px" d="M 2739 1220 L 2715 1230 L 2715 1210 z">
+		</path>
+	</g>
+	<g id="Heatexchanger6_3" PB:FillColor="16777215" transform="translate(2846,1296)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="1956131863" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0.963541666666667,0.973214285714286,2 ">
+		<rect id="Heatexchanger6_3_pbBoundingRectEl" x="2846" y="1296" width="192" height="112" fill="none" stroke-width="0">
+		</rect>
+		<svg height="112" viewBox="0 0 999 316" width="192" preserveAspectRatio="none">
+			<path style="fill:#a6a6a6;stroke:#000;stroke-width:2" d="M832,5 l45,0 0,17 -45,0 0,-17z">
+			</path>
+			<path style="fill:#a6a6a6;stroke:#000;stroke-width:2" d="M122,5 l44,0 0,17 -44,0 0,-17z">
+			</path>
+			<path style="fill:#d9d9d9" d="M139,5 l10,0 0,17 -10,0 0,-17z">
+			</path>
+			<path style="fill:#d9d9d9" d="M849,5 l11,0 0,17 -11,0 0,-17z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M89,155 l-17,0 0,150 17,0 0,-150z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M926,155 l-16,0 0,150 16,0 0,-150z">
+			</path>
+			<path style="fill:#999;stroke:#000;stroke-width:2" d="M965,132 l0,-110 10,5 6,8 5,12 5,15 2,9 2,8 1,10 1,10 1,11 1,11 0,23 -1,11 -1,10 -1,11 -1,9 -2,10 -4,16 -5,14 -6,10 -6,6 -7,3 0,-112z">
+			</path>
+			<path style="fill:#999;stroke:#000;stroke-width:2" d="M33,133 l0,111 -10,-5 -6,-9 -5,-11 -5,-16 -2,-8 -2,-9 -1,-10 -1,-10 -1,-11 0,-11 0,-22 0,-11 1,-11 1,-10 1,-10 2,-9 4,-16 5,-14 6,-10 6,-7 7,-2 0,111z">
+			</path>
+			<path style="fill:#bfbfbf" d="M33,133 l0,72 -10,-3 -7,-10 -4,-8 -3,-11 -2,-12 -2,-14 0,-7 0,-15 1,-14 2,-12 2,-12 4,-10 4,-8 9,-7 6,-1 0,72z">
+			</path>
+			<path style="fill:#bfbfbf" d="M965,132 l0,-71 10,3 7,9 4,9 3,11 2,12 2,13 0,7 0,15 -1,14 -2,13 -2,12 -4,9 -4,8 -8,7 -7,1 0,-72z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M965,0 l-44,0 0,266 44,0 0,-266z">
+			</path>
+			<path style="fill:#7f7f7f" d="M77,22 l844,0 0,222 -844,0 0,-222z">
+			</path>
+			<path style="fill:#7f7f7f" d="M77,0 l-44,0 0,266 44,0 0,-266z">
+			</path>
+			<path style="fill:#a6a6a6" d="M965,26 l-44,0 0,214 44,0 0,-214z">
+			</path>
+			<path style="fill:#a6a6a6" d="M77,44 l844,0 0,178 -844,0 0,-178z">
+			</path>
+			<path style="fill:#a6a6a6" d="M77,26 l-44,0 0,214 44,0 0,-214z">
+			</path>
+			<path style="fill:#bfbfbf" d="M965,40 l-44,0 0,186 44,0 0,-186z">
+			</path>
+			<path style="fill:#bfbfbf" d="M77,55 l844,0 0,156 -844,0 0,-156z">
+			</path>
+			<path style="fill:#bfbfbf" d="M77,40 l-44,0 0,186 44,0 0,-186z">
+			</path>
+			<path style="fill:#e5e5e5" d="M965,93 l-44,0 0,80 44,0 0,-80z">
+			</path>
+			<path style="fill:#e5e5e5" d="M77,100 l844,0 0,66 -844,0 0,-66z">
+			</path>
+			<path style="fill:#e5e5e5" d="M77,93 l-44,0 0,80 44,0 0,-80z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M943,0 l0,266">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M77,22 l844,0 0,222 -844,0 0,-222">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M77,0 l-44,0 0,266 44,0 0,-266">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M55,0 l0,266">
+			</path>
+			<path style="fill:#b2b2b2;stroke:#000;stroke-width:2" d="M33,305 l89,0 0,11 -89,0 0,-11z">
+			</path>
+			<path style="fill:#b2b2b2;stroke:#000;stroke-width:2" d="M877,305 l88,0 0,11 -88,0 0,-11z">
+			</path>
+			<path style="fill:#666" d="M122,141 l-4,-10 4,-9 9,-3 9,3 4,9 -4,10 -9,3 -9,-3z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M904,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M965,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M16,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,235 l17,0 0,15 -17,0 0,-15z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,181 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,126 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,71 l17,0 0,14 -17,0 0,-14z">
+			</path>
+			<path style="fill:#bfbfbf;stroke:#000;stroke-width:2" d="M77,16 l17,0 0,14 -17,0 0,-14z">
+			</path>
+		</svg>
+	</g>
+	<g id="Conector14" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector14_Polyline" fill="none" stroke="#5C5C5C" stroke-width="3px" points="2745,1220 2876,1220 2876,1297" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector14_Arrow" fill="#5C5C5C" stroke="#5C5C5C" stroke-width="3px" d="M 2876 1297 L 2886 1273 L 2866 1273 z">
+		</path>
+	</g>
+	<g id="Conector16" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector16_Polyline" fill="none" stroke="#FFFF00" stroke-width="3px" points="899,850 897,850 897,409" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector16_Arrow" fill="#FFFF00" stroke="#FFFF00" stroke-width="3px" d="M 897 409 L 907 433 L 887 433 z">
+		</path>
+	</g>
+	<g id="Conector18" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector18_Polyline" fill="none" stroke="#FFFF00" stroke-width="3px" points="897,600 1355,600 1355,414" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector18_Arrow" fill="#FFFF00" stroke="#FFFF00" stroke-width="3px" d="M 1355 414 L 1365 438 L 1345 438 z">
+		</path>
+	</g>
+	<g id="Conector19" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector19_Polyline" fill="none" stroke="#008000" stroke-width="3px" points="2017,1332 2017,1846 2125,1846" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector19_Arrow" fill="#008000" stroke="#008000" stroke-width="3px" d="M 2125 1846 L 2101 1856 L 2101 1836 z">
+		</path>
+	</g>
+	<g id="Storagefacility4_2" PB:FillColor="16777215" transform="translate(2132,1767)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="524317826" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0,0.503267973856209,1 ">
+		<rect id="Storagefacility4_2_pbBoundingRectEl" x="2132" y="1767" width="206" height="153" fill="none" stroke-width="0">
+		</rect>
+		<svg height="153" viewBox="0 0 999 852" width="206" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M54,344 l931,0 0,508 -931,0 0,-508z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M40,320 l959,0 0,24 -959,0 0,-24z">
+			</path>
+			<path style="fill:#7f7f7f" d="M518,0 l481,320 -959,0 478,-320z">
+			</path>
+			<path style="fill:#999" d="M78,320 l440,-320 409,320 -849,0z">
+			</path>
+			<path style="fill:#999" d="M927,320 l0,24 -849,0 0,-24 849,0z">
+			</path>
+			<path style="fill:#999" d="M92,344 l821,0 0,508 -821,0 0,-508z">
+			</path>
+			<path style="fill:#b2b2b2" d="M126,320 l392,-320 307,320 -699,0z">
+			</path>
+			<path style="fill:#b2b2b2" d="M825,320 l0,24 -699,0 0,-24 699,0z">
+			</path>
+			<path style="fill:#b2b2b2" d="M139,344 l679,0 0,508 -679,0 0,-508z">
+			</path>
+			<path style="fill:#ccc" d="M187,320 l331,-320 160,320 -491,0z">
+			</path>
+			<path style="fill:#ccc" d="M201,344 l470,0 0,508 -470,0 0,-508z">
+			</path>
+			<path style="fill:#ccc" d="M678,320 l0,24 -491,0 0,-24 491,0z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M40,320 l478,-320 481,320 -959,0">
+			</path>
+			<path style="fill:none;stroke:#7f7f7f;stroke-width:2" d="M201,698 l705,0">
+			</path>
+			<path style="fill:none;stroke:#7f7f7f;stroke-width:2" d="M473,521 l512,0">
+			</path>
+			<path style="fill:none;stroke:#7f7f7f;stroke-width:2" d="M54,521 l266,0">
+			</path>
+			<path style="fill:#666;stroke:#000;stroke-width:2" d="M92,852 l-24,0 0,-82 -41,0 0,82 -27,0 0,-17 0,-16 0,-17 0,-489 14,-24 17,-10 3,0 98,0 -40,27 -52,0 -13,14 0,426 41,0 0,-375 24,0 0,481z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M40,293 l-11,2 -9,5 -5,8 -2,12 14,0 2,-9 9,-4 2,-1 0,-13z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M40,306 l0,-13 72,0 -20,13 -52,0z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M13,320 l14,0 0,532 -14,0 0,-532z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M78,371 l14,0 0,481 -14,0 0,-481z">
+			</path>
+			<path style="fill:#000" d="M78,358 l3,0 3,1 3,1 2,2 1,2 1,2 0,3 1,2 -14,0 0,-13z">
+			</path>
+			<path style="fill:#000" d="M27,760 l51,0 0,10 -51,0 0,-10z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M78,371 l0,-13 3,0 3,1 3,1 2,2 1,2 1,2 0,3 1,2 -14,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M27,760 l51,0 0,10 -51,0 0,-10">
+			</path>
+		</svg>
+	</g>
+	<g id="Texto15" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto15_pbTextBoundingRectEl" x="2167" y="1858" width="132" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto15_pbTextEl" x="2167" y="1891" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">Tanque </text>
+	</g>
+	<g id="T3DGatevalve_5" PB:FillColor="32768" transform="translate(1608,1123)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2014426442" PB:Rotation="0" PB:Flip="2">
+		<rect id="T3DGatevalve_5_pbBoundingRectEl" x="1608" y="1123" width="61" height="41" fill="none" stroke-width="0">
+		</rect>
+		<svg height="41" viewBox="0 0 499 250" width="61" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f" d="M0,250 l0,-250 499,250 0,-250 -499,250z">
+			</path>
+			<path style="fill:#999" d="M0,237 l0,-224 499,224 0,-224 -499,224z">
+			</path>
+			<path style="fill:#b2b2b2" d="M0,211 l0,-173 499,173 0,-173 -499,173z">
+			</path>
+			<path style="fill:#ccc" d="M0,186 l0,-122 499,122 0,-122 -499,122z">
+			</path>
+			<path style="fill:#e5e5e5" d="M0,166 l0,-83 499,83 0,-83 -499,83z">
+			</path>
+			<path style="fill:#fff" d="M0,141 l0,-32 499,32 0,-32 -499,32z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,250 l0,-250 499,250 0,-250 -499,250">
+			</path>
+		</svg>
+	</g>
+	<g id="T3DGatevalve_1" PB:FillColor="32768" transform="translate(1996,1687)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2014426442" PB:Rotation="90" PB:Flip="2">
+		<rect id="T3DGatevalve_1_pbBoundingRectEl" x="1996" y="1687" width="44" height="56" fill="none" stroke-width="0">
+		</rect>
+		<svg height="56" viewBox="0 0 250 499" width="44" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f" d="M250,499 l-250,0 250,-499 -250,0 250,499z">
+			</path>
+			<path style="fill:#999" d="M237,499 l-224,0 224,-499 -224,0 224,499z">
+			</path>
+			<path style="fill:#b2b2b2" d="M211,499 l-173,0 173,-499 -173,0 173,499z">
+			</path>
+			<path style="fill:#ccc" d="M186,499 l-122,0 122,-499 -122,0 122,499z">
+			</path>
+			<path style="fill:#e5e5e5" d="M166,499 l-83,0 83,-499 -83,0 83,499z">
+			</path>
+			<path style="fill:#fff" d="M141,499 l-32,0 32,-499 -32,0 32,499z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M250,499 l-250,0 250,-499 -250,0 250,499">
+			</path>
+		</svg>
+	</g>
+	<g id="Linha6" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Linha6_Line" stroke="#008000" stroke-width="3px" x1="799" y1="1226" x2="899" y2="1226" PB:LineEnds="0" PB:LineStyle="0">
+		</line>
+	</g>
+	<g id="Linha7" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Linha7_Line" stroke="#008000" stroke-width="3px" x1="897" y1="1228" x2="897" y2="1441" PB:LineEnds="0" PB:LineStyle="0">
+		</line>
+	</g>
+	<g id="Linha8" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Linha8_Line" stroke="#008000" stroke-width="3px" x1="799" y1="1441" x2="899" y2="1441" PB:LineEnds="0" PB:LineStyle="0">
+		</line>
+	</g>
+	<g id="Barra1" fill="#800000" stroke="#000000" PB:IsMultiState="False" PB:LineStyle="0" PB:Lower="50" PB:Orientation="0" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="" PB:PtTagTime="" PB:PtTagValue="144.949615478516" PB:Start="50" PB:Type="12" PB:Upper="250" PB:Visible="True" PB:Scripting="True">
+		<rect id="Barra1_pbBarBoundingRectEl" x="909" y="908" width="20" height="112" fill="#FFFFFF" stroke="#000000" stroke-width="2px">
+		</rect>
+		<rect id="Barra1_pbBarTagRectEl" x="909" y="967" width="20" height="53" fill="#800000" stroke="none">
+		</rect>
+	</g>
+	<g id="Barra2" fill="#800000" stroke="#000000" PB:IsMultiState="False" PB:LineStyle="0" PB:Lower="50" PB:Orientation="0" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="" PB:PtTagTime="" PB:PtTagValue="144.949615478516" PB:Start="50" PB:Type="12" PB:Upper="250" PB:Visible="True" PB:Scripting="True">
+		<rect id="Barra2_pbBarBoundingRectEl" x="1985" y="858" width="20" height="112" fill="#FFFFFF" stroke="#000000" stroke-width="2px">
+		</rect>
+		<rect id="Barra2_pbBarTagRectEl" x="1985" y="917" width="20" height="53" fill="#800000" stroke="none">
+		</rect>
+	</g>
+	<g id="Barra3" fill="#800000" stroke="#000000" PB:IsMultiState="False" PB:LineStyle="0" PB:Lower="50" PB:Orientation="0" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="" PB:PtTagTime="" PB:PtTagValue="144.949615478516" PB:Start="50" PB:Type="12" PB:Upper="250" PB:Visible="True" PB:Scripting="True">
+		<rect id="Barra3_pbBarBoundingRectEl" x="2184" y="1194" width="27" height="132" fill="#FFFFFF" stroke="#000000" stroke-width="2px">
+		</rect>
+		<rect id="Barra3_pbBarTagRectEl" x="2184" y="1263" width="27" height="63" fill="#800000" stroke="none">
+		</rect>
+	</g>
+	<a id="Botão10" fill="#DB5000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" xlink:show="new" xlink:href="exemplo_tendencias.svg" PB:ButtonAction="exemplo_tendencias.pdi" PB:ButtonRelativePath="exemplo_tendencias.svg" PB:ButtonType="1" PB:Type="9" PB:Visible="True" PB:ButtonOptions="10" PB:WorkingDirectory="">
+		<rect id="Botão10_pbButtonRectEl" x="3201" y="226" width="470" height="114" fill="#D4D0C8" stroke="#000000" stroke-width="3">
+		</rect>
+		<polyline id="Botão10_pbButtone3dEl" fill="none" stroke="#FFFFFF" stroke-width="4" points="3204,335 3204,229 3666,229">
+		</polyline>
+		<polyline id="Botão10_pbButtone3dE2" fill="none" stroke="#808080" stroke-width="5" points="3203,337 3668,337 3668,228">
+		</polyline>
+		<text id="Botão10_pbTextEl" x="3436" y="293" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle">Tendências</text>
+	</a>
+	<g id="Linha12" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Linha12_Line" stroke="#008000" stroke-width="3px" x1="797" y1="1026" x2="797" y2="1802" PB:LineEnds="3" PB:LineStyle="0">
+		</line>
+		<path id="Linha12_Arrow" fill="#008000" stroke="#008000" stroke-width="3px" d="M 797 1802 L 807 1778 L 787 1778 z">
+		</path>
+	</g>
+	<g id="T3DGatevalve_2" PB:FillColor="32768" transform="translate(879,506)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2014426442" PB:Rotation="90" PB:Flip="2">
+		<rect id="T3DGatevalve_2_pbBoundingRectEl" x="879" y="506" width="44" height="52" fill="none" stroke-width="0">
+		</rect>
+		<svg height="52" viewBox="0 0 250 499" width="44" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f" d="M250,499 l-250,0 250,-499 -250,0 250,499z">
+			</path>
+			<path style="fill:#999" d="M237,499 l-224,0 224,-499 -224,0 224,499z">
+			</path>
+			<path style="fill:#b2b2b2" d="M211,499 l-173,0 173,-499 -173,0 173,499z">
+			</path>
+			<path style="fill:#ccc" d="M186,499 l-122,0 122,-499 -122,0 122,499z">
+			</path>
+			<path style="fill:#e5e5e5" d="M166,499 l-83,0 83,-499 -83,0 83,499z">
+			</path>
+			<path style="fill:#fff" d="M141,499 l-32,0 32,-499 -32,0 32,499z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M250,499 l-250,0 250,-499 -250,0 250,499">
+			</path>
+		</svg>
+	</g>
+	<g id="T3DGatevalve_7" PB:FillColor="32768" transform="translate(1508,1096)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="948290785" PB:Rotation="0" PB:Flip="2">
+		<rect id="T3DGatevalve_7_pbBoundingRectEl" x="1508" y="1096" width="62" height="65" fill="none" stroke-width="0">
+		</rect>
+		<svg height="65" viewBox="0 0 453 496" width="62" preserveAspectRatio="none">
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M55,15 l375,0 0,144 -375,0 0,-144z">
+			</path>
+			<path style="fill:#7f7f7f" d="M242,143 l0,244 -33,0 0,-244 33,0z">
+			</path>
+			<path style="fill:#b2b2b2" d="M239,143 l0,244 -27,0 0,-244 27,0z">
+			</path>
+			<path style="fill:#e5e5e5" d="M235,143 l0,244 -18,0 0,-244 18,0z">
+			</path>
+			<path style="fill:#fff" d="M229,143 l0,244 -6,0 0,-244 6,0z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M209,143 l0,244">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M242,387 l0,-244">
+			</path>
+			<path style="fill:#7f7f7f" d="M0,496 l0,-229 453,229 0,-229 -453,229z">
+			</path>
+			<path style="fill:#999" d="M0,484 l0,-205 453,205 0,-205 -453,205z">
+			</path>
+			<path style="fill:#b2b2b2" d="M0,460 l0,-158 453,158 0,-158 -453,158z">
+			</path>
+			<path style="fill:#ccc" d="M0,437 l0,-112 453,112 0,-112 -453,112z">
+			</path>
+			<path style="fill:#e5e5e5" d="M0,419 l0,-76 453,76 0,-76 -453,76z">
+			</path>
+			<path style="fill:#fff" d="M0,396 l0,-29 453,29 0,-29 -453,29z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,496 l0,-229 453,229 0,-229 -453,229">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M39,0 l374,0 0,144 -374,0 0,-144z">
+			</path>
+		</svg>
+	</g>
+	<g id="Conector7" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector7_Polyline" fill="none" stroke="#585858" stroke-width="3px" points="2784,1217 2784,958 2111,958" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector7_Arrow" fill="#585858" stroke="#585858" stroke-width="3px" d="M 2111 958 L 2135 968 L 2135 948 z">
+		</path>
+	</g>
+	<g id="Storagefacility4_1" PB:FillColor="16777215" transform="translate(3428,994)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="524317826" PB:Rotation="0" PB:Flip="2" PB:ConnectionPoints="1,0,0.503267973856209,1 ">
+		<rect id="Storagefacility4_1_pbBoundingRectEl" x="3428" y="994" width="206" height="153" fill="none" stroke-width="0">
+		</rect>
+		<svg height="153" viewBox="0 0 999 852" width="206" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M54,344 l931,0 0,508 -931,0 0,-508z">
+			</path>
+			<path style="fill:#7f7f7f;stroke:#000;stroke-width:2" d="M40,320 l959,0 0,24 -959,0 0,-24z">
+			</path>
+			<path style="fill:#7f7f7f" d="M518,0 l481,320 -959,0 478,-320z">
+			</path>
+			<path style="fill:#999" d="M78,320 l440,-320 409,320 -849,0z">
+			</path>
+			<path style="fill:#999" d="M927,320 l0,24 -849,0 0,-24 849,0z">
+			</path>
+			<path style="fill:#999" d="M92,344 l821,0 0,508 -821,0 0,-508z">
+			</path>
+			<path style="fill:#b2b2b2" d="M126,320 l392,-320 307,320 -699,0z">
+			</path>
+			<path style="fill:#b2b2b2" d="M825,320 l0,24 -699,0 0,-24 699,0z">
+			</path>
+			<path style="fill:#b2b2b2" d="M139,344 l679,0 0,508 -679,0 0,-508z">
+			</path>
+			<path style="fill:#ccc" d="M187,320 l331,-320 160,320 -491,0z">
+			</path>
+			<path style="fill:#ccc" d="M201,344 l470,0 0,508 -470,0 0,-508z">
+			</path>
+			<path style="fill:#ccc" d="M678,320 l0,24 -491,0 0,-24 491,0z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M40,320 l478,-320 481,320 -959,0">
+			</path>
+			<path style="fill:none;stroke:#7f7f7f;stroke-width:2" d="M201,698 l705,0">
+			</path>
+			<path style="fill:none;stroke:#7f7f7f;stroke-width:2" d="M473,521 l512,0">
+			</path>
+			<path style="fill:none;stroke:#7f7f7f;stroke-width:2" d="M54,521 l266,0">
+			</path>
+			<path style="fill:#666;stroke:#000;stroke-width:2" d="M92,852 l-24,0 0,-82 -41,0 0,82 -27,0 0,-17 0,-16 0,-17 0,-489 14,-24 17,-10 3,0 98,0 -40,27 -52,0 -13,14 0,426 41,0 0,-375 24,0 0,481z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M40,293 l-11,2 -9,5 -5,8 -2,12 14,0 2,-9 9,-4 2,-1 0,-13z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M40,306 l0,-13 72,0 -20,13 -52,0z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M13,320 l14,0 0,532 -14,0 0,-532z">
+			</path>
+			<path style="fill:#000;stroke:#000;stroke-width:2" d="M78,371 l14,0 0,481 -14,0 0,-481z">
+			</path>
+			<path style="fill:#000" d="M78,358 l3,0 3,1 3,1 2,2 1,2 1,2 0,3 1,2 -14,0 0,-13z">
+			</path>
+			<path style="fill:#000" d="M27,760 l51,0 0,10 -51,0 0,-10z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M78,371 l0,-13 3,0 3,1 3,1 2,2 1,2 1,2 0,3 1,2 -14,0">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M27,760 l51,0 0,10 -51,0 0,-10">
+			</path>
+		</svg>
+	</g>
+	<g id="Conector15" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:ConnectionTo="Storagefacility4_1,1" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector15_Polyline" fill="none" stroke="#585858" stroke-width="3px" points="3020,1414 3020,1435 3061,1435 3061,1070 3378,1070 3378,1071 3428,1071" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector15_Arrow" fill="#585858" stroke="#585858" stroke-width="3px" d="M 3428 1071 L 3404 1081 L 3404 1061 z">
+		</path>
+	</g>
+	<g id="Texto2" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto2_pbTextBoundingRectEl" x="3464" y="1082" width="144" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto2_pbTextEl" x="3464" y="1115" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">Tanques</text>
+	</g>
+	<g id="T3DGatevalve_4" PB:FillColor="32768" transform="translate(3296,1052)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2014426442" PB:Rotation="0" PB:Flip="2">
+		<rect id="T3DGatevalve_4_pbBoundingRectEl" x="3296" y="1052" width="53" height="39" fill="none" stroke-width="0">
+		</rect>
+		<svg height="39" viewBox="0 0 499 250" width="53" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f" d="M0,250 l0,-250 499,250 0,-250 -499,250z">
+			</path>
+			<path style="fill:#999" d="M0,237 l0,-224 499,224 0,-224 -499,224z">
+			</path>
+			<path style="fill:#b2b2b2" d="M0,211 l0,-173 499,173 0,-173 -499,173z">
+			</path>
+			<path style="fill:#ccc" d="M0,186 l0,-122 499,122 0,-122 -499,122z">
+			</path>
+			<path style="fill:#e5e5e5" d="M0,166 l0,-83 499,83 0,-83 -499,83z">
+			</path>
+			<path style="fill:#fff" d="M0,141 l0,-32 499,32 0,-32 -499,32z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M0,250 l0,-250 499,250 0,-250 -499,250">
+			</path>
+		</svg>
+	</g>
+	<g id="Composto1" PB:IsMultiState="False" PB:Type="0" PB:Visible="True">
+		<polygon id="RetTitulo" points="3690,206 9,206 9,7 3690,7" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3px" PB:IsMultiState="False" PB:Type="2" PB:LineStyle="0">
+		</polygon>
+		<g id="TxtTitulo" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+			<rect id="TxtTitulo_pbTextBoundingRectEl" x="682" y="21" width="1173" height="76" fill="none" stroke-width="0">
+			</rect>
+			<text id="TxtTitulo_pbTextEl" x="682" y="78" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold"> Planta de Processo - Unidade exemplo</text>
+		</g>
+		<g id="TxtTitulo1" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+			<rect id="TxtTitulo1_pbTextBoundingRectEl" x="701" y="108" width="908" height="76" fill="none" stroke-width="0">
+			</rect>
+			<text id="TxtTitulo1_pbTextEl" x="701" y="165" fill="#000000" stroke="none" font-family="Arial" font-size="59.9999976158143" font-weight="bold">PROCESSAMENTO DE ÓLEO</text>
+		</g>
+	</g>
+	<g id="Texto1" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto1_pbTextBoundingRectEl" x="741" y="932" width="144" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto1_pbTextEl" x="741" y="965" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">Vaso -01</text>
+	</g>
+	<g id="Texto3" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto3_pbTextBoundingRectEl" x="1817" y="882" width="144" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto3_pbTextEl" x="1817" y="915" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">Vaso -02</text>
+	</g>
+	<g id="Texto4" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto4_pbTextBoundingRectEl" x="2011" y="1240" width="144" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto4_pbTextEl" x="2011" y="1273" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857">Vaso -03</text>
+	</g>
+	<g id="Texto5" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto5_pbTextBoundingRectEl" x="200" y="917" width="176" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto5_pbTextEl" x="200" y="950" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold">Óleo Bruto</text>
+	</g>
+	<g id="Valor1" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor1_pbTextBoundingRectEl" x="385" y="870" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor1_pbTextEl" x="504" y="903" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor2" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor2_pbTextBoundingRectEl" x="662" y="623" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor2_pbTextEl" x="781" y="656" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor3" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor3_pbTextBoundingRectEl" x="1044" y="541" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor3_pbTextEl" x="1163" y="574" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor4" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor4_pbTextBoundingRectEl" x="820" y="1076" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor4_pbTextEl" x="939" y="1109" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor5" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor5_pbTextBoundingRectEl" x="553" y="1293" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor5_pbTextEl" x="672" y="1326" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor6" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor6_pbTextBoundingRectEl" x="917" y="1302" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor6_pbTextEl" x="1036" y="1335" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor7" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor7_pbTextBoundingRectEl" x="1100" y="891" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor7_pbTextEl" x="1219" y="924" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor8" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor8_pbTextBoundingRectEl" x="1532" y="1182" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor8_pbTextEl" x="1651" y="1215" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor9" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor9_pbTextBoundingRectEl" x="2002" y="673" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor9_pbTextEl" x="2121" y="706" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor10" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor10_pbTextBoundingRectEl" x="2040" y="1402" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor10_pbTextEl" x="2159" y="1435" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor11" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor11_pbTextBoundingRectEl" x="1770" y="1793" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor11_pbTextEl" x="1889" y="1826" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor12" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor12_pbTextBoundingRectEl" x="2623" y="1237" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor12_pbTextEl" x="2742" y="1270" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="Valor13" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:DisplayPointName="9" PB:DisplayTimeStamp="9" PB:HorzAlign="0" PB:ShowUOM="True" PB:IsMultiState="False" PB:NumberFormat="0.00" PBD:PtTagName="\\peepvm\cdt158" PB:PersistString="89 {4572DB6F-FB4B-4BA4-92E2-1811DAA61D7B} \1\?60320e15-0445-4b45-95d5-03217b2e7b0a\PEEPVM54 {2CA6C7D5-025B-4EF6-9E5E-CCE1AB741C69} \1\?3\CDT158" PB:PtTagStatus="0" PB:PtTagTime="7/15/2011 12:27:44 PM" PB:PtTagValue="144.95 DEG. C" PB:Type="7" PB:Visible="True" PB:Scripting="True">
+		<rect id="Valor13_pbTextBoundingRectEl" x="3087" y="1123" width="238" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Valor13_pbTextEl" x="3206" y="1156" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" text-anchor="middle" PBD:Property="value">144.95 DEG. C</text>
+	</g>
+	<g id="T3DGatevalve_6" PB:FillColor="32768" transform="translate(779,1290)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2014426442" PB:Rotation="90" PB:Flip="2">
+		<rect id="T3DGatevalve_6_pbBoundingRectEl" x="779" y="1290" width="44" height="56" fill="none" stroke-width="0">
+		</rect>
+		<svg height="56" viewBox="0 0 250 499" width="44" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f" d="M250,499 l-250,0 250,-499 -250,0 250,499z">
+			</path>
+			<path style="fill:#999" d="M237,499 l-224,0 224,-499 -224,0 224,499z">
+			</path>
+			<path style="fill:#b2b2b2" d="M211,499 l-173,0 173,-499 -173,0 173,499z">
+			</path>
+			<path style="fill:#ccc" d="M186,499 l-122,0 122,-499 -122,0 122,499z">
+			</path>
+			<path style="fill:#e5e5e5" d="M166,499 l-83,0 83,-499 -83,0 83,499z">
+			</path>
+			<path style="fill:#fff" d="M141,499 l-32,0 32,-499 -32,0 32,499z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M250,499 l-250,0 250,-499 -250,0 250,499">
+			</path>
+		</svg>
+	</g>
+	<g id="T3DGatevalve_8" PB:FillColor="32768" transform="translate(873,1293)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2014426442" PB:Rotation="90" PB:Flip="2">
+		<rect id="T3DGatevalve_8_pbBoundingRectEl" x="873" y="1293" width="44" height="56" fill="none" stroke-width="0">
+		</rect>
+		<svg height="56" viewBox="0 0 250 499" width="44" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f" d="M250,499 l-250,0 250,-499 -250,0 250,499z">
+			</path>
+			<path style="fill:#999" d="M237,499 l-224,0 224,-499 -224,0 224,499z">
+			</path>
+			<path style="fill:#b2b2b2" d="M211,499 l-173,0 173,-499 -173,0 173,499z">
+			</path>
+			<path style="fill:#ccc" d="M186,499 l-122,0 122,-499 -122,0 122,499z">
+			</path>
+			<path style="fill:#e5e5e5" d="M166,499 l-83,0 83,-499 -83,0 83,499z">
+			</path>
+			<path style="fill:#fff" d="M141,499 l-32,0 32,-499 -32,0 32,499z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M250,499 l-250,0 250,-499 -250,0 250,499">
+			</path>
+		</svg>
+	</g>
+	<g id="Linha1" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+		<line id="Linha1_Line" stroke="#FFFF00" stroke-width="6px" x1="832" y1="400" x2="2108" y2="400" PB:LineEnds="0" PB:LineStyle="0">
+		</line>
+	</g>
+	<g id="Composto2" PB:IsMultiState="False" PB:Type="0" PB:Visible="True">
+		<g id="Linha2" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+			<line id="Linha2_Line" stroke="#FFFF00" stroke-width="6px" x1="832" y1="379" x2="832" y2="423" PB:LineEnds="0" PB:LineStyle="0">
+			</line>
+		</g>
+		<g id="Linha3" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+			<line id="Linha3_Line" stroke="#FFFF00" stroke-width="6px" x1="823" y1="379" x2="823" y2="423" PB:LineEnds="0" PB:LineStyle="0">
+			</line>
+		</g>
+	</g>
+	<g id="Composto3" PB:IsMultiState="False" PB:Type="0" PB:Visible="True">
+		<g id="Linha4" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+			<line id="Linha4_Line" stroke="#FFFF00" stroke-width="6px" x1="2120" y1="379" x2="2120" y2="423" PB:LineEnds="0" PB:LineStyle="0">
+			</line>
+		</g>
+		<g id="Linha5" PB:IsMultiState="False" PB:Type="1" PB:Visible="True">
+			<line id="Linha5_Line" stroke="#FFFF00" stroke-width="6px" x1="2111" y1="379" x2="2111" y2="423" PB:LineEnds="0" PB:LineStyle="0">
+			</line>
+		</g>
+	</g>
+	<g id="Conector1" PB:IsMultiState="False" PB:Type="27" PB:Visible="True" PB:Flow="0" PB:UserCalc="True">
+		<polyline id="Conector1_Polyline" fill="none" stroke="#FFFF00" stroke-width="3px" points="1979,800 1982,800 1982,397" PB:LineStyle="0">
+		</polyline>
+		<path id="Conector1_Arrow" fill="#FFFF00" stroke="#FFFF00" stroke-width="3px" d="M 1982 397 L 1992 421 L 1972 421 z">
+		</path>
+	</g>
+	<g id="T3DGatevalve_3" PB:FillColor="32768" transform="translate(1961,573)" PB:FillStyle="1" PB:BackgroundColor="-1" PB:IsMultiState="False" PB:Type="16" PB:Visible="True" PB:TBHandle="2014426442" PB:Rotation="90" PB:Flip="2">
+		<rect id="T3DGatevalve_3_pbBoundingRectEl" x="1961" y="573" width="41" height="56" fill="none" stroke-width="0">
+		</rect>
+		<svg height="56" viewBox="0 0 250 499" width="41" preserveAspectRatio="none">
+			<path style="fill:#7f7f7f" d="M250,499 l-250,0 250,-499 -250,0 250,499z">
+			</path>
+			<path style="fill:#999" d="M237,499 l-224,0 224,-499 -224,0 224,499z">
+			</path>
+			<path style="fill:#b2b2b2" d="M211,499 l-173,0 173,-499 -173,0 173,499z">
+			</path>
+			<path style="fill:#ccc" d="M186,499 l-122,0 122,-499 -122,0 122,499z">
+			</path>
+			<path style="fill:#e5e5e5" d="M166,499 l-83,0 83,-499 -83,0 83,499z">
+			</path>
+			<path style="fill:#fff" d="M141,499 l-32,0 32,-499 -32,0 32,499z">
+			</path>
+			<path style="fill:none;stroke:#000;stroke-width:2" d="M250,499 l-250,0 250,-499 -250,0 250,499">
+			</path>
+		</svg>
+	</g>
+	<g id="Texto6" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold" PB:IsMultiState="False" PB:StrikethroughAndUnderline="False" PB:Type="4" PB:Visible="True">
+		<rect id="Texto6_pbTextBoundingRectEl" x="626" y="1808" width="338" height="44" fill="none" stroke-width="0">
+		</rect>
+		<text id="Texto6_pbTextEl" x="626" y="1841" fill="#000000" stroke="none" font-family="Arial" font-size="33.3333320087857" font-weight="bold">Tratamento de Água</text>
+	</g>
+	<script language="JavaScript" type="text/javascript"> 
+        
+        function SVG_doc_loaded(evt)
+	{
+	    var parentDoc = evt.getTarget().getOwnerDocument();
+	    var elem = parentDoc.createElement("Ready");
+	    evt.getTarget().appendChild(elem);
+
+        }</script>
+</svg>

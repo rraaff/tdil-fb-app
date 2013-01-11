@@ -22,6 +22,6 @@
     </ul>
   </li>
   <li>
-    <a href="boLogout.php">Salir</a>
+    <a href="./boLogout">Salir</a>
   </li>
 </ul>
